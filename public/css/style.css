@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 12px;
+  color: #414141;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+}
+
+#main {
+  min-height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto auto 1fr auto;
+      grid-template-rows: auto auto 1fr auto;
+  grid-gap: 0px;
+      grid-template-areas: "bar" "header" "content" "footer";
+}
+
+#header-bar {
+  background: #d9d955;
+  width: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: bar;
+}
+
+.header-wrapper {
+  padding: 0 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  grid-gap: 0px;
+      grid-template-areas: "logo" "link-one" "link-two";
+}
+
+header {
+  background: #fff;
+  -webkit-box-shadow: 0 0 16px 0 #dadada;
+          box-shadow: 0 0 16px 0 #dadada;
+  height: 70px;
+  width: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+
+header .logo-wrapper {
+  line-height: 70px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+header .logo-wrapper img {
+  vertical-align: middle;
+}
+
+header .link-one {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: link-one;
+}
+
+header .link-two {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: link-two;
+}
+
+header ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 85px;
+}
+
+header ul li {
+  vertical-align: bottom;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #193654;
+  text-transform: uppercase;
+  margin: 0 15px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+header ul li a:hover, header ul li a:active {
+  text-decoration: underline;
+}
+
+#content {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: content;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+footer {
+  background: #414141;
+  color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  line-height: 1.5;
+}
+
+.footer-wrapper {
+  padding: 40px 60px;
+}
+
+.footer-side--two ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-side--two ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-side .footer-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 16px;
+}
+
+.footer-side p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ([col] 1fr)[12];
+      grid-template-columns: repeat(12, [col] 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 30px;
+}
+
+.grid-1 {
+  grid-column: span 1;
+}
+
+.grid-2 {
+  grid-column: span 2;
+}
+
+.grid-3 {
+  grid-column: span 3;
+}
+
+.grid-4 {
+  grid-column: span 4;
+}
+
+.grid-5 {
+  grid-column: span 5;
+}
+
+.grid-6 {
+  grid-column: span 6;
+}
+
+.grid-7 {
+  grid-column: span 7;
+}
+
+.grid-8 {
+  grid-column: span 8;
+}
+
+.grid-9 {
+  grid-column: span 9;
+}
+
+.grid-10 {
+  grid-column: span 10;
+}
+
+.grid-11 {
+  grid-column: span 11;
+}
+
+@media (max-width: 800px) {
+  [class*="grid-"] {
+    grid-column: span 12;
+  }
+}
+
+.text--center {
+  text-align: center;
+}
+
+.width--large {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.item-container {
+  height: auto;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn-primary {
+  padding: .8em 2em;
+  background: #193654;
+  color: #ffffff;
+  cursor: pointer;
+  background-position: center;
+  -webkit-transition: background 0.7s;
+  transition: background 0.7s;
+}
+
+.btn-primary:hover {
+  background: #254f7b radial-gradient(circle, transparent 1%, #254f7b 1%) center/15000%;
+}
+
+.btn-primary:active {
+  background-color: #ffffff;
+  background-size: 100%;
+  -webkit-transition: background 0s;
+  transition: background 0s;
+}
+
+.btn-secondary {
+  padding: 10px 30px;
+  background: #efefef;
+  color: #193654;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.btn-secondary--active {
+  background: #2b4d66;
+  color: #ffffff;
+}
+
+.width--full {
+  width: 100%;
+}
+
+.width--medium {
+  width: calc(100% - 30px);
+  max-width: 480px;
+  margin: auto;
+}
+
+.bg-shadow {
+  -webkit-box-shadow: 0 0 16px 0 #dadada;
+          box-shadow: 0 0 16px 0 #dadada;
+}
+
+.container {
+  padding: 3rem 40px;
+}
+
+.form-container {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+
+.form-group + .form-group {
+  margin: 1rem 0px;
+}
+
+input[type=text] {
+  width: calc(100% - 20px);
+  font-family: "Montserrat", sans-serif;
+  height: 42px;
+  padding: 0 10px;
+  border: none;
+  background: rgba(246, 241, 241, 0.69);
+}
+
+input[type=text]:focus {
+  outline: none;
+  background: #ffffff;
+  color: #193654;
+  width: calc(100% - 22px);
+  border: 1px solid #828282;
+  height: 40px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.link {
+  color: #193654;
+  font-weight: bold;
+}
+
+.bg--white-two {
+  background: #efefef;
+}
+
+.bg--white {
+  background: #ffffff;
+}
+
+.height--large {
+  height: 100vh;
+  max-height: 460px;
+  vertical-align: center;
+}
+
+hr.border {
+  border: none;
+  border-top: 1px solid #efefef;
+  outline: none;
+}
+
+.product-container {
+  margin-top: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.product-container > div {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-container > div img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  position: absolute;
+}
+
+/*
+
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 310). 
+        
+The 'supports' rule will only run if your browser supports CSS grid.
+
+Flexbox and floats are used as a fallback so that browsers which don't support grid will still recieve a similar layout.
+
+*/
+/* Base Styles */
+/* Profile Section */
+/* Gallery Section */
+.product-carousel {
+  position: relative;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+}
+
+.next-btn {
+  right: 3px;
+}
+
+.prev-btn {
+  left: 3px;
+}
+
+.product-carousel__container img {
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 30px 10px -15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 30px 10px -15px rgba(0, 0, 0, 0.25);
+}
+
+.tag-category {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #193654;
+  padding-bottom: 5px;
+}
+
+.product-name {
+  font-size: 32px;
+  color: #353535;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.discount {
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ea2335;
+}
+
+.product-price-before {
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--warm-grey);
+}
+
+.product-price {
+  color: #353535;
+  font-size: 26px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.detail {
+  margin: 30px 0;
+}
+
+.detail__title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #828282;
+  padding-bottom: 8px;
+}
+
+.detail__content {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.92;
+  letter-spacing: normal;
+  color: #353535;
+}
+
+.detail__content ul {
+  list-style-position: inside;
+  color: inherit;
+}
+
+.marketplace-link {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.92;
+  letter-spacing: normal;
+  color: #828282;
+}
+
+.marketplace-link a {
+  font-weight: bold;
+  color: #2b4d66;
+}
+/*# sourceMappingURL=style.css.map */

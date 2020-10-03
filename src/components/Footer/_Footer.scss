@@ -1,0 +1,38 @@
+footer {
+    background: #414141;
+    color: #fff;
+    font-size: $font-medium;
+    bottom: 0;
+    width: 100%;
+    grid-area: footer;
+    line-height: 1.5;
+}
+
+.footer-wrapper {
+    padding: 40px 60px;
+}
+
+.footer-side--two {
+    ul {
+        list-style: none;
+        display: flex;
+        li a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+.footer-side {
+    .footer-title {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 16px;
+    }
+
+    p {
+        font-size: $font-medium;
+        font-weight: 500;
+    }
+}
