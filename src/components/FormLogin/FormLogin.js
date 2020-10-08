@@ -3,18 +3,20 @@ import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import TextInput from '../TextInput/TextInput';
 import { useForm } from 'react-hook-form';
 
-export default function FormLogin() {
+export default function FormLogin(props) {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
+        //console.log(data);
+        props.handleData(data);
     }
 
     return (
         <Fragment>
             <form 
-                onSubmit={handleSubmit(onSubmit)} 
-                >
+                onSubmit={handleSubmit(onSubmit)}
+                //onSubmit={props.submitForm} 
+                method="post" >
                 <div className="form-container">
                     <TextInput 
                         type="text"
@@ -31,7 +33,7 @@ export default function FormLogin() {
                         required={true}
                     />
                 </div>
-                <SubmitBtn value="Login"/>
+                <SubmitBtn value="Login" />
             </form>
             <div className="text--center mt-20">
                 <p className="mb-10">Belum punya akun?</p>

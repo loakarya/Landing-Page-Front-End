@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 const SubmitBtn = (props) => {
     return (
         <Fragment>
-            <input className="btn btn-primary width--full" type="submit" value={props.value} />
+            <input className="btn btn-primary width--full" type="submit" value={props.value} onClick={props.onClick} />
         </Fragment>
     );
 }
