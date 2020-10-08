@@ -10,7 +10,7 @@ class Home extends Component {
     render() {
         return (
             <div id="main">
-                <HeaderBar />
+                <HeaderBar message="Hai, syai" />
                 <Header />
                 <div id="content" className="width--large">
                     Hollysheet

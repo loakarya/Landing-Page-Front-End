@@ -35,8 +35,8 @@ body {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: content;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .row::after {
@@ -250,6 +250,11 @@ hr.border {
   border: none;
   border-top: 1px solid #efefef;
   outline: none;
+}
+
+.border-style-1 {
+  width: 70%;
+  margin: 0 auto;
 }
 
 footer {
@@ -654,5 +659,27 @@ hr.border {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: bar;
+}
+
+.form-group + .form-group {
+  margin: 1rem 0px;
+}
+
+input[type=text], input[type=password] {
+  width: calc(100% - 20px);
+  font-family: "Montserrat", sans-serif;
+  height: 42px;
+  padding: 0 10px;
+  border: none;
+  background: rgba(246, 241, 241, 0.69);
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  outline: none;
+  background: #ffffff;
+  color: #193654;
+  width: calc(100% - 22px);
+  border: 1px solid #828282;
+  height: 40px;
 }
 /*# sourceMappingURL=default.css.map */

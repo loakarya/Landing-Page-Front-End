@@ -1,12 +1,9 @@
 import React, { Fragment } from 'react';
-// import './HeaderBar.css';
 
-const HeaderBar = (props) => {
+const SubmitBtn = (props) => {
     return (
         <Fragment>
-            <div id="header-bar">
-                {props.message}
-            </div>
+            <input className="btn btn-primary width--full" type="submit" value={props.value} />
         </Fragment>
     );
 }
@@ -15,4 +12,4 @@ const HeaderBar = (props) => {
 //     message: 'gaada'
 // }
 
-export default HeaderBar;
+export default SubmitBtn;

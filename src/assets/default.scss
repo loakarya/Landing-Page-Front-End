@@ -55,8 +55,8 @@ body {
 
 #content {
     grid-area: content;
-    padding-top: 2rem; 
-    padding-bottom: 2rem;   
+    padding-top: 3rem; 
+    padding-bottom: 3rem;   
 }
 
 .row::after {
@@ -270,7 +270,13 @@ hr.border {
   outline: none;
 }
 
+.border-style-1 {
+  width: 70%; 
+  margin: 0 auto;
+}
+
 @import 'variables';
 @import '../components/Footer/Footer';
 @import '../components/Header/Header';
 @import '../components/HeaderBar/HeaderBar';
+@import '../components/TextInput/TextInput';
