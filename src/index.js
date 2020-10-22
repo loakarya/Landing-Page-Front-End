@@ -19,6 +19,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from './router/routes';
 import * as serviceWorker from './serviceWorker';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://api.loakarya.co';
 
 ReactDOM.render(<Router />, document.getElementById('root'));
 serviceWorker.unregister();

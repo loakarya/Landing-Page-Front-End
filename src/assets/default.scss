@@ -190,6 +190,21 @@ body {
   font-family: $font-style-1;
 }
 
+.btn-secondary {
+  padding: 10px 30px;
+  background: $white-two;
+  color: $dark-slate-blue;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 50px;
+  margin: 0 10px; 
+  cursor: pointer;
+}
+
+.btn-secondary--active {
+  background: $dark-grey-blue;
+  color: $white;
+}
 
 .width--full {
   width: 100%;
@@ -276,6 +291,8 @@ hr.border {
 }
 
 @import 'variables';
+@import 'products';
+@import 'detail';
 @import '../components/Footer/Footer';
 @import '../components/Header/Header';
 @import '../components/HeaderBar/HeaderBar';

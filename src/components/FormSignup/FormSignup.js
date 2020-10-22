@@ -4,11 +4,11 @@ import SubmitBtn from '../SubmitBtn/SubmitBtn';
 
 import { useForm } from 'react-hook-form';
 
-export default function FormSignup() {
+export default function FormSignup(props) {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
+        props.handleData(data);
     }
 
     return (
@@ -60,35 +60,35 @@ export default function FormSignup() {
                     <TextInput 
                         placeholder="Alamat"
                         type="text"
-                        name="alamat" 
+                        name="address" 
                         register={register} 
                         required={true} 
                         />
                     <TextInput 
                         placeholder="Kode Pos" 
                         type="text"
-                        name="kodePos" 
+                        name="zipCode" 
                         register={register} 
                         required={true}
                         />
                     <TextInput 
                         placeholder="Kota" 
                         type="text"
-                        name="kota" 
+                        name="city" 
                         register={register} 
                         required={true}
                         />
                     <TextInput 
                         placeholder="Provinsi" 
                         type="text"
-                        name="provinsi" 
+                        name="province" 
                         register={register} 
                         required={true}
                         />
                     <TextInput 
                         placeholder="Negara" 
                         type="text"
-                        name="negara" 
+                        name="country" 
                         register={register} 
                         required={true}
                         />

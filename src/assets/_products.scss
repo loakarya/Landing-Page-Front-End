@@ -1,0 +1,21 @@
+.product-container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+    > div {
+        width: 100%;
+        padding-bottom: 100%;
+        position: relative;
+        cursor: pointer;
+        // background-image: url("../image/image-3.jpg");
+        // object-fit: cover;
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            position: absolute;
+        }
+    }
+}
