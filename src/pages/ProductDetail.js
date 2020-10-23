@@ -3,16 +3,20 @@ import React from 'react';
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import ProductCarousel from '../components/Carousel/ProductCarousel';
+
+
+import Grid from '@material-ui/core/Grid';
 
 export default function ProductDetail () {
     return (
         <div id="main">
             <HeaderBar />
             <Header />
-            <div id="content" class="width--large">
-                <div class="grid mb-4">
-                    <div class="grid-6">
-                        <div class="product-carousel">
+            <div id="content" class="width--large mb-4">
+                <Grid container spacing={4}>
+                    <Grid item xs={12} sm={5}>
+                        {/* <div class="product-carousel">
                             <div class="slider-btn prev-btn">
                                 <img src="../image/prev-carousel.png" alt="" />
                             </div>
@@ -22,12 +26,16 @@ export default function ProductDetail () {
                             </div>
                             
                             <div class="product-carousel__container">
-                                <img src="../image/image-1.png" alt="" />
+                                <img src="../image/image-2.png" alt="" />
                             </div>
+                        </div> */}
+                        <div className="carousel-container">
+                            <ProductCarousel/>
                         </div>
-                    </div>
+                        
+                    </Grid>
 
-                    <div class="grid-6">
+                    <Grid item xs={12} sm={7}>
                         <p class="tag-category">Authentic Product</p>
                         <h1 class="product-name mb-10">Loka Smart Table</h1>
 
@@ -58,8 +66,8 @@ export default function ProductDetail () {
                         </div>
 
                         <p class="marketplace-link">Produk ini juga tersedia di <a href="">Shopee,</a> <a href="">Tokopedia</a> dan <a href="">Bukalapak</a></p>
-                    </div>
-                </div>
+                    </Grid>
+                </Grid>
             </div>
             <Footer />
         </div>
