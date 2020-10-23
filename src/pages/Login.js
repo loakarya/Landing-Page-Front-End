@@ -4,7 +4,6 @@ import FormLogin from '../components/FormLogin/FormLogin';
 import axios from 'axios';
 import { CookiesProvider, useCookies } from 'react-cookie';
 
-import '../assets/default.css';
 import { Redirect } from 'react-router-dom';
 
 export default function Login() {

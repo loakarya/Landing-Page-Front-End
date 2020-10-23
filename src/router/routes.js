@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios';
 
 import About from '../pages/About';
 import Articles from '../pages/Articles';
@@ -12,7 +13,7 @@ import ProductDetail from '../pages/ProductDetail';
 import Products from '../pages/Products';
 import Signup from '../pages/Signup';
 
-import axios from 'axios';
+import '../assets/default.css';
 
 // const authAxios = axios.create ( {
 //     baseUrl: apiUrl,
