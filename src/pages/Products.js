@@ -81,16 +81,14 @@ export default function Products () {
 
                 <div className="product-container">
                     {
-                        products && filteredProducts.map((product) => (
-                            <div>
-                            <Link to="/products/${{product.id}}">
+                        filteredProducts && filteredProducts.map((product) => (
+                            <Link to={`products/${product.id}`}>
                                 <ProductImage 
                                     src={product.thumbnail}
                                     alt={product.id}
                                 />
                             </Link>
-                            </div>
-                            
+                           
                         ))
                     }
                    

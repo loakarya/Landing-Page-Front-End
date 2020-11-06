@@ -1,25 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
+
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomeCarousel from '../components/Carousel/HomeCarousel';
 
-import { useCookies } from 'react-cookie';
+//import { useCookies } from 'react-cookie';
 
 export default function Home () { 
-    const [isLoggedIn, setLoggedIn] = useState(false);
-    const [cookies, setCookie, removeCookie] = useCookies(['token']);
+    // const [isLoggedIn, setLoggedIn] = useState(false);
+    // const [cookies, setCookie, removeCookie] = useCookies(['token']);
     
-    useEffect(() => {
-       if(cookies.token) {
-           setLoggedIn(true);
-       }
-       else {
-           setLoggedIn(false);
-       }
-    }, [])
+    // useEffect(() => {
+    //    if(cookies.token) {
+    //        setLoggedIn(true);
+    //    }
+    //    else {
+    //        setLoggedIn(false);
+    //    }
+    // }, [])
 
-    console.log(cookies.token);
+    // console.log(cookies.token);
+
+    useEffect(() => {
+        const endpoint = 'profile/products/';
+
+        axios.get(endpoint)
+        .then((response) => {
+            console.log(response);
+            // if (response.status === 200) {
+            if (response.data.status) {
+                
+            }
+
+            else {
+
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }, [])
 
     const imgUrl = [
         'https://picsum.photos/400/300?random=1',
@@ -29,14 +51,15 @@ export default function Home () {
         'https://picsum.photos/400/300?random=5',
     ];
     console.log(imgUrl);
+
     return (
         <div id="main">
             <HeaderBar 
                  
             />
-            <Header isLoggedIn={isLoggedIn} />
+            <Header />
+            {/* <Header isLoggedIn={isLoggedIn} /> */}
             <div id="content" className="" style={{ paddingTop: 0 }}>
-                {/* { isLoggedIn ? 'Logged In' : 'Logged Out' } */}
                 <div className="home-carousel-container">
                     <HomeCarousel />
                 </div>

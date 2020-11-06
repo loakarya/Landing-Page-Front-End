@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
 
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
@@ -9,6 +11,99 @@ import ProductCarousel from '../components/Carousel/ProductCarousel';
 import Grid from '@material-ui/core/Grid';
 
 export default function ProductDetail () {
+    
+    const { id } = useParams();
+    //const [product, setProduct] = useState();
+    const [category, setCategory] = useState();
+    const [title, setTitle] = useState();
+    const [price, setPrice] = useState();
+    const [discount, setDiscount] = useState();
+    const [priceBeforeDisc, setPriceBeforeDisc] = useState();
+    const [detail, setDetail] = useState();
+    const [material, setMaterial] = useState();
+    const [shopee, setShopee] = useState();
+    const [tokopedia, setTokopedia] = useState();
+    const [bukalapak, setBukalapak] = useState();
+    const [picture, setPicture] = useState([]);
+    // const [product, setProduct] = useState([
+    //     category: "",
+    //     title: "",
+    //     price: "",
+    //     discount: "",
+    //     price_before_disc: "",
+    //     detail: "",
+    //     material: "",
+    //     shopee_order_link: "",
+    //     tokopedia_order_link: "",
+    //     bukalapak_order_link: "",
+    //     picture : [],
+    //     isDeleted: null
+    // ]);
+
+    useEffect(() => {
+        const endpoint = '/product/' + id;
+
+        axios.get(endpoint)
+        .then((response) => {
+            
+            // if (response.status === 200) {
+            if (response.data.status) {
+                let p = response.data.data;
+                console.log(p);
+                setCategory(p.category);
+                setTitle(p.title);
+                setPrice(p.price);
+                setDiscount(p.discount);
+                setDetail(p.detail);
+                setMaterial(p.material);
+                setShopee(p.shopee_order_link);
+                setTokopedia(p.tokopedia_order_link);
+                setBukalapak(p.bukalapak_order_link);
+                controlPictures(p);
+                getPriceBeforeDisc(p);
+            }
+
+            else {
+
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }, [])
+
+    function getPriceBeforeDisc (data) {
+        const price = Number(data.price);
+        const disc = Number(data.discount);
+        const priceBefore = price + (price * disc/100);
+        setPriceBeforeDisc(priceBefore);
+    }
+
+    function controlPictures (data) {
+        let pictureArray = [];
+        
+        pictureArray = [
+            data.thumbnail_url,
+            data.picture_url_1,
+            data.picture_url_2,
+            data.picture_url_3,
+            data.picture_url_4,
+            data.picture_url_5
+        ];
+
+        setPicture(picture.push(pictureArray));
+        console.log(pictureArray);
+        console.log(picture);
+    }
+
+    let productCategory;
+    if (category === "0") {
+        productCategory = "Authentic Product";
+    }
+    else {
+        productCategory = "On Demand Product";
+    }
+
     return (
         <div id="main">
             <HeaderBar />
@@ -16,38 +111,25 @@ export default function ProductDetail () {
             <div id="content" class="width--large mb-4">
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={5}>
-                        {/* <div class="product-carousel">
-                            <div class="slider-btn prev-btn">
-                                <img src="../image/prev-carousel.png" alt="" />
-                            </div>
-                            
-                            <div class="slider-btn next-btn">
-                                <img src="../image/next-carousel.png" alt="" />
-                            </div>
-                            
-                            <div class="product-carousel__container">
-                                <img src="../image/image-2.png" alt="" />
-                            </div>
-                        </div> */}
                         <div className="carousel-container">
-                            <ProductCarousel/>
+                            <ProductCarousel pictures={picture}/>
                         </div>
                         
                     </Grid>
 
                     <Grid item xs={12} sm={7}>
-                        <p class="tag-category">Authentic Product</p>
-                        <h1 class="product-name mb-10">Loka Smart Table</h1>
+                        <p class="tag-category">{productCategory}</p>
+                        <h1 class="product-name mb-10">{title}</h1>
 
-                        <s class="product-price-before">Rp 4.200.000</s> <span class="discount">(Diskon 15%)</span>
-                        <p class="product-price ">Rp 4.200.000</p>
+                        <s class="product-price-before">Rp {priceBeforeDisc}</s> <span class="discount">(Diskon {discount}%)</span>
+                        <p class="product-price ">Rp {price}</p>
 
                         <div class="detail">
                             <div class="detail__title">
                                 Detail Produk
                             </div>
                             <div class="detail__content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                {detail}
                             </div>
                         </div>
 
@@ -56,16 +138,19 @@ export default function ProductDetail () {
                                 Bahan Material
                             </div>
                             <div class="detail__content">
-                            <ul>
+                                {material}
+                            {/* <ul>
                                 <li>Bahan 1</li>
                                 <li>Bahan 2</li>
                                 <li>Bahan 3</li>
                                 <li>Bahan 4</li>
-                            </ul>
+                            </ul> */}
                             </div>
                         </div>
 
-                        <p class="marketplace-link">Produk ini juga tersedia di <a href="">Shopee,</a> <a href="">Tokopedia</a> dan <a href="">Bukalapak</a></p>
+                        <p class="marketplace-link">
+                            Produk ini juga tersedia di <a href={shopee} target="_blank">Shopee, </a><a href={tokopedia} target="_blank">Tokopedia</a> dan <a href={bukalapak} target="_blank">Bukalapak</a>
+                        </p>
                     </Grid>
                 </Grid>
             </div>

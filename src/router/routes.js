@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { CookiesProvider, useCookies } from 'react-cookie';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+//import { CookiesProvider, useCookies } from 'react-cookie';
+import { BrowserRouter as Router, Route, } from 'react-router-dom';
+//import axios from 'axios';
 
 import About from '../pages/About';
 import Articles from '../pages/Articles';
@@ -15,6 +15,9 @@ import Signup from '../pages/Signup';
 
 import '../assets/default.css';
 
+// to hide all warning in console log
+// console.log = console.warn = console.error = () => {};
+
 // const authAxios = axios.create ( {
 //     baseUrl: apiUrl,
 //     headers: {
@@ -25,41 +28,38 @@ import '../assets/default.css';
 
 
 function routes() {
-    const [cookies] = useCookies();
-    const [user, setUser] = useState(); 
+//     const [cookies] = useCookies();
+//     const [user, setUser] = useState(); 
     
-    console.log(cookies.token);
+//     console.log(cookies.token);
 
-    // const existingToken = cookies.token;
-    // const [isLoggedIn, setIsLoggedIn] = useState();
-
-    useEffect(() => {
+    // useEffect(() => {
         // const config = {
         //     headers: {
         //         Authorization: 'Bearer ' + cookies.token
         //     }
         // };
 
-        const endpoint = '/user';
+    //     const endpoint = '/user';
 
-        axios.post(
-            endpoint,{}, {
-                headers: {
-                    Authorization: "Bearer " + cookies.token
-                }
-            }
-        )
-        .then((response) => {
-            console.log(response.data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-    }, [])
-
+    //     axios.post(
+    //         endpoint,{}, {
+    //             headers: {
+    //                 Authorization: "Bearer " + cookies.token
+    //             }
+    //         }
+    //     )
+    //     .then((response) => {
+    //         console.log(response.data);
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     })
+    // }, [])
+    
     return(
-        <CookiesProvider>
-            <Router>
+        // <CookiesProvider>
+        <Router>
                 <div>
                     <Route exact path="/" component={Home} />
                     <Route path="/articles" component={Articles} />
@@ -67,13 +67,13 @@ function routes() {
                     <Route path="/about" component={About} />
                     <Route path="/contact" component={Contact} />
                     <Route exact path="/products" component={Products} />
-                    <Route path="/products/id" component={ProductDetail} />
+                    <Route path="/products/:id" component={ProductDetail} />
 
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={Signup} />
                 </div>
             </Router>
-        </CookiesProvider>
+        // </CookiesProvider>
     );
 }
 export default routes;

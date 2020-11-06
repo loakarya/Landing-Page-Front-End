@@ -1,0 +1,21 @@
+.slick-list {
+  padding-bottom: 20px !important;
+}
+
+.slick-prev,
+.slick-next {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: yellow;
+  display: none !important;
+}
+
+.slick-dots li {
+  width: 10px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+}
+/*# sourceMappingURL=ProductCarousel.css.map */
