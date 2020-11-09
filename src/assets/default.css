@@ -654,6 +654,21 @@ section .section-title::after {
   margin: 6rem auto;
 }
 
+.filter-btn {
+  width: 100%;
+  background: #efefef;
+  padding: 40px 70px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter-btn-active, .filter-btn:hover {
+  background: #45C875;
+}
+
 footer {
   background: #414141;
   color: #fff;
@@ -828,5 +843,79 @@ input[type=text]:focus, input[type=password]:focus {
 
 .detail-content p + p {
   margin: .5em 0;
+}
+
+.accordion {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+  background-color: #fcfcfc;
+  color: #3e61dc;
+  cursor: pointer;
+  padding: 15px 30px 15px 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.5;
+  position: relative;
+}
+
+.container-accordion {
+  margin-bottom: 15px;
+}
+
+.accordion-active, .accordion:hover {
+  background-color: #45C875;
+  color: #fff;
+}
+
+.accordion-active::after, .accordion:hover::after {
+  color: #fff;
+}
+
+.panel {
+  padding: 20px 20px;
+  display: none;
+  overflow: hidden;
+  font-size: 12px;
+  font-style: "Montserrat", sans-serif;
+  border-radius: 0px 0px 10px 10px;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  color: #353535;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.panel-active {
+  display: block;
+}
+
+.accordion:after {
+  content: '+';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 25px;
+  color: #3e61dc;
+  font-weight: 500;
+  margin-left: 5px;
+  position: absolute;
+  right: 15px;
+  top: 7px;
+}
+
+.accordion-active:after {
+  content: '-';
+  /* Unicode character for "minus" sign (-) */
+  color: #fff;
 }
 /*# sourceMappingURL=default.css.map */

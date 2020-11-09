@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
@@ -11,6 +12,7 @@ import HomeCarousel from '../components/Carousel/HomeCarousel';
 export default function Home () { 
     // const [isLoggedIn, setLoggedIn] = useState(false);
     // const [cookies, setCookie, removeCookie] = useCookies(['token']);
+    const [profileProducts, setProfileProducts] = useState([]);
     
     // useEffect(() => {
     //    if(cookies.token) {
@@ -24,14 +26,24 @@ export default function Home () {
     // console.log(cookies.token);
 
     useEffect(() => {
-        const endpoint = 'profile/products/';
+        const endpoint = 'profile/products';
 
         axios.get(endpoint)
         .then((response) => {
-            console.log(response);
+            //console.log(response);
             // if (response.status === 200) {
             if (response.data.status) {
+                console.log(response.data.data);
+                let respProfileProducts = [];
                 
+                response.data.data.map(resp => {
+                    respProfileProducts.push({
+                        productId: resp.id,
+                        thumbnail: resp.product.thumbnail_url
+                    });
+                });
+
+                setProfileProducts(respProfileProducts);
             }
 
             else {
@@ -50,7 +62,7 @@ export default function Home () {
         'https://picsum.photos/400/300?random=4',
         'https://picsum.photos/400/300?random=5',
     ];
-    console.log(imgUrl);
+    console.log(profileProducts);
 
     return (
         <div id="main">
@@ -68,13 +80,13 @@ export default function Home () {
                     <h1 class="section-title">Produk Unggulan</h1>
                     <div class="home-gallery-container">
                         
-                        {imgUrl.map((imgUrl) => 
-                            <a href="" class="">
+                        {profileProducts.slice(0, 5).map((product) => 
+                            <Link to={`products/${product.productId}`} class="">
                                 <div class="home-gallery" 
-                                    style={{backgroundImage: `url(${imgUrl})`}}
+                                    style={{backgroundImage: `url(${product.thumbnail})`}}
                                     > 
                                 </div>
-                            </a>
+                            </Link>
                         )}
 
                     </div>

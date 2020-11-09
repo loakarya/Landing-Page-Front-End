@@ -1,0 +1,14 @@
+.filter-btn {
+    width: 100%;
+    background: $white-two;
+    padding: 40px 70px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $white;
+    cursor: pointer;
+}
+
+.filter-btn-active, .filter-btn:hover {
+    background: $dark-grey-blue;
+}
