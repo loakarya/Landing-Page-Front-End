@@ -15,16 +15,16 @@ class About extends Component {
                     </div>
 
                     <div class="width--large compro-section">
-                        <h1 className="pt-2rem">Siapa Kami?</h1>
+                        <h1 className="pt-2rem font-color-primary">Siapa Kami?</h1>
                         <p>Loakarya merupakan sebuah startup di bidang waste management yang mengubah limbah menjadi produk furniture dengan menggunakan metode upcyling.</p>
                     </div>
 
-                    <div class="width--large compro-section">
+                    <div class="width--large compro-section font-color-secondary">
                         <p><b>“We escalate the value of waste material by upcycling and repurposing for eco living.”</b></p>
                     </div>
 
                     <div class="width--large compro-section">
-                        <h1>Visi dan Misi</h1>
+                        <h1 className="font-color-primary">Visi dan Misi</h1>
                         <p>Visi Kami adalah mengurangi limbah dalam sebuah kota sebanyak 100 ton dalam setahun di 2030.</p>
                         <p>Dan misi Loakarya adalah untuk menuntaskan permasalahan limbah di masyarakat.</p>
                     </div>

@@ -273,6 +273,7 @@ body {
   padding-top: 2rem;
 }
 
+
 .pb-2rem {
   padding-bottom: 2rem;
 }
@@ -493,11 +494,20 @@ section {
   //background-color: khaki;
 }
 
+.font-color-primary {
+  color: $dark-slate-blue;
+}
+
+.font-color-secondary {
+  color: $dark-grey-blue;
+}
+
 @import 'variables';
 @import 'products';
 @import 'detail';
 @import 'about';
 @import 'faq';
+@import 'contact';
 @import '../components/Footer/Footer';
 @import '../components/Header/Header';
 @import '../components/HeaderBar/HeaderBar';
