@@ -18,8 +18,7 @@ export default function Products () {
     const [secondButtonFilter, setSecondButtonFilter] = useState('btn filter-btn');
     const [thirdButtonFilter, setThirdButtonFilter] = useState('btn filter-btn');
     const [fourthButtonFilter, setFourthButtonFilter] = useState('btn filter-btn');
-    const [panelClass, setPanelClass] = useState("");
-    const [accordionClass, setAccordionClass] = useState("");
+    const [active, setActive] = useState("");
 
     useEffect(() => {
         const endpoint = '/faq';
@@ -28,14 +27,15 @@ export default function Products () {
         .then((response) => {
             // if (response.status === 200) {
             if (response.data.status) {
-                //console.log(response.data.data);
+                console.log(response.data.data);
                 let respFaq = [];
                 
                 response.data.data.map(resp => {
                     faq.push({
                         category: resp.category,
                         question: resp.question,
-                        answer: resp.answer
+                        answer: resp.answer,
+                        id: resp.id
                     });
                 });
 
@@ -47,11 +47,12 @@ export default function Products () {
                         filteredFaq.push({
                             category: resp.category,
                             question: resp.question,
-                            answer: resp.answer
+                            answer: resp.answer,
+                            id: resp.id
                         });
                     }
                 });
-            
+                showFirstCategory();
                 console.log(filteredFaq);
             }
             else {
@@ -61,8 +62,6 @@ export default function Products () {
             console.log(error);
         })
     }, [])
-
-    
 
     function showFirstCategory() {
         setFilteredFaq(faq.filter(e => e.category === "1"));
@@ -96,13 +95,6 @@ export default function Products () {
         setFourthButtonFilter("btn filter-btn filter-btn-active");
     }
 
-    function openPanel() {
-        setPanelClass(panelClass === "" ? "panel-active" : "");
-        setAccordionClass(accordionClass === "" ? "accordion-active" : "")
-        console.log(panelClass);
-        
-    }
-
     return( 
         <div id="main"> 
             <HeaderBar />
@@ -114,13 +106,13 @@ export default function Products () {
                             <button className={firstButtonFilter} onClick={() => showFirstCategory()} >Loak</button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                            <button className="btn filter-btn" onClick={() => showSecondCategory()}>Produk</button>
+                            <button className={secondButtonFilter} onClick={() => showSecondCategory()}>Produk</button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                            <button className="btn filter-btn" onClick={() => showThirdCategory()}>Pesan</button>
+                            <button className={thirdButtonFilter} onClick={() => showThirdCategory()}>Pesan</button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                            <button className="btn filter-btn" onClick={() => showFourthCategory()}>Lain-lain</button>
+                            <button className={fourthButtonFilter} onClick={() => showFourthCategory()}>Lain-lain</button>
                         </Grid>
                     </Grid>
                 </div>
@@ -128,11 +120,11 @@ export default function Products () {
                 {
                     filteredFaq && filteredFaq.map((faq) => (
                         <Accordion
+                            id={faq.id}
                             top={faq.question}
                             bottom={faq.answer}
-                            onClick={() => openPanel()}
-                            accordionClass={`accordion ${accordionClass}`}
-                            panelClass={`panel ${panelClass}`}
+                            active={active}
+                            setActive={setActive}
                         />     
                     ))
                 }
