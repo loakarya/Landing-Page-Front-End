@@ -1,0 +1,40 @@
+.account-container {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+
+    a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+   
+    .account {
+        background: khaki;
+        max-width: 300px;
+        padding: 1rem 1.5rem;
+        margin: 8px auto;
+        font-weight: bold;
+
+        &:hover {
+            box-shadow: 0 0 16px 0 #cecece;
+        }
+    }
+
+    .account-whatsapp {
+        background: #25D366;
+    }
+
+    .account-instagram {
+        background: #f09433; 
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    }
+
+    .account-linkedin {
+        background: #2867B2;
+    }
+
+    .account-email {
+        background: linear-gradient(45deg, $dark-slate-blue 10%, $dark-grey-blue 80%);      
+    }
+}
