@@ -6,10 +6,10 @@ import "./SlickCustom.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default class ProductCarousel extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   console.log(this.props.pictures);
-  // }
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+  }
 
   // state = {
   //   slide: this.props.pictures
@@ -28,33 +28,12 @@ export default class ProductCarousel extends Component {
       autoplaySpeed: 4000
     };
 
-    // const items = this.state.slide.map((value, index) => {
-    //   return (
-    //     <div class="product-carousel__container">
-    //       <img key={index} src={value} alt="" />
-    //     </div>
-    //   )
-    // })
-
     return (
       <div>
         <Slider {...settings}>
-          {/* {items} */}
-          {/* {this.props.pictures[0].map((src) => {
-              <div class="product-carousel__container">
-                <img src={src} alt="" />
-              </div>
-            }
-          )} */}
-            {/* <div class="product-carousel__container">
-                <img src={this.props.src} alt="" />
-            </div>
-            <div class="product-carousel__container">
-                <img src="../image/image-2.png" alt="" />
-            </div>
-            <div class="product-carousel__container">
-                <img src="../image/image-1.png" alt="" />
-            </div> */}
+          <div class="product-carousel__container">
+              <img src={this.props.src} alt="" />
+          </div> 
         </Slider>
       </div>
     );

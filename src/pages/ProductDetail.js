@@ -25,6 +25,7 @@ export default function ProductDetail () {
     const [tokopedia, setTokopedia] = useState();
     const [bukalapak, setBukalapak] = useState();
     const [picture, setPicture] = useState([]);
+    const [filteredPicture, setFilteredPicture] = useState([]);
     // const [product, setProduct] = useState([
     //     category: "",
     //     title: "",
@@ -59,8 +60,29 @@ export default function ProductDetail () {
                 setShopee(p.shopee_order_link);
                 setTokopedia(p.tokopedia_order_link);
                 setBukalapak(p.bukalapak_order_link);
-                controlPictures(p);
                 getPriceBeforeDisc(p);
+                let pictureArray = [];
+        
+                pictureArray = [
+                    p.thumbnail_url,
+                    p.picture_url_1,
+                    p.picture_url_2,
+                    p.picture_url_3,
+                    p.picture_url_4,
+                    p.picture_url_5
+                ];
+
+                console.log(pictureArray);
+
+                pictureArray.map((data, i) => {
+                    if(data !== null){
+                        picture.push({
+                            id: i,
+                            src: data
+                        });
+                    }
+                });
+                console.log(picture);
             }
 
             else {
@@ -79,23 +101,6 @@ export default function ProductDetail () {
         setPriceBeforeDisc(priceBefore);
     }
 
-    function controlPictures (data) {
-        let pictureArray = [];
-        
-        pictureArray = [
-            data.thumbnail_url,
-            data.picture_url_1,
-            data.picture_url_2,
-            data.picture_url_3,
-            data.picture_url_4,
-            data.picture_url_5
-        ];
-
-        setPicture(picture.push(pictureArray));
-        console.log(pictureArray);
-        console.log(picture);
-    }
-
     let productCategory;
     if (category === "0") {
         productCategory = "Authentic Product";
@@ -112,7 +117,9 @@ export default function ProductDetail () {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={5}>
                         <div className="carousel-container">
-                            <ProductCarousel pictures={picture}/>
+                            {
+                                picture.map((item) => {console.log(item)}) 
+                            }
                         </div>
                         
                     </Grid>
