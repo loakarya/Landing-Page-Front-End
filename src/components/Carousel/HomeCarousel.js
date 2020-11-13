@@ -29,7 +29,7 @@ export default class HomeCarousel extends Component {
                 <Grid container spacing={4}>
                   <Grid item xs={7}>
                     <div className="banner-left-container">
-                      <img src="../../image/image-4.jpg" />
+                      <img src="../../image/image-4.jpg" alt="Loakarya"/>
                     </div>
                   </Grid>
 
@@ -49,7 +49,7 @@ export default class HomeCarousel extends Component {
                 <Grid container spacing={4}>
                   <Grid item xs={7}>
                     <div className="banner-left-container">
-                      <img src="../../image/image-3.jpg" />
+                      <img src="../../image/image-3.jpg" alt="Loakarya"/>
                     </div>
                   </Grid>
 
@@ -69,7 +69,7 @@ export default class HomeCarousel extends Component {
                 <Grid container spacing={4}>
                   <Grid item xs={7}>
                     <div className="banner-left-container">
-                      <img src="../../image/image-5.jpg" />
+                      <img src="../../image/image-5.jpg" alt="Loakarya"/>
                     </div>
                   </Grid>
 

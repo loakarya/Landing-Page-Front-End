@@ -47,21 +47,21 @@ export default function Products () {
         })
     }, [])
 
-    function showAllProduct () {
+    const showAllProduct = () => {
         setFilteredProducts(products);
         setButtonClass("btn btn-secondary btn-secondary--active");
         setFirstButtonClass("btn btn-secondary");
         setSecondButtonClass("btn btn-secondary");
     }
 
-    function showAuthenticProduct () {
+    const showAuthenticProduct = () => {
         setFilteredProducts(products.filter(e => e.category === "0"));
         setFirstButtonClass("btn btn-secondary btn-secondary--active");
         setSecondButtonClass("btn btn-secondary");
         setButtonClass("btn btn-secondary");
     }
 
-    function showOnDemandProduct () {
+    const showOnDemandProduct = () => {
         setFilteredProducts(products.filter(e => e.category === "1"));
         setSecondButtonClass("btn btn-secondary btn-secondary--active");
         setFirstButtonClass("btn btn-secondary");
@@ -74,15 +74,15 @@ export default function Products () {
             <Header />
             <div id="content" className="width--large">
                 <div className="text--center">
-                    <button className={buttonClass} onClick={() => showAllProduct()}>All Product</button>
-                    <button className={firstButtonClass} onClick={() => showAuthenticProduct()}>Authentic Product</button>
-                    <button className={secondButtonClass} onClick={() => showOnDemandProduct()}>On Demand Product</button>
+                    <button className={buttonClass} onClick={showAllProduct}>All Product</button>
+                    <button className={firstButtonClass} onClick={showAuthenticProduct}>Authentic Product</button>
+                    <button className={secondButtonClass} onClick={showOnDemandProduct}>On Demand Product</button>
                 </div>
 
                 <div className="product-container">
                     {
                         filteredProducts && filteredProducts.map((product) => (
-                            <Link to={`products/${product.id}`}>
+                            <Link to={`products/${product.id}`} key={product.id}>
                                 <ProductImage 
                                     src={product.thumbnail}
                                     alt={product.id}
