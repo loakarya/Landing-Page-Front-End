@@ -31,9 +31,14 @@ export default class ProductCarousel extends Component {
     return (
       <div>
         <Slider {...settings}>
-          <div class="product-carousel__container">
-              <img src={this.props.src} alt="" />
-          </div> 
+            {
+              this.props.pictures.map((item) => 
+                <div class="product-carousel__container">
+                  <img src={item.src} alt="" />
+                </div>
+              )
+            }
+             
         </Slider>
       </div>
     );

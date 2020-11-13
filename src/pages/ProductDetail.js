@@ -74,15 +74,27 @@ export default function ProductDetail () {
 
                 console.log(pictureArray);
 
+                // pictureArray.map((data, i) => {
+                //     if(data !== null){
+                //         picture.push({
+                //             id: i,
+                //             src: data
+                //         });
+                //     }
+                // });
+
+                let pictBuff = [];
+
                 pictureArray.map((data, i) => {
                     if(data !== null){
-                        picture.push({
+                        pictBuff.push({
                             id: i,
                             src: data
                         });
                     }
                 });
-                console.log(picture);
+
+                setPicture(pictBuff);
             }
 
             else {
@@ -117,9 +129,14 @@ export default function ProductDetail () {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={5}>
                         <div className="carousel-container">
-                            {
-                                picture.map((item) => {console.log(item)}) 
-                            }
+                            {/* {
+                                picture.map((item) => 
+                                    <ProductCarousel src={item.src}
+                                        id={item.id}
+                                    />
+                                ) 
+                            } */}
+                            <ProductCarousel pictures={picture} />
                         </div>
                         
                     </Grid>
@@ -146,6 +163,7 @@ export default function ProductDetail () {
                             </div>
                             <div class="detail__content">
                                 {material}
+                                }
                             {/* <ul>
                                 <li>Bahan 1</li>
                                 <li>Bahan 2</li>
