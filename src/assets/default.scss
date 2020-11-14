@@ -491,6 +491,7 @@ section {
   max-width: 100vw;
   overflow: hidden;
   padding-bottom: 2rem;
+  overflow-x: hidden;
   //background-color: khaki;
 }
 
@@ -501,6 +502,8 @@ section {
 .font-color-secondary {
   color: $dark-grey-blue;
 }
+
+
 
 @import 'variables';
 @import 'products';
@@ -514,3 +517,4 @@ section {
 @import '../components/TextInput/TextInput';
 @import '../components/Card/Card';
 @import '../components/Accordion/Accordion';
+@import 'queries';

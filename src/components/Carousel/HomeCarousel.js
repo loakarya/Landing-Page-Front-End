@@ -24,23 +24,25 @@ export default class HomeCarousel extends Component {
     return (
       <div>
         <Slider {...settings}>
-            
               <div className="home-carousel-container-content">
                 <Grid container spacing={4}>
-                  <Grid item xs={7}>
+                  <Grid item xs={12} sm={7} >
                     <div className="banner-left-container">
                       <img src="../../image/image-4.jpg" />
                     </div>
                   </Grid>
 
-                  <Grid item xs={5}>
+                  <Grid item xs={12} sm={5}>
                     <div className="banner-right-container">
                       <h1>Loka</h1>
                       <h2>Smart Table</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in metus non tortor tristique dignissim congue at dui. Phasellus et lacus nunc. Praesent pretium sed nulla ut bibendum. </p>
-                      <Link>
-                        <button className="btn btn-secondary btn-secondary--active">Telusuri</button> 
-                      </Link>
+                      <div className="banner-button-container">
+                        <Link>
+                          <button className="btn btn-secondary btn-secondary--active">Telusuri</button> 
+                        </Link>
+                      </div>
+                      
                     </div>
                   </Grid>
                 </Grid>

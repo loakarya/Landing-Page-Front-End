@@ -8,7 +8,7 @@ export default function Contact () {
     return (
         <div id="main">
             <Header />
-            <div id="content" className="account-container text--center">
+            <div id="content" className="account-container text--center  width--large">
                 <h1 className="font-color-primary mb-4">Tetaplah terhubung bersama kami</h1>
                 <Link><div className="account account-whatsapp">via WhatsApp</div></Link>
                 <Link><div className="account account-instagram">viaInstagram</div></Link>

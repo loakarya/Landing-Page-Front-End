@@ -7,6 +7,8 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomeCarousel from '../components/Carousel/HomeCarousel';
 
+import Grid from '@material-ui/core/Grid';
+
 //import { useCookies } from 'react-cookie';
 
 export default function Home () { 
@@ -98,7 +100,7 @@ export default function Home () {
                             <h1 class="section-title">Testimoni</h1>
 
                             <div class="row slider-testimoni">
-                                <div class="testimoni mr-15 column">
+                                <div class="testimoni column">
                                     <div class="head-testimoni">
                                         Sampah rumah ternyata bisa dipakai lagi, puas sekali saya menggunakan layanan on demand Loak.co!
                                     </div>
@@ -109,7 +111,7 @@ export default function Home () {
                                         Rani, Ibu Rumah Tangga
                                     </div>
                                 </div>
-                                <div class="testimoni ml-15 column">
+                                <div class="testimoni column">
                                     <div class="head-testimoni">
                                         Mejanya benar-benar elegan dan minimalis.
                                     </div>
@@ -129,37 +131,45 @@ export default function Home () {
                 <section>
                     <h1 class="section-title">Nilai Kami</h1>
 
-                    <div class="box-container grid">
-                        <div class="box grid-3">
-                            <img src="image/image-1.png" alt="" /> 
-                            <div class="box-title">Waste</div>
-                            <div class="box-content">
-                                Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
-                            </div>
-                        </div>
-                        <div class="box grid-3">
-                            <img src="image/image-1.png" alt="" />
-                            <div class="box-title">Waste</div>
-                            <div class="box-content">
-                                Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
-                            </div>
-                        </div>
-                        <div class="box grid-3">
-                            <img src="image/image-1.png" alt="" />
-                            <div class="box-title">Waste</div>
-                            <div class="box-content">
-                                Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
-                            </div>
-                        </div>
-                        <div class="box grid-3">
-                            <img src="image/image-1.png" alt="" />
-                            <div class="box-title">Hi-Quality 
-                                Upcycled Product</div>
-                            <div class="box-content">
-                                Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
-                            </div>
-                        </div>
-                        
+                    <div class="box-container">
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6} md={3}>
+                                <div class="box">
+                                    <img src="image/image-1.png" alt="" /> 
+                                    <div class="box-title">Waste</div>
+                                    <div class="box-content">
+                                        Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
+                                    </div>
+                                </div>
+                            </Grid>
+                            <Grid item xs={12} sm={6} md={3}>
+                                <div class="box">
+                                    <img src="image/image-1.png" alt="" /> 
+                                    <div class="box-title">Waste</div>
+                                    <div class="box-content">
+                                        Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
+                                    </div>
+                                </div>
+                            </Grid>
+                            <Grid item xs={12} sm={6} md={3}>
+                                <div class="box">
+                                    <img src="image/image-1.png" alt="" /> 
+                                    <div class="box-title">Waste</div>
+                                    <div class="box-content">
+                                        Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
+                                    </div>
+                                </div>
+                            </Grid>
+                            <Grid item xs={12} sm={6} md={3}>
+                                <div class="box">
+                                    <img src="image/image-1.png" alt="" /> 
+                                    <div class="box-title">Waste</div>
+                                    <div class="box-content">
+                                        Permasalahan pelik yang global, Loak hadir bersungguh-sungguh menjadi solusi untuk hal tersebut. 
+                                    </div>
+                                </div>
+                            </Grid>
+                        </Grid>
                     </div>
                 </section>
             </div>

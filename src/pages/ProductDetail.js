@@ -127,7 +127,7 @@ export default function ProductDetail () {
             <Header />
             <div id="content" class="width--large mb-4">
                 <Grid container spacing={4}>
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={12} md={5}>
                         <div className="carousel-container">
                             {/* {
                                 picture.map((item) => 
@@ -141,7 +141,7 @@ export default function ProductDetail () {
                         
                     </Grid>
 
-                    <Grid item xs={12} sm={7}>
+                    <Grid item xs={12} sm={12} md={7}>
                         <p class="tag-category">{productCategory}</p>
                         <h1 class="product-name mb-10">{title}</h1>
 

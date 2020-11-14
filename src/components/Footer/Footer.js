@@ -1,48 +1,66 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import './Footer.css';
 // import '../../assets/style.css';
+
+import Grid from '@material-ui/core/Grid'
+//import { faInstagram } from "@fortawesome/free-solid-svg-icons";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
     return (
         <footer>
-            <div className="footer-wrapper grid">
-                <div className="footer-side footer-side--one grid-4">
-                    <div className="footer-title">Logo</div>
-                    <p>
-                        This is a wonderful footer designed by song, a CodePen user. Useful information and links have been presented through different columns. The first column contains the company logo and description of the company.
-                    </p>
-                    <br />
-                    <p>Telepon:</p>
-                    <p>Email:</p> 
-                    <p>Alamat:</p>
-                </div>
-                <div className="footer-side footer-side--two grid-4">
-                    <div className="footer-title text--center">Menu</div>
-                    <ul className="row text--center">
-                        <div className="col-6">
-                            <li><a href="/">Link 1</a></li>
-                            <li><a href="/">Link 2</a></li>
-                            <li><a href="/">Link 3</a></li>
-                            <li><a href="/">Link 4</a></li>
+            <div className="footer-wrapper">
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={4}>
+                        <div className="footer-side footer-side--one ">
+                            <div className="footer-title">
+                                <img src="../image/Logo Loak.png"/>
+                            </div>
+                            <p>
+                                Loakarya merupakan sebuah startup di bidang <i>waste management</i> yang mengubah limbah menjadi produk furniture dengan menggunakan metode <i>Upcyling</i>.
+                            </p>
+                            <br />
+                            <p>Telepon:</p>
+                            <p>Email:</p> 
+                            <p>Alamat:</p>
                         </div>
-                        <div className="col-6">
-                            <li><a href="/">Link 5</a></li>
-                            <li><a href="/">Link 6</a></li>
-                            <li><a href="/">Link 7</a></li>
+                    </Grid>
+
+                    <Grid item xs={12} sm={4}>
+                        <div className="footer-side footer-side--two ">
+                            <div className="footer-title text--center">Menu</div>
+                            <ul className="row text--center">
+                                <div className="col-12">
+                                    <li><Link to="/products">Produk Kami</Link></li>
+                                    <li><Link to="/about">Tentang Kami</Link></li>
+                                    <li><Link to="/faq">Frequnetly Asked Question</Link></li>
+                                    <li><Link to="/contact">Hubungi Kami</Link></li>
+                                </div>
+                                {/* <div className="col-6">
+                                    <li><a href="/">Link 5</a></li>
+                                    <li><a href="/">Link 6</a></li>
+                                    <li><a href="/">Link 7</a></li>
+                                </div> */}
+                            </ul>
                         </div>
-                    </ul>
-                </div>
-                <div className="footer-side footer-side--three grid-4">
-                    <div className="footer-title">
-                        Ikuti Kami
-                    </div>
-                    <p>
-                        This is a wonderful footer designed by song, a CodePen user. Useful information and links have been presented through different columns. 
-                    </p>
-                </div>
+                    </Grid>
+
+                    <Grid item xs={12} sm={4}>
+                        <div className="footer-side footer-side--three">
+                            <div className="footer-title">
+                                Ikuti Kami
+                            </div>
+                            <div className="footer-contact-container">
+                                <div><Link to="">Instagram: loak.co</Link></div>
+                                <div><Link to="">Email: halo@loakarya.co</Link></div>
+                                <div><Link to="">LinkedIn: loak.co</Link></div>
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
             </div>
-            <p className="text--center">&copy; Syaina Nur Fauziyah, 2020</p>
+            <p className="text--center mb-4">&copy; Syaina Nur Fauziyah, 2020</p>
         </footer>
     );
 }

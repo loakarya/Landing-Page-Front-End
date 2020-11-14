@@ -73,7 +73,7 @@ export default function Products () {
             <HeaderBar />
             <Header />
             <div id="content" className="width--large">
-                <div className="text--center">
+                <div className="text--center button-filter-wrapper">
                     <button className={buttonClass} onClick={() => showAllProduct()}>All Product</button>
                     <button className={firstButtonClass} onClick={() => showAuthenticProduct()}>Authentic Product</button>
                     <button className={secondButtonClass} onClick={() => showOnDemandProduct()}>On Demand Product</button>

@@ -135,6 +135,8 @@ export default function Products () {
                 /> */}
             </div>
             <Footer />
+
+            
         </div>
     )
 }

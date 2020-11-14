@@ -56,7 +56,7 @@ export default function Card () {
     return (
         <Grid container spacing={4}>
             {cards.map((card) => 
-                <Grid item xs={6} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={3}>
                     <div style={{ flex: 1 }}>
                         <div class="image-container" style={{ backgroundImage: `url(${card.src})` }}></div>
                         <div class="detail-content">
