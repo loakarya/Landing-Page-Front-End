@@ -32,7 +32,7 @@ const Footer = () => {
                                 <div className="col-12">
                                     <li><Link to="/products">Produk Kami</Link></li>
                                     <li><Link to="/about">Tentang Kami</Link></li>
-                                    <li><Link to="/faq">Frequnetly Asked Question</Link></li>
+                                    <li><Link to="/faq">FAQ</Link></li>
                                     <li><Link to="/contact">Hubungi Kami</Link></li>
                                 </div>
                                 {/* <div className="col-6">

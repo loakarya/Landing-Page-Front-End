@@ -470,7 +470,7 @@ section {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 20%;
+    margin-bottom: 10px;
     
     img {
         width: auto;
@@ -481,7 +481,7 @@ section {
         color: $white;
         font-weight: 600;
         font-size: 1.5rem;
-        padding: 1em 17px .5em 17px;
+        padding: 30% 17px .5em 17px;
     }
 
     .box-content {

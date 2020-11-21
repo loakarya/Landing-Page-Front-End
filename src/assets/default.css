@@ -464,7 +464,7 @@ section .section-title::after {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-top: 20%;
+  margin-bottom: 10px;
 }
 
 .box-container .box img {
@@ -476,7 +476,7 @@ section .section-title::after {
   color: #ffffff;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 1em 17px .5em 17px;
+  padding: 30% 17px .5em 17px;
 }
 
 .box-container .box .box-content {
@@ -837,7 +837,7 @@ footer {
 }
 
 .footer-contact-container img.contact-icon {
-  height: 40px;
+  height: 35px;
   width: auto;
 }
 

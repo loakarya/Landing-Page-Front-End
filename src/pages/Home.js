@@ -6,6 +6,7 @@ import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomeCarousel from '../components/Carousel/HomeCarousel';
+import Loading from '../components/Loading/Loading';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -15,6 +16,8 @@ export default function Home () {
     // const [isLoggedIn, setLoggedIn] = useState(false);
     // const [cookies, setCookie, removeCookie] = useCookies(['token']);
     const [profileProducts, setProfileProducts] = useState([]);
+    const [isLoading, setLoading] = useState(true);
+    let loading = <div></div>;
     
     // useEffect(() => {
     //    if(cookies.token) {
@@ -46,6 +49,7 @@ export default function Home () {
                 });
 
                 setProfileProducts(respProfileProducts);
+                setLoading(false)
             }
 
             else {
@@ -56,6 +60,10 @@ export default function Home () {
             console.log(error);
         })
     }, [])
+
+    if(isLoading) return (
+        <Loading />
+    );
 
     const imgUrl = [
         'https://picsum.photos/400/300?random=1',
@@ -81,7 +89,7 @@ export default function Home () {
                 <section>
                     <h1 class="section-title">Produk</h1>
                     <div class="home-gallery-container">
-                        
+        
                         {profileProducts.slice(0, 5).map((product) => 
                             <Link to={`products/${product.productId}`} class="">
                                 <div class="home-gallery" 
@@ -137,7 +145,7 @@ export default function Home () {
                             spacing={2} 
                             alignItems="stretch"
                             >
-                            <Grid item xs={12} sm={6} md={3} height="100%">
+                            <Grid item xs={12} sm={6} md={3} height="100%" mb-2>
                                 <div class="box" style={{backgroundImage: `url(${require("../image/value1.png")})`}}>
                                     {/* <img src="image/image-1.png" alt="" />  */}
                                     <div class="box-title">Kolaborasi</div>
