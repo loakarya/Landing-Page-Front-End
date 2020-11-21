@@ -10,7 +10,7 @@ class About extends Component {
             <div id="main">
                 <Header />
                 <div id="content" style={{paddingTop: 0}}>
-                    <div class="image-heading" style={{backgroundImage: `url(${'https://picsum.photos/600/200?grayscale'})`}}>
+                    <div class="image-heading" style={{backgroundImage: `url(${require("../image/about.png")})`}}>
                         <h1 class="image-heading-title">Tentang Kami</h1>
                     </div>
 

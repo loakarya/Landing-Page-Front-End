@@ -15,15 +15,13 @@ const Footer = () => {
                     <Grid item xs={12} sm={4}>
                         <div className="footer-side footer-side--one ">
                             <div className="footer-title">
-                                <img src="../image/Logo Loak.png"/>
+                                <img src="../image/logo.png"/>
                             </div>
                             <p>
-                                Loakarya merupakan sebuah startup di bidang <i>waste management</i> yang mengubah limbah menjadi produk furniture dengan menggunakan metode <i>Upcyling</i>.
+                                Loakarya menyediakan solusi mudah dengan pengalaman yang menyenangkan untuk mengelola limbah anorganik yang anda punya dengan metode <i>upcycling</i> dan <i>recycling</i> juga mengedepankan konsep <i>eco smartliving</i>.
                             </p>
                             <br />
-                            <p>Telepon:</p>
-                            <p>Email:</p> 
-                            <p>Alamat:</p>
+                            <p>Alamat: Jalan Raya Soreang - Banjaran No. 223 RT05/RW01 Ds. Ciluncat, Kec. Cangkuang, Kab. Bandung, 40377</p>
                         </div>
                     </Grid>
 
@@ -49,12 +47,14 @@ const Footer = () => {
                     <Grid item xs={12} sm={4}>
                         <div className="footer-side footer-side--three">
                             <div className="footer-title">
-                                Ikuti Kami
+                                Kontak
                             </div>
                             <div className="footer-contact-container">
-                                <div><Link to="">Instagram: loak.co</Link></div>
-                                <div><Link to="">Email: halo@loakarya.co</Link></div>
-                                <div><Link to="">LinkedIn: loak.co</Link></div>
+                                <a href="https://api.whatsapp.com/send?phone=6285759332633"><img className="contact-icon" src="../image/wa.png"/></a>
+                                <a href="https://www.facebook.com/Loakarya.co/"><img className="contact-icon" src="../image/facebook.png"/></a>
+                                <a href="https://www.instagram.com/loakarya/"><img className="contact-icon" src="../image/instagram.png"/></a>
+                                <a href="https://www.linkedin.com/company/53214780/"><img className="contact-icon" src="../image/linkedin.png"/></a>
+                                {/* <a href="#"><img className="contact-icon" src="../image/email.png"/></a> */}
                             </div>
                         </div>
                     </Grid>

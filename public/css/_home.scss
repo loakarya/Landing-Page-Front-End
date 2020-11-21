@@ -42,6 +42,10 @@ section {
         // 3:2 = 66.6%
         // 16:9 = 56.25%
         position: relative;
+
+        &:hover {
+            box-shadow: 0 0 10px 0 #777777;
+        }
     }
 
     .home-gallery--span {
@@ -149,7 +153,12 @@ section {
     .box {
         background-color: $white-69;
         text-align: center;
-        padding: 28px 17px;
+        // padding: 28px 17px;
+        //height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 66.66%;
         
         img {
             width: auto;
@@ -160,7 +169,7 @@ section {
             color: $dark-slate-blue;
             font-weight: 600;
             font-size: 1.5rem;
-            padding: 1em 0 .5em 0;
+            padding: 1em 17px .5em 17px;
         }
 
         .box-content {
@@ -168,6 +177,7 @@ section {
             font-size: 11px;
             line-height: 1.36;
             font-weight: 500;
+            padding: 0 17px 10px 17px;
         }
     }
 }

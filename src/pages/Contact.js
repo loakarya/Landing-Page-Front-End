@@ -10,10 +10,11 @@ export default function Contact () {
             <Header />
             <div id="content" className="account-container text--center  width--large">
                 <h1 className="font-color-primary mb-4">Tetaplah terhubung bersama kami</h1>
-                <Link><div className="account account-whatsapp">via WhatsApp</div></Link>
-                <Link><div className="account account-instagram">viaInstagram</div></Link>
-                <Link><div className="account account-linkedin">via LinkedIn</div></Link>
-                <Link><div className="account account-email">via Email</div></Link>
+                <a href="https://api.whatsapp.com/send?phone=6285759332633"><div className="account account-whatsapp"><img src="../image/wa.png" />0857-5933-2633</div></a>
+                <a href="https://www.facebook.com/Loakarya.co/"><div className="account account-facebook"><img src="../image/facebook.png" />Loakarya Indonesia</div></a>
+                <a href="https://www.instagram.com/loakarya/"><div className="account account-instagram"><img src="../image/instagram.png" />loakarya</div></a>
+                <a href="https://www.linkedin.com/company/53214780"><div className="account account-linkedin"><img src="../image/linkedin.png" />Loakarya Indonesia</div></a>
+                <a href="#"><div className="account account-email"><img src="../image/email.png" />halo@loakarya.co</div></a>
             </div>
             <Footer />
         </div>

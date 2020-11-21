@@ -4,6 +4,7 @@ import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Accordion from '../components/Accordion/Accordion';
+import Loading from '../components/Loading/Loading';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -19,6 +20,9 @@ export default function Products () {
     const [thirdButtonFilter, setThirdButtonFilter] = useState('btn filter-btn');
     const [fourthButtonFilter, setFourthButtonFilter] = useState('btn filter-btn');
     const [active, setActive] = useState("");
+    const [isLoading, setLoading] = useState(true);
+
+    let loading = <div></div>
 
     useEffect(() => {
         const endpoint = '/faq';
@@ -95,6 +99,10 @@ export default function Products () {
         setFourthButtonFilter("btn filter-btn filter-btn-active");
     }
 
+    if (isLoading) {
+        loading = <Loading />
+    }
+
     return( 
         <div id="main"> 
             <HeaderBar />
@@ -103,19 +111,21 @@ export default function Products () {
                 <div className="text--center mb-4">
                     <Grid container spacing={2}>
                         <Grid item xs={6} sm={3}>
-                            <button className={firstButtonFilter} onClick={() => showFirstCategory()} >Loak</button>
+                            <button className={firstButtonFilter} onClick={() => showFirstCategory()} >Loakarya</button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
                             <button className={secondButtonFilter} onClick={() => showSecondCategory()}>Produk</button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                            <button className={thirdButtonFilter} onClick={() => showThirdCategory()}>Pesan</button>
+                            <button className={thirdButtonFilter} onClick={() => showThirdCategory()}>Layanan</button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                            <button className={fourthButtonFilter} onClick={() => showFourthCategory()}>Lain-lain</button>
+                            <button className={fourthButtonFilter} onClick={() => showFourthCategory()}>Pemesanan</button>
                         </Grid>
                     </Grid>
                 </div>
+
+                { loading }
 
                 {
                     filteredFaq && filteredFaq.map((faq) => (

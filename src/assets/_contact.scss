@@ -11,18 +11,30 @@
    
     .account {
         background: khaki;
-        max-width: 300px;
-        padding: 1rem 1.5rem;
+        max-width: 320px;
+        height: 50px;
+        //padding: 1rem 1.5rem;
         margin: 8px auto;
         font-weight: bold;
+        line-height: 50px;
 
         &:hover {
             box-shadow: 0 0 16px 0 #cecece;
+        }
+
+        img {
+            height: 40px;
+            width: 40px;
+            vertical-align: middle;
         }
     }
 
     .account-whatsapp {
         background: #25D366;
+    }
+
+    .account-facebook {
+        background: #4267b2;
     }
 
     .account-instagram {

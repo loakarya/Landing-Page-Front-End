@@ -69,8 +69,8 @@ function routes() {
                     <Route exact path="/products" component={Products} />
                     <Route path="/products/:id" component={ProductDetail} />
 
-                    <Route path="/login" component={Login} />
-                    <Route path="/signup" component={Signup} />
+                    {/* <Route path="/login" component={Login} />
+                    <Route path="/signup" component={Signup} /> */}
                 </div>
             </Router>
         // </CookiesProvider>

@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ProductCarousel from '../components/Carousel/ProductCarousel';
-
+import Loading from '../components/Loading/Loading';
 
 import Grid from '@material-ui/core/Grid';
+import NumberFormat from 'react-number-format';
 
 export default function ProductDetail () {
     
     const { id } = useParams();
+    const [isRedirect, setRedirect] = useState(false);
     //const [product, setProduct] = useState();
+    const [isLoading, setLoading] = useState(true);
     const [category, setCategory] = useState();
     const [title, setTitle] = useState();
     const [price, setPrice] = useState();
@@ -95,14 +98,16 @@ export default function ProductDetail () {
                 });
 
                 setPicture(pictBuff);
+                setLoading(false);
             }
 
             else {
-
+                setRedirect(true);
+                setLoading(false);
             }
         })
         .catch(function (error) {
-            console.log(error);
+            
         })
     }, [])
 
@@ -121,6 +126,15 @@ export default function ProductDetail () {
         productCategory = "On Demand Product";
     }
 
+    if (isLoading) return (
+        <Loading />
+    );
+
+    
+    if (isRedirect) return (
+        <Redirect to="/" />
+    )
+   
     return (
         <div id="main">
             <HeaderBar />
@@ -145,8 +159,8 @@ export default function ProductDetail () {
                         <p class="tag-category">{productCategory}</p>
                         <h1 class="product-name mb-10">{title}</h1>
 
-                        <s class="product-price-before">Rp {priceBeforeDisc}</s> <span class="discount">(Diskon {discount}%)</span>
-                        <p class="product-price ">Rp {price}</p>
+                        <s class="product-price-before"><NumberFormat displayType={'text'} thousandSeparator={true} prefix={'Rp '} value={priceBeforeDisc} /></s> <span class="discount">(Diskon {discount}%)</span>
+                        <p class="product-price "><NumberFormat displayType={'text'} thousandSeparator={true} prefix={'Rp '} value={price} /></p>
 
                         <div class="detail">
                             <div class="detail__title">
@@ -163,7 +177,6 @@ export default function ProductDetail () {
                             </div>
                             <div class="detail__content">
                                 {material}
-                                }
                             {/* <ul>
                                 <li>Bahan 1</li>
                                 <li>Bahan 2</li>

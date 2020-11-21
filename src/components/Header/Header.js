@@ -46,9 +46,9 @@ function Header (props) {
         <header>
             <div className="header-wrapper">
                 <div className="logo-wrapper">
-                    <a href="/">
-                        <img src="../image/Logo Loak.png" alt=""/>
-                    </a>
+                    <Link to="/">
+                        <img src="../image/logo.png" alt=""/>
+                    </Link>
                 </div>
 
                 <div className="web-menu">

@@ -4,6 +4,7 @@ import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ProductImage from '../components/ProductImage/ProductImage';
+import Loading from '../components/Loading/Loading';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -14,6 +15,9 @@ export default function Products () {
     const [buttonClass, setButtonClass] = useState('btn btn-secondary btn-secondary--active');
     const [firstButtonClass, setFirstButtonClass] = useState('btn btn-secondary');
     const [secondButtonClass, setSecondButtonClass] = useState('btn btn-secondary');
+    const [isLoading, setLoading] = useState(true);
+
+    let loading = <div></div>
 
     useEffect(() => {
         const endpoint = '/product?data_per_page=9';
@@ -38,6 +42,7 @@ export default function Products () {
                 setFilteredProducts(respProducts);
                 console.log(filteredProducts);
                 //console.log(products, [products]);
+                setLoading(false);
             }
             else {
             }
@@ -46,6 +51,10 @@ export default function Products () {
             console.log(error);
         })
     }, [])
+
+    if (isLoading) {
+        loading = <Loading />
+    }
 
     function showAllProduct () {
         setFilteredProducts(products);
@@ -67,7 +76,7 @@ export default function Products () {
         setFirstButtonClass("btn btn-secondary");
         setButtonClass("btn btn-secondary");
     }
-
+    
     return (
         <div id="main"> 
             <HeaderBar />
@@ -78,6 +87,8 @@ export default function Products () {
                     <button className={firstButtonClass} onClick={() => showAuthenticProduct()}>Authentic Product</button>
                     <button className={secondButtonClass} onClick={() => showOnDemandProduct()}>On Demand Product</button>
                 </div>
+
+                {loading}
 
                 <div className="product-container">
                     {

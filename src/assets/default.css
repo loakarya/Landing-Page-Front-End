@@ -22,7 +22,6 @@ body {
 #main {
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -39,6 +38,7 @@ body {
   grid-area: content;
   padding-top: 3rem;
   padding-bottom: 5rem;
+  overflow-x: hidden;
 }
 
 .row::after {
@@ -415,6 +415,20 @@ section .section-title::after {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.slider-testimoni {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.slider-testimoni > .testimoni {
+  margin-right: 32px;
 }
 
 .testimoni {
@@ -446,7 +460,11 @@ section .section-title::after {
 .box-container .box {
   background-color: rgba(246, 241, 241, 0.69);
   text-align: center;
-  padding: 28px 17px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 20%;
 }
 
 .box-container .box img {
@@ -455,17 +473,18 @@ section .section-title::after {
 }
 
 .box-container .box .box-title {
-  color: #3e61dc;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 1em 0 .5em 0;
+  padding: 1em 17px .5em 17px;
 }
 
 .box-container .box .box-content {
-  color: #494949;
-  font-size: 11px;
+  color: #ffffff;
+  font-size: 12px;
   line-height: 1.36;
   font-weight: 500;
+  padding: 0 17px 10px 17px;
 }
 
 .home-carousel-container {
@@ -482,6 +501,14 @@ section .section-title::after {
 
 .font-color-secondary {
   color: #45C875;
+}
+
+.vertical--center {
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  -webkit-transform: translate(50%, 0%);
+          transform: translate(50%, 0%);
 }
 
 .product-container {
@@ -506,6 +533,11 @@ section .section-title::after {
      object-fit: cover;
   height: 100%;
   position: absolute;
+}
+
+.product-container a > div:hover {
+  -webkit-box-shadow: 0 0 10px 0 #777777;
+          box-shadow: 0 0 10px 0 #777777;
 }
 
 .button-filter-wrapper button {
@@ -679,7 +711,7 @@ section .section-title::after {
 }
 
 .filter-btn-active, .filter-btn:hover {
-  background: #45C875;
+  background: #3e61dc;
 }
 
 .account-container {
@@ -696,10 +728,11 @@ section .section-title::after {
 
 .account-container .account {
   background: khaki;
-  max-width: 300px;
-  padding: 1rem 1.5rem;
+  max-width: 320px;
+  height: 50px;
   margin: 8px auto;
   font-weight: bold;
+  line-height: 50px;
 }
 
 .account-container .account:hover {
@@ -707,8 +740,18 @@ section .section-title::after {
           box-shadow: 0 0 16px 0 #cecece;
 }
 
+.account-container .account img {
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
+}
+
 .account-container .account-whatsapp {
   background: #25D366;
+}
+
+.account-container .account-facebook {
+  background: #4267b2;
 }
 
 .account-container .account-instagram {
@@ -771,6 +814,10 @@ footer {
   padding-bottom: 16px;
 }
 
+.footer-side .footer-title img {
+  height: 20px;
+}
+
 .footer-side p {
   font-size: 12px;
   font-weight: 500;
@@ -787,6 +834,11 @@ footer {
 
 .footer-contact-container div + div {
   margin: 5px 0;
+}
+
+.footer-contact-container img.contact-icon {
+  height: 40px;
+  width: auto;
 }
 
 .header-wrapper {
@@ -819,6 +871,8 @@ header .logo-wrapper {
 
 header .logo-wrapper img {
   vertical-align: middle;
+  height: 25px;
+  width: auto;
 }
 
 header .link-one {
@@ -1016,7 +1070,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .accordion-active, .accordion:hover {
-  background-color: #45C875;
+  background-color: #3e61dc;
   color: #fff;
 }
 

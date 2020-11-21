@@ -21,18 +21,18 @@ export default function Card () {
             name: 'Fikri Rida Pebriansyah',
             position: 'Chief Technology Officer'
         },
-        {
-            id: 4,
-            src: 'https://picsum.photos/300/400?random=5',
-            name: 'Muhammad Rivaldi Pratama',
-            position: 'Head of Authentic Product'
-        },
-        {
-            id: 5,
-            src: 'https://picsum.photos/300/400?random=5',
-            name: 'Nadhira Qinthara',
-            position: 'Interior Designer'
-        },
+        // {
+        //     id: 4,
+        //     src: 'https://picsum.photos/300/400?random=5',
+        //     name: 'Muhammad Rivaldi Pratama',
+        //     position: 'Head of Authentic Product'
+        // },
+        // {
+        //     id: 5,
+        //     src: 'https://picsum.photos/300/400?random=5',
+        //     name: 'Nadhira Qinthara',
+        //     position: 'Interior Designer'
+        // },
         {
             id: 6,
             src: 'https://picsum.photos/300/400?random=6',
@@ -43,7 +43,7 @@ export default function Card () {
             id: 7,
             src: 'https://picsum.photos/300/400?random=7',
             name: 'Naufal Taqi Athallah',
-            position: 'Graphic Designe'
+            position: 'Graphic Designer'
         },
         {
             id: 8,
