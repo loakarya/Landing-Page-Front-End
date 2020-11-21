@@ -15,8 +15,8 @@ import Signup from '../pages/Signup';
 
 import '../assets/default.css';
 
-// to hide all warning in console log
-// console.log = console.warn = console.error = () => {};
+//to hide all warning in console log
+console.log = console.warn = console.error = () => {};
 
 // const authAxios = axios.create ( {
 //     baseUrl: apiUrl,
