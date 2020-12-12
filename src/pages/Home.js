@@ -31,14 +31,16 @@ export default function Home () {
     // console.log(cookies.token);
 
     useEffect(() => {
-        const endpoint = 'profile/products';
+        const endpoint1 = 'profile/products';
+        const endpoint2 = 'profile/articles';
 
-        axios.get(endpoint)
-        .then((response) => {
+        const req1 = axios.get(endpoint1);
+        const req2 = axios.get(endpoint2);
+
+        req1.then((response) => {
             //console.log(response);
             // if (response.status === 200) {
             if (response.data.status) {
-                console.log(response.data.data);
                 let respProfileProducts = [];
                 
                 response.data.data.map(resp => {
@@ -56,23 +58,34 @@ export default function Home () {
 
             }
         })
-        .catch(function (error) {
+        req1.catch(function (error) {
             console.log(error);
+        })
+
+        req2.then((response) => {
+            console.log(response);
+            // if (response.status === 200) {
+            // if (response.data.status) {
+            //     console.log(response.data.data);
+            //     let respProfileProducts = [];
+                
+            //     response.data.data.map(resp => {
+            //         respProfileProducts.push({
+            //             productId: resp.id,
+            //             thumbnail: resp.product.thumbnail_url
+            //         });
+            //     });
+
+            //     setProfileProducts(respProfileProducts);
+            //     setLoading(false)
+            // }
+
         })
     }, [])
 
     if(isLoading) return (
         <Loading />
     );
-
-    const imgUrl = [
-        'https://picsum.photos/400/300?random=1',
-        'https://picsum.photos/400/300?random=2',
-        'https://picsum.photos/400/300?random=3',
-        'https://picsum.photos/400/300?random=4',
-        'https://picsum.photos/400/300?random=5',
-    ];
-    console.log(profileProducts);
 
     return (
         <div id="main">
@@ -182,6 +195,29 @@ export default function Home () {
                                 </div>
                             </Grid>
                         </Grid>
+                    </div>
+                </section>
+
+                <section>
+                    <h1 class="section-title">Artikel Terbaru</h1>
+                    <Grid container spacing={4} className="mb-4">
+                        {profileProducts.slice(0, 3).map((article) => 
+                            <Grid item xs={12} sm={6} md={4}>
+                                <div>
+                                    <div className="a-image" style={{ backgroundImage: `url(${article.thumbnail})` }}>
+                                    </div>
+                                    <h3 className="a-title">Dummy</h3>
+                                    <Link to={`articles/${article.productId}`} className="a-link">Lihat Selengkapnya</Link>
+                                </div>
+                            </Grid>
+                        )}
+
+                    </Grid>
+
+                    <div className="text--center mt-4">
+                        <Link to="/articles">
+                            <button className="btn btn-secondary btn-secondary--active">Lihat Artikel Lain</button> 
+                        </Link>
                     </div>
                 </section>
             </div>

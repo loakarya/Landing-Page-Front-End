@@ -1,0 +1,40 @@
+.article {
+    max-width: 700px;
+    margin: auto;
+}
+
+.article__title {
+    color: $black-two;
+    font-family: $font-style-2;
+    font-weight: 500;
+    font-size: 3em;
+    line-height: 1.36;
+    margin-bottom: 5px;
+}
+
+.article__subtitle {
+    color: $greyish-brown;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+.article__author, .article__date {
+    color: $greyish-brown-two;
+    font-family: $font-style-1;
+    line-height: 1.59;
+}
+
+.article__date {
+    margin-bottom: 20px;
+}
+
+.article__content {
+    font-family: $font-style-2;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    color: $greyish-brown;
+}
