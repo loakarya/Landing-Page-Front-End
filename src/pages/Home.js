@@ -45,7 +45,7 @@ export default function Home () {
                 
                 response.data.data.map(resp => {
                     respProfileProducts.push({
-                        productId: resp.id,
+                        productId: resp.product_id,
                         thumbnail: resp.product.thumbnail_url
                     });
                 });
@@ -94,7 +94,7 @@ export default function Home () {
             />
             <Header />
             {/* <Header isLoggedIn={isLoggedIn} /> */}
-            <div id="content" className="" style={{ paddingTop: 0 }}>
+            <div id="content" className="overflow-x-hidden" style={{ paddingTop: 0 }}>
                 <div className="home-carousel-container">
                     <HomeCarousel />
                 </div>

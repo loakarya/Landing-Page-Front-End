@@ -58,6 +58,7 @@ export default function Products () {
                 });
                 showFirstCategory();
                 console.log(filteredFaq);
+                setLoading(false);
             }
             else {
             }

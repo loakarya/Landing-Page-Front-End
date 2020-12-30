@@ -21,25 +21,31 @@ export default function ArticlesDetail () {
 
         axios.get(endpoint)
         .then((response) => {
-
+            
             if(response.data.status) {
-                let respArticle = []
 
-                response.data.data.map(a => {
-                    respArticle.push({
-                        id: a.id,
-                        category: a.category,
-                        content: a.content,
-                        slug: a.slug,
-                        subtitle: a.subtitle,
-                        thumbnail: a.thumbnail_url,
-                        title: a.title,
-                        user_id: a.user_id,
-                        updated_at: a.updated_at
-                    })
-                })
+                // console.log(response.data.data);
+                const respArticle = response.data.data
+                // let respArticle = []
+                
+                // response.data.data.map(a => {
+                //     respArticle.push({
+                //         category: a.category,
+                //         content: a.content,
+                //         deleted_at: a.deleted_at,
+                //         id: a.id,
+                //         slug: a.slug,
+                //         subtitle: a.subtitle,
+                //         thumbnail: a.thumbnail_url,
+                //         title: a.title,
+                //         updated_at: a.updated_at,
+                //         user_id: a.user_id
+                //     })
+                // })
+
+                // console.log(respArticle);
                 setArticle(respArticle);
-                getTimeStamp()
+                getTimeStamp(response.data.data.updated_at)
             }
         })
         .catch(function (error) {
@@ -49,11 +55,11 @@ export default function ArticlesDetail () {
 
     var updated_at = "2020-10-12T09:56:16.000000Z";
 
-    function getTimeStamp () {
+    function getTimeStamp (time) {
         var str_time, str_date, getDate, str_tahun, str_bulan, str_tanggal, str_jam, str_menit, date_str, time_str;
         var bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September' , 'Oktober', 'November', 'Desember'];
 
-        getDate = updated_at.split('T');
+        getDate = time.split('T');
         str_date = getDate[0];
         str_tahun = str_date.split('-')[0];
         str_bulan = bulanIndo[Math.abs(str_date.split('-')[1])];
@@ -75,7 +81,8 @@ export default function ArticlesDetail () {
         <div id="main">
             <Header />
             <div id="content" className="account-container width--large">
-                {article.map((article) => 
+                {/* {article.map((article) =>  */}
+                
                     <article className="article">
                     <h1 className="article__title">{article.title}</h1>
                     <h3 className="article__subtitle">{article.subtitle}</h3>
@@ -87,7 +94,7 @@ export default function ArticlesDetail () {
                     <div className="article__content" dangerouslySetInnerHTML={{__html: `${article.content}` }} />
                 </article>
                     
-                )}
+                {/* )} */}
                 
             </div>
             <Footer />

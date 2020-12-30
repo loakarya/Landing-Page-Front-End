@@ -22,7 +22,7 @@ export default function Articles () {
             response.data.data.map(resp => {
                 respArticles.push({
                     id: resp.id,
-                    thumbnail: resp.thumbnail_url,
+                    thumbnail: 'https://dev.api.loakarya.co/storage/article/' + resp.thumbnail_url,
                     title: resp.title,
                     slug: resp.slug
                 });
@@ -47,7 +47,7 @@ export default function Articles () {
                                 <div className="a-image" style={{ backgroundImage: `url(${article.thumbnail})` }}>
                                 </div>
                                 <h3 className="a-title">{article.title}</h3>
-                                <Link to={`articles/${article.id}`} className="a-link">Lihat Selengkapnya</Link>
+                                <Link to={`articles/${article.slug}`} className="a-link">Lihat Selengkapnya</Link>
                             </div>
                         </Grid>
                     )}

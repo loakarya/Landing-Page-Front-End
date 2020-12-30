@@ -57,7 +57,11 @@ body {
     grid-area: content;
     padding-top: 3rem; 
     padding-bottom: 5rem; 
-    overflow-x: hidden;  
+    // overflow-x: hidden;  
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .row::after {
