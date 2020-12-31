@@ -31,7 +31,7 @@
 .banner-right-container h1, .banner-right-container h2 {
   font-size: 3rem;
   font-weight: bold;
-  color: #45C875;
+  color: #3e61dc;
   text-transform: uppercase;
   text-align: left;
 }
@@ -53,7 +53,7 @@
   font-size: 14px;
   font-weight: 500px;
   line-height: 1.52;
-  color: #3e61dc;
+  color: #353535;
   max-width: 400px;
   text-align: left;
 }

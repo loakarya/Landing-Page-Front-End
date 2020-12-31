@@ -42,7 +42,6 @@ body {
 #main {
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr auto;
@@ -57,7 +56,8 @@ body {
 #content {
     grid-area: content;
     padding-top: 3rem; 
-    padding-bottom: 5rem;   
+    padding-bottom: 5rem; 
+    overflow-x: hidden;  
 }
 
 .row::after {
@@ -273,6 +273,7 @@ body {
   padding-top: 2rem;
 }
 
+
 .pb-2rem {
   padding-bottom: 2rem;
 }
@@ -307,7 +308,7 @@ hr.border {
   margin: 0 auto;
 }
 
-//home
+// home
 section {
   //text-align: center;
   //align-items: center;
@@ -417,16 +418,18 @@ section {
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-//.slider-testimoni {
-  // display: inline-flex;
-  // flex-wrap: wrap;
+.slider-testimoni {
+  display: inline-flex;
+  flex-wrap: wrap;
 
-  // > .testimoni {
-  //     margin-right: 32px;
-  // }
-//}
+  > .testimoni {
+      margin-right: 32px;
+  }
+}
 
 .testimoni {
   // width: auto;
@@ -460,28 +463,34 @@ section {
 .box-container {
 
   .box {
-      background-color: $white-69;
-      text-align: center;
-      padding: 28px 17px;
-      
-      img {
-          width: auto;
-          max-height: 80px;
-      }
+    background-color: $white-69;
+    text-align: center;
+    // padding: 28px 17px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+    
+    img {
+        width: auto;
+        max-height: 80px;
+    }
 
-      .box-title {
-          color: $dark-slate-blue;
-          font-weight: 600;
-          font-size: 1.5rem;
-          padding: 1em 0 .5em 0;
-      }
+    .box-title {
+        color: $white;
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding: 30% 17px .5em 17px;
+    }
 
-      .box-content {
-          color: $greyish-brown-two;
-          font-size: 11px;
-          line-height: 1.36;
-          font-weight: 500;
-      }
+    .box-content {
+        color: $white;
+        font-size: 12px;
+        line-height: 1.36;
+        font-weight: 500;
+        padding: 0 17px 10px 17px;
+    }
   }
 }
 
@@ -490,15 +499,35 @@ section {
   max-width: 100vw;
   overflow: hidden;
   padding-bottom: 2rem;
+  overflow-x: hidden;
   //background-color: khaki;
+}
+
+.font-color-primary {
+  color: $dark-slate-blue;
+}
+
+.font-color-secondary {
+  color: $dark-grey-blue;
+}
+
+.vertical--center {
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  transform: translate(50%, 0%);
 }
 
 @import 'variables';
 @import 'products';
 @import 'detail';
 @import 'about';
+@import 'faq';
+@import 'contact';
 @import '../components/Footer/Footer';
 @import '../components/Header/Header';
 @import '../components/HeaderBar/HeaderBar';
 @import '../components/TextInput/TextInput';
 @import '../components/Card/Card';
+@import '../components/Accordion/Accordion';
+@import 'queries';

@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ProductCarousel from '../components/Carousel/ProductCarousel';
-
+import Loading from '../components/Loading/Loading';
 
 import Grid from '@material-ui/core/Grid';
+import NumberFormat from 'react-number-format';
 
 export default function ProductDetail () {
     
     const { id } = useParams();
+    const [isRedirect, setRedirect] = useState(false);
     //const [product, setProduct] = useState();
+    const [isLoading, setLoading] = useState(true);
     const [category, setCategory] = useState();
     const [title, setTitle] = useState();
     const [price, setPrice] = useState();
@@ -25,6 +28,7 @@ export default function ProductDetail () {
     const [tokopedia, setTokopedia] = useState();
     const [bukalapak, setBukalapak] = useState();
     const [picture, setPicture] = useState([]);
+    const [filteredPicture, setFilteredPicture] = useState([]);
     // const [product, setProduct] = useState([
     //     category: "",
     //     title: "",
@@ -59,16 +63,51 @@ export default function ProductDetail () {
                 setShopee(p.shopee_order_link);
                 setTokopedia(p.tokopedia_order_link);
                 setBukalapak(p.bukalapak_order_link);
-                controlPictures(p);
                 getPriceBeforeDisc(p);
+                let pictureArray = [];
+        
+                pictureArray = [
+                    p.thumbnail_url,
+                    p.picture_url_1,
+                    p.picture_url_2,
+                    p.picture_url_3,
+                    p.picture_url_4,
+                    p.picture_url_5
+                ];
+
+                console.log(pictureArray);
+
+                // pictureArray.map((data, i) => {
+                //     if(data !== null){
+                //         picture.push({
+                //             id: i,
+                //             src: data
+                //         });
+                //     }
+                // });
+
+                let pictBuff = [];
+
+                pictureArray.map((data, i) => {
+                    if(data !== null){
+                        pictBuff.push({
+                            id: i,
+                            src: data
+                        });
+                    }
+                });
+
+                setPicture(pictBuff);
+                setLoading(false);
             }
 
             else {
-
+                setRedirect(true);
+                setLoading(false);
             }
         })
         .catch(function (error) {
-            console.log(error);
+            
         })
     }, [])
 
@@ -79,23 +118,6 @@ export default function ProductDetail () {
         setPriceBeforeDisc(priceBefore);
     }
 
-    function controlPictures (data) {
-        let pictureArray = [];
-        
-        pictureArray = [
-            data.thumbnail_url,
-            data.picture_url_1,
-            data.picture_url_2,
-            data.picture_url_3,
-            data.picture_url_4,
-            data.picture_url_5
-        ];
-
-        setPicture(picture.push(pictureArray));
-        console.log(pictureArray);
-        console.log(picture);
-    }
-
     let productCategory;
     if (category === "0") {
         productCategory = "Authentic Product";
@@ -104,25 +126,41 @@ export default function ProductDetail () {
         productCategory = "On Demand Product";
     }
 
+    if (isLoading) return (
+        <Loading />
+    );
+
+    
+    if (isRedirect) return (
+        <Redirect to="/" />
+    )
+   
     return (
         <div id="main">
             <HeaderBar />
             <Header />
             <div id="content" class="width--large mb-4">
                 <Grid container spacing={4}>
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={12} md={5}>
                         <div className="carousel-container">
-                            <ProductCarousel pictures={picture}/>
+                            {/* {
+                                picture.map((item) => 
+                                    <ProductCarousel src={item.src}
+                                        id={item.id}
+                                    />
+                                ) 
+                            } */}
+                            <ProductCarousel pictures={picture} />
                         </div>
                         
                     </Grid>
 
-                    <Grid item xs={12} sm={7}>
+                    <Grid item xs={12} sm={12} md={7}>
                         <p class="tag-category">{productCategory}</p>
                         <h1 class="product-name mb-10">{title}</h1>
 
-                        <s class="product-price-before">Rp {priceBeforeDisc}</s> <span class="discount">(Diskon {discount}%)</span>
-                        <p class="product-price ">Rp {price}</p>
+                        <s class="product-price-before"><NumberFormat displayType={'text'} thousandSeparator={true} prefix={'Rp '} value={priceBeforeDisc} /></s> <span class="discount">(Diskon {discount}%)</span>
+                        <p class="product-price "><NumberFormat displayType={'text'} thousandSeparator={true} prefix={'Rp '} value={price} /></p>
 
                         <div class="detail">
                             <div class="detail__title">

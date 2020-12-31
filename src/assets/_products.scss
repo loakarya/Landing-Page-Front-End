@@ -17,5 +17,15 @@
             height: 100%;
             position: absolute;
         }
+
+        &:hover {
+            box-shadow: 0 0 10px 0 #777777;
+        }
+    }
+}
+
+.button-filter-wrapper {
+    button {
+        margin: 5px 10px;
     }
 }
