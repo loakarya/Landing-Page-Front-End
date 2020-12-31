@@ -1,0 +1,26 @@
+.a-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 66.6%;
+    position: relative;
+    background: $white-69;   
+}
+
+.a-title {
+    margin-top: 13px;
+    font-weight: bold;
+    color:$dark-slate-blue;
+    margin-bottom: 8px;
+}
+
+.a-link {
+    font-size: .9em;
+    color: $black;
+
+    &:hover {
+        cursor: pointer;
+        color: $dark-grey-blue;
+
+    }
+}

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, } from 'react-router-dom';
 
 import About from '../pages/About';
 import Articles from '../pages/Articles';
+import ArticlesDetail from '../pages/ArticlesDetail';
 import Contact from '../pages/Contact';
 import Faq from '../pages/Faq';
 import Home from '../pages/Home';
@@ -16,7 +17,7 @@ import Signup from '../pages/Signup';
 import '../assets/default.css';
 
 //to hide all warning in console log
-console.log = console.warn = console.error = () => {};
+//console.log = console.warn = console.error = () => {};
 
 // const authAxios = axios.create ( {
 //     baseUrl: apiUrl,
@@ -62,7 +63,8 @@ function routes() {
         <Router>
                 <div>
                     <Route exact path="/" component={Home} />
-                    <Route path="/articles" component={Articles} />
+                    <Route exact path="/articles" component={Articles} />
+                    <Route path="/articles/:id" component={ArticlesDetail} />
                     <Route path="/faq" component={Faq} />
                     <Route path="/about" component={About} />
                     <Route path="/contact" component={Contact} />
