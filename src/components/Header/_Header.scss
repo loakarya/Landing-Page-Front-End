@@ -21,6 +21,8 @@ header {
         grid-area: logo;
         img {
             vertical-align: middle;
+            height: 25px;
+            width: auto;
         }
     }
 
@@ -52,4 +54,61 @@ header {
           }  
         }
     }
+}
+
+.mobile-menu {
+    flex-direction: row;
+}
+
+.hamburger {
+    position: absolute;
+    right: 3rem;
+    top: 25px;
+    display: none;
+    div {
+        width: 30px;
+        height: 5px;
+        background: $dark-slate-blue;
+    }
+
+    div + div {
+        margin: 3px 0;
+    }
+    
+    cursor: pointer;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 70px;
+  //right: -700px;
+  display: none;
+  background: $dark-slate-blue;
+  border-radius: 0 0 0px 30px;
+  
+  ul {
+    text-align: right;
+    list-style: none;
+    padding: 2rem 2rem 2rem 5rem;
+    display: block;
+    line-height: 1rem;
+  }
+  li {
+    padding: 10px 0;
+    a {
+      text-decoration: none;
+      color: $white;
+      font-size: 1.3rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.mobile-menu-active {
+  display: block;
+  right: 0;
+  transition: 0.3ms ease-in;
 }

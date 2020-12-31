@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
 //import React, { Component, Fragment } from 'react';
@@ -36,22 +36,43 @@ function Header (props) {
     //     removeCookie('token');
     //     console.log("handleLogout")
     // };
+    const [isHamburger, setHamburger] = useState(false);
+
+    function openHamburger () {
+        isHamburger ? setHamburger(false) : setHamburger(true)
+    }
 
     return (
         <header>
             <div className="header-wrapper">
                 <div className="logo-wrapper">
-                    <a href="/">
-                        <img src="../image/Logo Loak.png" alt=""/>
-                    </a>
+                    <Link to="/">
+                        <img src="../image/logo.png" alt=""/>
+                    </Link>
                 </div>
 
-                <div>
+                <div className="web-menu">
                     <ul>
-                        <li><Link to="/article">Artikel</Link></li>
-                        <li><Link to="/faq">FAQ</Link></li>
+                        {/* <li><Link to="/article">Artikel</Link></li> */}
                         <li><Link to="/products">Produk Kami</Link></li>
                         <li><Link to="/about">Tentang Kami</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/contact">Hubungi Kami</Link></li>
+                    </ul>
+                </div>
+
+                <div className="hamburger" onClick={() => openHamburger()}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div className={(isHamburger ? "mobile-menu-active" : "") + " mobile-menu"}>
+                    <ul>
+                        {/* <li><Link to="/article">Artikel</Link></li> */}
+                        <li><Link to="/products">Produk Kami</Link></li>
+                        <li><Link to="/about">Tentang Kami</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/contact">Hubungi Kami</Link></li>
                     </ul>
                 </div>
