@@ -1096,13 +1096,13 @@ header ul li a:hover, header ul li a:active {
 }
 
 .hamburger div {
-  width: 30px;
+  width: 25px;
   height: 3px;
   background: #3e61dc;
 }
 
 .hamburger div + div {
-  margin: 5px 0;
+  margin: 3.5px 0;
 }
 
 .mobile-menu {

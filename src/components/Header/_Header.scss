@@ -66,13 +66,13 @@ header {
     top: 27px;
     display: none;
     div {
-        width: 30px;
+        width: 25px;
         height: 3px;
         background: $dark-slate-blue;
     }
 
     div + div {
-        margin: 5px 0;
+        margin: 3.5px 0;
     }
     
     cursor: pointer;
