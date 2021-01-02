@@ -10,7 +10,9 @@ import Grid from '@material-ui/core/Grid';
 export default function Articles () {
     
     const [articles, setArticles] = useState([]);
+    const [content, setContent] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [contentString, setContentString] = useState();
 
     useEffect(() => {
         const endpoint = '/article';
@@ -18,22 +20,35 @@ export default function Articles () {
         axios.get(endpoint)
         .then((response) => {
             let respArticles = [];
-                
+            
             response.data.data.map(resp => {
                 respArticles.push({
                     id: resp.id,
                     thumbnail: 'https://dev.api.loakarya.co/storage/article/' + resp.thumbnail_url,
                     title: resp.title,
-                    slug: resp.slug
+                    slug: resp.slug,
+                    content: resp.content
                 });
             });
 
             setArticles(respArticles);
+            
+            getContentString(respArticles);
         })
         .catch(function (error) {
             console.log(error);
         })
     }, [])
+
+    function getContentString (data) {
+        const allArticles = [...data];
+
+        for (var i=0; i < allArticles.length ; i++) {
+            allArticles[i].content = allArticles[i].content.replace(/<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g, ' ');
+        }
+
+        setArticles(allArticles);
+    }
 
     return (
         <div id="main">
@@ -47,7 +62,8 @@ export default function Articles () {
                                 <div className="a-image" style={{ backgroundImage: `url(${article.thumbnail})` }}>
                                 </div>
                                 <h3 className="a-title">{article.title}</h3>
-                                <Link to={`articles/${article.slug}`} className="a-link">Lihat Selengkapnya</Link>
+                                <div className="a-content">{article.content}</div>
+                                <Link to={`articles/${article.slug}`} className="a-link">Baca Artikel</Link>
                             </div>
                         </Grid>
                     )}
