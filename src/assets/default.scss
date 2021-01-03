@@ -57,7 +57,11 @@ body {
     grid-area: content;
     padding-top: 3rem; 
     padding-bottom: 5rem; 
-    overflow-x: hidden;  
+    // overflow-x: hidden;  
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .row::after {
@@ -524,6 +528,8 @@ section {
 @import 'about';
 @import 'faq';
 @import 'contact';
+@import 'articles';
+@import 'articles-detail';
 @import '../components/Footer/Footer';
 @import '../components/Header/Header';
 @import '../components/HeaderBar/HeaderBar';
