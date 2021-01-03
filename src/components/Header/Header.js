@@ -53,7 +53,7 @@ function Header (props) {
 
                 <div className="web-menu">
                     <ul>
-                        {/* <li><Link to="/article">Artikel</Link></li> */}
+                        <li><Link to="/articles">Artikel</Link></li>
                         <li><Link to="/products">Produk Kami</Link></li>
                         <li><Link to="/about">Tentang Kami</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
@@ -69,7 +69,7 @@ function Header (props) {
 
                 <div className={(isHamburger ? "mobile-menu-active" : "") + " mobile-menu"}>
                     <ul>
-                        {/* <li><Link to="/article">Artikel</Link></li> */}
+                        <li><Link to="/articles">Artikel</Link></li>
                         <li><Link to="/products">Produk Kami</Link></li>
                         <li><Link to="/about">Tentang Kami</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>

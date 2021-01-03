@@ -63,16 +63,16 @@ header {
 .hamburger {
     position: absolute;
     right: 3rem;
-    top: 25px;
+    top: 27px;
     display: none;
     div {
-        width: 30px;
-        height: 5px;
+        width: 25px;
+        height: 3px;
         background: $dark-slate-blue;
     }
 
     div + div {
-        margin: 3px 0;
+        margin: 3.5px 0;
     }
     
     cursor: pointer;
@@ -107,8 +107,23 @@ header {
   }
 }
 
+@keyframes slide-in {
+  0% {
+    // transform: scale(0.2);
+    transform: translateX(100%);
+  }
+  100% {
+    // transform: scale(1);
+    transform: translateX(0%);
+  }
+}
+
 .mobile-menu-active {
   display: block;
   right: 0;
   transition: 0.3ms ease-in;
+  z-index: 99;
+  animation: slide-in 0.3s;
 }
+
+
