@@ -179,7 +179,24 @@
 
 }
 
-// @media all and (max-width: 480px) { }
+@media all and (max-width: 480px) {
+  #content.services-content {
+    .services-section {
+      width: 90%;
+
+      &.collaboration-section {
+        .collaboration-content {
+          width: 80%;
+          margin: 2em auto;
+        }
+
+        hr {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
 
 // /*------------------------------------------
 //   Foundation Media Queries 
