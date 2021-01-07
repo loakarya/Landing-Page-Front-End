@@ -27,41 +27,6 @@
       }
     }
 
-    .howto-content {
-      margin-top: 6em;
-
-
-      .left-text-wrapper {
-        margin: 0 2em;
-
-        .howto-button-wrapper {
-          width: 100%;
-          text-align: center;
-
-          button {
-            font-weight: bold;
-            margin-top: 5em;
-            padding: 1em 3em;
-            border: 1px solid transparent;
-            transition: .2s;
-
-            &:hover {
-              color: $dark-grey-blue;
-              background-color: white;
-              border: 1px solid $dark-grey-blue;
-              transition: .2s;
-            }
-          }
-        }
-      }
-    }
-
-    .right-image-wrapper {
-      img {
-        width: 100%;
-      }
-    }
-
     hr {
       border: none;
       height: 3px;
@@ -70,6 +35,42 @@
       margin-top: 6em;
     }
 
+    // Bagaimana Cara Kerjanya?
+    .howto-content {
+      margin-top: 6em;
+
+      .left-text-wrapper {
+        margin: 0 2em;
+      }
+
+      .right-image-wrapper {
+        img {
+          width: 100%;
+        }
+      }
+
+      .howto-button-wrapper {
+        width: 100%;
+        text-align: center;
+
+        button {
+          font-weight: bold;
+          margin-top: 5em;
+          padding: 1em 3em;
+          border: 1px solid transparent;
+          transition: .2s;
+
+          &:hover {
+            color: $dark-grey-blue;
+            background-color: white;
+            border: 1px solid $dark-grey-blue;
+            transition: .2s;
+          }
+        }
+      }
+    }
+
+    // Mengapa Loakarya?
     .why-content {
       width: 90%;
       margin: 5em auto;
@@ -99,6 +100,35 @@
             cursor: default;
           }
         }
+      }
+    }
+
+    // Kolaborasi Bersama
+    &.collaboration-section {
+      width: 100%;
+
+      .collaboration-header {
+        background-image: url(../image/services-2.svg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+
+        .collaboration-header-text {
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .collaboration-content {
+        width: 70%;
+        margin: 2em auto;
+      }
+
+      hr {
+        width: 85%;
+        margin: 6em auto;
       }
     }
   }

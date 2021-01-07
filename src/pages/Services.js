@@ -3,6 +3,7 @@ import React from 'react';
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
 import PageHeader from '../components/PageHeader/PageHeader';
+import ServicesTitle from '../components/ServicesTitle/ServicesTitle';
 import ReasonPoints from '../components/Reason/ReasonPoints';
 import ReasonEffects from '../components/Reason/ReasonEffects';
 import Footer from '../components/Footer/Footer';
@@ -43,21 +44,11 @@ export default function Services() {
           <PageHeader />
 
           <section className="services-section">
-            <Typography
-              variant="h2"
-              align="center"
-              className="services-section-title"
-            >
-              Bagaimana Cara Kerjanya?
-            </Typography>
-            <Typography
-              variant="subtitle2"
-              align="center"
-              className="services-section-subtitle"
-            >
-              Berkolaborasi dengan desainer secara mudah dan menyenangkan
-            </Typography>
-
+            <ServicesTitle
+              titleText="Bagaimana Cara Kerjanya?"
+              addSubtitle
+              subtitleText="Berkolaborasi dengan desainer secara mudah dan menyenangkan"
+            />
             <Grid
               container
               spacing={3}
@@ -109,17 +100,38 @@ export default function Services() {
           </section>
 
           <section className="services-section">
-            <Typography
-              variant="h2"
-              align="center"
-              className="services-section-title"
-            >
-              Mengapa Loakarya?
-            </Typography>
-
+            <ServicesTitle titleText="Mengapa Loakarya?" />
             <div className="why-content">
               <ReasonPoints reasons={reasons} />
               <ReasonEffects reasonEffects={reasonEffects} />
+            </div>
+            <hr />
+          </section>
+
+          <section className="services-section collaboration-section">
+            <div className="collaboration-header">
+              <div className="collaboration-header-text">
+                <ServicesTitle
+                  titleText="Kolaborasi Bersama"
+                  addSubtitle
+                  subtitleText="Nemo enim ipsam voluptatem quia voluptas sit"
+                />
+              </div>
+            </div>
+            <div className="collaboration-content">
+              <Typography
+                variant="subtitle2"
+                className="services-section-subtitle"
+                align="justify"
+              >
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem.
+              </Typography>
             </div>
             <hr />
           </section>

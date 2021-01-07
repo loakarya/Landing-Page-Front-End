@@ -808,6 +808,14 @@ section .section-title::after {
   font-weight: bold;
 }
 
+#content.services-content .services-section hr {
+  border: none;
+  height: 3px;
+  color: #333;
+  background-color: #333;
+  margin-top: 6em;
+}
+
 #content.services-content .services-section .howto-content {
   margin-top: 6em;
 }
@@ -816,12 +824,16 @@ section .section-title::after {
   margin: 0 2em;
 }
 
-#content.services-content .services-section .howto-content .left-text-wrapper .howto-button-wrapper {
+#content.services-content .services-section .howto-content .right-image-wrapper img {
+  width: 100%;
+}
+
+#content.services-content .services-section .howto-content .howto-button-wrapper {
   width: 100%;
   text-align: center;
 }
 
-#content.services-content .services-section .howto-content .left-text-wrapper .howto-button-wrapper button {
+#content.services-content .services-section .howto-content .howto-button-wrapper button {
   font-weight: bold;
   margin-top: 5em;
   padding: 1em 3em;
@@ -830,24 +842,12 @@ section .section-title::after {
   transition: .2s;
 }
 
-#content.services-content .services-section .howto-content .left-text-wrapper .howto-button-wrapper button:hover {
+#content.services-content .services-section .howto-content .howto-button-wrapper button:hover {
   color: #45C875;
   background-color: white;
   border: 1px solid #45C875;
   -webkit-transition: .2s;
   transition: .2s;
-}
-
-#content.services-content .services-section .right-image-wrapper img {
-  width: 100%;
-}
-
-#content.services-content .services-section hr {
-  border: none;
-  height: 3px;
-  color: #333;
-  background-color: #333;
-  margin-top: 6em;
 }
 
 #content.services-content .services-section .why-content {
@@ -878,6 +878,40 @@ section .section-title::after {
   color: white;
   border-color: white;
   cursor: default;
+}
+
+#content.services-content .services-section.collaboration-section {
+  width: 100%;
+}
+
+#content.services-content .services-section.collaboration-section .collaboration-header {
+  background-image: url(../image/services-2.svg);
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 350px;
+}
+
+#content.services-content .services-section.collaboration-section .collaboration-header .collaboration-header-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#content.services-content .services-section.collaboration-section .collaboration-content {
+  width: 70%;
+  margin: 2em auto;
+}
+
+#content.services-content .services-section.collaboration-section hr {
+  width: 85%;
+  margin: 6em auto;
 }
 
 footer {
