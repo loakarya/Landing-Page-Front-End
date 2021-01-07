@@ -2,22 +2,85 @@
   padding-top: 0;
 
   .services-section {
+    width: 85%;
+    padding-top: 4em;
 
     .services-section-title {
-      font-family: $font-style-1;
       font-size: 3rem;
       font-weight: bold;
       color: #000000;
     }
 
+    .services-mini-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
     .services-section-subtitle {
-      font-family: $font-style-1;
       font-size: 1.5rem;
       font-weight: 400;
       margin-top: .5em;
 
-      .services-subtitle-bold {
+      span {
         font-weight: bold;
+      }
+    }
+
+    .howto-content {
+      margin-top: 6em;
+    }
+
+    .left-text-wrapper {
+      margin: 0 2em;
+
+      .howto-button-wrapper {
+        width: 100%;
+        text-align: center;
+
+        button {
+          margin-top: 5em;
+        }
+      }
+    }
+
+    .right-image-wrapper {
+      img {
+        width: 100%;
+      }
+    }
+
+    hr {
+      border: none;
+      height: 3px;
+      color: #333;
+      background-color: #333;
+      margin-top: 6em;
+    }
+
+    .section-content {
+      width: 90%;
+      margin: 5em auto;
+
+      .reason-effects {
+        margin-top: 4em;
+
+        .services-section-subtitle {
+          width: 70%;
+          margin: 2em auto;
+          padding: 1em;
+          color: $dark-slate-blue;
+          font-size: bold;
+          border-color: $dark-slate-blue;
+          border-radius: 8px;
+
+          &:hover {
+            background-color: $dark-slate-blue;
+            color: white;
+            border-color: white;
+            cursor: default;
+          }
+        }
       }
     }
   }

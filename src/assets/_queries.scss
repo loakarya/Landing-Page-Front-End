@@ -14,6 +14,17 @@
   .web-menu {
     display: none;
   }
+
+  // For services page
+  #content.services-content {
+    .services-section {
+      .left-text-wrapper {
+        .MuiTypography-root.services-section-subtitle {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 @media all and (min-width: 300px) and (max-width: 614px) {
@@ -139,6 +150,10 @@
         font-size: 1rem;
       }
     }
+  }
+
+  #content.services-content {
+    .services-section {}
   }
 
 }

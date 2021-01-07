@@ -781,22 +781,86 @@ section .section-title::after {
   padding-top: 0;
 }
 
+#content.services-content .services-section {
+  width: 85%;
+  padding-top: 4em;
+}
+
 #content.services-content .services-section .services-section-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 3rem;
   font-weight: bold;
   color: #000000;
 }
 
+#content.services-content .services-section .services-mini-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
 #content.services-content .services-section .services-section-subtitle {
-  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: .5em;
 }
 
-#content.services-content .services-section .services-section-subtitle .services-subtitle-bold {
+#content.services-content .services-section .services-section-subtitle span {
   font-weight: bold;
+}
+
+#content.services-content .services-section .howto-content {
+  margin-top: 6em;
+}
+
+#content.services-content .services-section .left-text-wrapper {
+  margin: 0 2em;
+}
+
+#content.services-content .services-section .left-text-wrapper .howto-button-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+#content.services-content .services-section .left-text-wrapper .howto-button-wrapper button {
+  margin-top: 5em;
+}
+
+#content.services-content .services-section .right-image-wrapper img {
+  width: 100%;
+}
+
+#content.services-content .services-section hr {
+  border: none;
+  height: 3px;
+  color: #333;
+  background-color: #333;
+  margin-top: 6em;
+}
+
+#content.services-content .services-section .section-content {
+  width: 90%;
+  margin: 5em auto;
+}
+
+#content.services-content .services-section .section-content .reason-effects {
+  margin-top: 4em;
+}
+
+#content.services-content .services-section .section-content .reason-effects .services-section-subtitle {
+  width: 70%;
+  margin: 2em auto;
+  padding: 1em;
+  color: #3e61dc;
+  font-size: bold;
+  border-color: #3e61dc;
+  border-radius: 8px;
+}
+
+#content.services-content .services-section .section-content .reason-effects .services-section-subtitle:hover {
+  background-color: #3e61dc;
+  color: white;
+  border-color: white;
+  cursor: default;
 }
 
 footer {
@@ -1170,11 +1234,13 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .page-header-container .title-wrapper .header-subtitle {
+  font-family: "Roboto", sans-serif;
   color: #424242;
   font-size: 1.5rem;
 }
 
 .page-header-container .title-wrapper .header-title {
+  font-family: "Roboto", sans-serif;
   color: #3e61dc;
   font-size: 6rem;
   font-weight: bold;
@@ -1182,6 +1248,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .page-header-container .title-wrapper .header-link {
+  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1210,6 +1277,9 @@ input[type=text]:focus, input[type=password]:focus {
 @media all and (min-width: 300px) and (max-width: 768px) {
   .web-menu {
     display: none;
+  }
+  #content.services-content .services-section .left-text-wrapper .MuiTypography-root.services-section-subtitle {
+    text-align: center;
   }
 }
 
