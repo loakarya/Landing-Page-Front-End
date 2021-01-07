@@ -812,17 +812,30 @@ section .section-title::after {
   margin-top: 6em;
 }
 
-#content.services-content .services-section .left-text-wrapper {
+#content.services-content .services-section .howto-content .left-text-wrapper {
   margin: 0 2em;
 }
 
-#content.services-content .services-section .left-text-wrapper .howto-button-wrapper {
+#content.services-content .services-section .howto-content .left-text-wrapper .howto-button-wrapper {
   width: 100%;
   text-align: center;
 }
 
-#content.services-content .services-section .left-text-wrapper .howto-button-wrapper button {
+#content.services-content .services-section .howto-content .left-text-wrapper .howto-button-wrapper button {
+  font-weight: bold;
   margin-top: 5em;
+  padding: 1em 3em;
+  border: 1px solid transparent;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#content.services-content .services-section .howto-content .left-text-wrapper .howto-button-wrapper button:hover {
+  color: #45C875;
+  background-color: white;
+  border: 1px solid #45C875;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 #content.services-content .services-section .right-image-wrapper img {

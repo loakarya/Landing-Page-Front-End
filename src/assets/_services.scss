@@ -29,17 +29,29 @@
 
     .howto-content {
       margin-top: 6em;
-    }
 
-    .left-text-wrapper {
-      margin: 0 2em;
 
-      .howto-button-wrapper {
-        width: 100%;
-        text-align: center;
+      .left-text-wrapper {
+        margin: 0 2em;
 
-        button {
-          margin-top: 5em;
+        .howto-button-wrapper {
+          width: 100%;
+          text-align: center;
+
+          button {
+            font-weight: bold;
+            margin-top: 5em;
+            padding: 1em 3em;
+            border: 1px solid transparent;
+            transition: .2s;
+
+            &:hover {
+              color: $dark-grey-blue;
+              background-color: white;
+              border: 1px solid $dark-grey-blue;
+              transition: .2s;
+            }
+          }
         }
       }
     }

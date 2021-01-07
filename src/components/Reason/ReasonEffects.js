@@ -8,7 +8,7 @@ function ReasonEffects(props) {
   return (
     <Grid container justify="center" className="reason-effects">
       {reasonEffects.map((effect, index) => (
-        <Grid container item key={index} md={4} xs={6} justify="center">
+        <Grid container item key={index} md={4} sm={6} xs={12} justify="center">
           <Button
             variant="outlined"
             size="large"
