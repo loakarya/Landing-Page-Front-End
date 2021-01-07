@@ -70,9 +70,15 @@
       margin-top: 6em;
     }
 
-    .section-content {
+    .why-content {
       width: 90%;
       margin: 5em auto;
+
+      .reason-points {
+        .services-section-subtitle {
+          width: 100%;
+        }
+      }
 
       .reason-effects {
         margin-top: 4em;

@@ -850,16 +850,20 @@ section .section-title::after {
   margin-top: 6em;
 }
 
-#content.services-content .services-section .section-content {
+#content.services-content .services-section .why-content {
   width: 90%;
   margin: 5em auto;
 }
 
-#content.services-content .services-section .section-content .reason-effects {
+#content.services-content .services-section .why-content .reason-points .services-section-subtitle {
+  width: 100%;
+}
+
+#content.services-content .services-section .why-content .reason-effects {
   margin-top: 4em;
 }
 
-#content.services-content .services-section .section-content .reason-effects .services-section-subtitle {
+#content.services-content .services-section .why-content .reason-effects .services-section-subtitle {
   width: 70%;
   margin: 2em auto;
   padding: 1em;
@@ -869,7 +873,7 @@ section .section-title::after {
   border-radius: 8px;
 }
 
-#content.services-content .services-section .section-content .reason-effects .services-section-subtitle:hover {
+#content.services-content .services-section .why-content .reason-effects .services-section-subtitle:hover {
   background-color: #3e61dc;
   color: white;
   border-color: white;
@@ -1294,6 +1298,9 @@ input[type=text]:focus, input[type=password]:focus {
   #content.services-content .services-section .left-text-wrapper .MuiTypography-root.services-section-subtitle {
     text-align: center;
   }
+  #content.services-content .services-section .why-content .reason-effects .services-section-subtitle {
+    width: 80%;
+  }
 }
 
 @media all and (min-width: 300px) and (max-width: 614px) {
@@ -1400,6 +1407,12 @@ input[type=text]:focus, input[type=password]:focus {
   }
   .page-header-container .title-wrapper .header-link {
     font-size: 1rem;
+  }
+  #content.services-content .services-section .why-content .reason-points {
+    text-align: center;
+  }
+  #content.services-content .services-section .why-content .reason-effects .services-section-subtitle {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=default.css.map */

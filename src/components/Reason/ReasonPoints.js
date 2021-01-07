@@ -7,7 +7,7 @@ function ReasonPoints(props) {
   const { reasons } = props;
 
   return (
-    <Grid container spacing={5}>
+    <Grid container spacing={5} className="reason-points">
       {reasons.map((reason) => (
         <Grid key={reason.id} container item md={3} sm={6} xs={12}>
           <Typography

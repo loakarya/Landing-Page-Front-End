@@ -117,7 +117,7 @@ export default function Services() {
               Mengapa Loakarya?
             </Typography>
 
-            <div className="section-content">
+            <div className="why-content">
               <ReasonPoints reasons={reasons} />
               <ReasonEffects reasonEffects={reasonEffects} />
             </div>

@@ -23,6 +23,14 @@
           text-align: center;
         }
       }
+
+      .why-content {
+        .reason-effects {
+          .services-section-subtitle {
+            width: 80%;
+          }
+        }
+      }
     }
   }
 }
@@ -153,7 +161,20 @@
   }
 
   #content.services-content {
-    .services-section {}
+    .services-section {
+      .why-content {
+
+        .reason-points {
+          text-align: center;
+        }
+
+        .reason-effects {
+          .services-section-subtitle {
+            width: 90%;
+          }
+        }
+      }
+    }
   }
 
 }
