@@ -781,6 +781,24 @@ section .section-title::after {
   padding-top: 0;
 }
 
+#content.services-content .services-section .services-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+#content.services-content .services-section .services-section-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: .5em;
+}
+
+#content.services-content .services-section .services-section-subtitle .services-subtitle-bold {
+  font-weight: bold;
+}
+
 footer {
   background: #414141;
   color: #fff;
@@ -1283,6 +1301,22 @@ input[type=text]:focus, input[type=password]:focus {
   }
   .hamburger {
     display: block;
+  }
+  .page-header-container {
+    padding: 1em .5em;
+  }
+  .page-header-container .title-wrapper {
+    width: 95%;
+    padding: 5em 2em;
+  }
+  .page-header-container .title-wrapper .header-subtitle {
+    font-size: 1rem;
+  }
+  .page-header-container .title-wrapper .header-title {
+    font-size: 5rem;
+  }
+  .page-header-container .title-wrapper .header-link {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=default.css.map */

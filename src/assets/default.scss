@@ -1,31 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-//@import "./variables";
+// @import "./variables";
+@import 'variables';
 
-$font-style-1: 'Montserrat',
-sans-serif;
-$font-style-2: 'Raleway',
-sans-serif;
-$font-style-3: 'Roboto',
-sans-serif;
-$font-medium: 12px;
 
-// colors
-$dark-slate-blue: #3e61dc;
-$dark-grey-blue: #45C875;
-$black: #353535;
-$black-two: #292929;
-$black-25: rgba(0, 0, 0, 0.25);
-$white: #ffffff;
-$white-two: #efefef;
-$white-69: rgba(246, 241, 241, 0.69);
-$warm-grey: #828282;
-$greyish-brown: #414141;
-$greyish-brown-two: #494949;
-$greyish-brown-three: #635959;
-$macaroni-and-cheese: #f2b32b;
-$pinkish-red: #ea2335;
+// $font-style-1: 'Montserrat',
+// sans-serif;
+// $font-style-2: 'Raleway',
+// sans-serif;
+// $font-style-3: 'Roboto',
+// sans-serif;
+// $font-medium: 12px;
+
+// // colors
+// $dark-slate-blue: #3e61dc;
+// $dark-grey-blue: #45C875;
+// $black: #353535;
+// $black-two: #292929;
+// $black-25: rgba(0, 0, 0, 0.25);
+// $white: #ffffff;
+// $white-two: #efefef;
+// $white-69: rgba(246, 241, 241, 0.69);
+// $warm-grey: #828282;
+// $greyish-brown: #414141;
+// $greyish-brown-two: #494949;
+// $greyish-brown-three: #635959;
+// $macaroni-and-cheese: #f2b32b;
+// $pinkish-red: #ea2335;
 
 * {
   padding: 0;
@@ -533,7 +535,7 @@ section {
   transform: translate(50%, 0%);
 }
 
-@import 'variables';
+// @import 'variables';
 @import 'products';
 @import 'detail';
 @import 'about';
