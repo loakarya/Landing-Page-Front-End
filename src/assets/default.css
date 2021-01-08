@@ -1423,7 +1423,19 @@ input[type=text]:focus, input[type=password]:focus {
 .portfolio-modal-backdrop .modal-content .prev-button,
 .portfolio-modal-backdrop .modal-content .next-button {
   position: absolute;
+  color: #3e61dc;
   background-color: ivory;
+  z-index: 1;
+  -webkit-transition: all .2;
+  transition: all .2;
+}
+
+.portfolio-modal-backdrop .modal-content .prev-button:hover,
+.portfolio-modal-backdrop .modal-content .next-button:hover {
+  color: white;
+  background-color: #3e61dc;
+  -webkit-transition: all .2;
+  transition: all .2;
 }
 
 .portfolio-modal-backdrop .modal-content .prev-button {

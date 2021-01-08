@@ -15,7 +15,16 @@
     .prev-button,
     .next-button {
       position: absolute;
+      color: $dark-slate-blue;
       background-color: ivory;
+      z-index: 1;
+      transition: all .2;
+
+      &:hover {
+        color: white;
+        background-color: $dark-slate-blue;
+        transition: all .2;
+      }
     }
 
     .prev-button {

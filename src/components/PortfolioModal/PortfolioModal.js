@@ -7,6 +7,8 @@ import { IconButton } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
+import { motion } from 'framer-motion';
+
 function PortfolioModal(props) {
   const { selectedImg, setSelectedImg, setIsOpen } = props;
   const [indexGallery, setIndexGallery] = useState(0);
@@ -23,21 +25,30 @@ function PortfolioModal(props) {
   };
 
   return (
-    <div className="portfolio-modal-backdrop" onClick={handleCloseOnClick}>
+    <motion.div
+      className="portfolio-modal-backdrop"
+      onClick={handleCloseOnClick}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      // transition={{ delay: 0.1 }}
+    >
       <div className="modal-content">
         {indexGallery !== 0 && (
           <IconButton
-            color="primary"
             className="prev-button"
             onClick={() => setIndexGallery(indexGallery - 1)}
           >
             <ArrowBackIosIcon fontSize="large" />
           </IconButton>
         )}
-        <img src={imgSrc[selectedImg - 1][indexGallery]} alt="enlarged pic" />
+        <motion.img
+          src={imgSrc[selectedImg - 1][indexGallery]}
+          alt="enlarged pic"
+          initial={{ y: '-100vh' }}
+          animate={{ y: 0 }}
+        />
         {indexGallery <= indexLength - 1 && (
           <IconButton
-            color="primary"
             className="next-button"
             onClick={() => setIndexGallery(indexGallery + 1)}
           >
@@ -45,7 +56,7 @@ function PortfolioModal(props) {
           </IconButton>
         )}
       </div>
-    </div>
+    </motion.div>
 
     // <Dialog
     //   open={isOpen}
