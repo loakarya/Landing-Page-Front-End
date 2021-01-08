@@ -6,8 +6,16 @@ import PageHeader from '../components/PageHeader/PageHeader';
 import ServicesTitle from '../components/ServicesTitle/ServicesTitle';
 import ReasonPoints from '../components/Reason/ReasonPoints';
 import ReasonEffects from '../components/Reason/ReasonEffects';
+import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
 import Footer from '../components/Footer/Footer';
+
 import services1 from '../image/services-1.svg';
+import portfolio1 from '../image/portfolio/icon/portfolio1.svg';
+import portfolio2 from '../image/portfolio/icon/portfolio2.svg';
+import portfolio3 from '../image/portfolio/icon/portfolio3.svg';
+import portfolio4 from '../image/portfolio/icon/portfolio4.svg';
+import portfolio5 from '../image/portfolio/icon/portfolio5.svg';
+import portfolio6 from '../image/portfolio/icon/portfolio6.svg';
 
 import {
   Grid,
@@ -31,6 +39,39 @@ const reasons = [
 ];
 
 const reasonEffects = ['mudah', 'cepat', 'menyenangkan'];
+
+const cardPortfolio = [
+  {
+    id: 1,
+    title: 'Renovasi Kamar Billy',
+    subtitles: ['Residental', 'Desain Interior', 'Furnitur'],
+  },
+  {
+    id: 2,
+    title: 'Japandi Bedroom Client',
+    subtitles: ['Residental', 'Desain Interior'],
+  },
+  {
+    id: 3,
+    title: 'Kenko Rehabilitation Facility',
+    subtitles: ['Fasilitas Publik', 'Desain Interior'],
+  },
+  {
+    id: 4,
+    title: 'Lobby Hotel Batik',
+    subtitles: ['Fasilitas Gedung', 'Desain Interior'],
+  },
+  {
+    id: 5,
+    title: 'Office Paxel Jakarta',
+    subtitles: ['Office', 'Desain Interior'],
+  },
+  {
+    id: 6,
+    title: "Yanie's Cake Tea and Patisserie",
+    subtitles: ['Toko Retail', 'Desain Interior'],
+  },
+];
 
 export default function Services() {
   const isMediumDevice = useMediaQuery('(max-width:960px)');
@@ -134,6 +175,19 @@ export default function Services() {
               </Typography>
             </div>
             <hr />
+          </section>
+
+          <section className="services-section">
+            <div className="portfolio-section">
+              <ServicesTitle titleText="Portofolio" />
+              <div className="portfolio-content">
+                <Grid container spacing={4} justify="center">
+                  {cardPortfolio.map((cardText, index) => (
+                    <PortfolioCard key={index} cardText={cardText} />
+                  ))}
+                </Grid>
+              </div>
+            </div>
           </section>
         </div>
         <Footer />

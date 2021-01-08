@@ -914,6 +914,84 @@ section .section-title::after {
   margin: 6em auto;
 }
 
+#content.services-content .services-section .portfolio-section {
+  background-color: #3e61dc;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+#content.services-content .services-section .portfolio-section .services-section-title {
+  color: white;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content {
+  width: 90%;
+  margin: 7em auto;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item {
+  overflow: hidden;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .portfolio-image {
+  width: 100%;
+  margin-bottom: -.4em;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .portfolio-image:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: .8;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content {
+  position: relative;
+  height: 130px;
+  text-align: left;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content .detail-content-title {
+  font-size: 1.5rem;
+  text-transform: none;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content p + ul {
+  margin-top: .5em;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content p + ul li {
+  display: inline-block;
+  list-style: none;
+  margin-top: .5em;
+  margin-right: .5em;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content .text-selanjutnya {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: .5em;
+  margin-bottom: .5em;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content .text-selanjutnya a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#content.services-content .services-section .portfolio-section .portfolio-content .portfolio-item .detail-content .text-selanjutnya a:hover {
+  text-decoration: underline;
+}
+
 footer {
   background: #414141;
   color: #fff;
