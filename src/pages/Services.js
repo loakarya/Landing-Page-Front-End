@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import HeaderBar from '../components/HeaderBar/HeaderBar';
 import Header from '../components/Header/Header';
@@ -7,6 +7,7 @@ import ServicesTitle from '../components/ServicesTitle/ServicesTitle';
 import ReasonPoints from '../components/Reason/ReasonPoints';
 import ReasonEffects from '../components/Reason/ReasonEffects';
 import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
+import PortfolioModal from '../components/PortfolioModal/PortfolioModal';
 import Footer from '../components/Footer/Footer';
 
 import services1 from '../image/services-1.svg';
@@ -62,13 +63,16 @@ const cardPortfolio = [
   },
   {
     id: 6,
-    title: "Yanie's Cake Tea and Patisserie",
+    title: `Yanie's Cake Tea and Patisserie`,
     subtitles: ['Toko Retail', 'Desain Interior'],
   },
 ];
 
 export default function Services() {
   const isMediumDevice = useMediaQuery('(max-width:960px)');
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImg, setSelectedImg] = useState(null);
 
   return (
     <ThemeProvider theme={theme}>
@@ -177,7 +181,12 @@ export default function Services() {
               <div className="portfolio-content">
                 <Grid container spacing={4} justify="center">
                   {cardPortfolio.map((cardText, index) => (
-                    <PortfolioCard key={index} cardText={cardText} />
+                    <PortfolioCard
+                      key={index}
+                      cardText={cardText}
+                      setSelectedImg={setSelectedImg}
+                      setIsOpen={setIsOpen}
+                    />
                   ))}
                 </Grid>
               </div>
@@ -186,6 +195,13 @@ export default function Services() {
         </div>
         <Footer />
       </div>
+      {isOpen && (
+        <PortfolioModal
+          setIsOpen={setIsOpen}
+          selectedImg={selectedImg}
+          setSelectedImg={setSelectedImg}
+        />
+      )}
     </ThemeProvider>
   );
 }
