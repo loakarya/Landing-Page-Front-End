@@ -10,12 +10,6 @@ import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
 import Footer from '../components/Footer/Footer';
 
 import services1 from '../image/services-1.svg';
-import portfolio1 from '../image/portfolio/icon/portfolio1.svg';
-import portfolio2 from '../image/portfolio/icon/portfolio2.svg';
-import portfolio3 from '../image/portfolio/icon/portfolio3.svg';
-import portfolio4 from '../image/portfolio/icon/portfolio4.svg';
-import portfolio5 from '../image/portfolio/icon/portfolio5.svg';
-import portfolio6 from '../image/portfolio/icon/portfolio6.svg';
 
 import {
   Grid,
