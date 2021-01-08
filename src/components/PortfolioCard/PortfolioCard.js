@@ -41,8 +41,12 @@ function PortfolioCard(props) {
               <li key={index}>-{subtitle}</li>
             ))}
           </ul>
-          <Typography className="text-selanjutnya" align="right">
-            <a href="#">Lihat Selanjutnya...</a>
+          <Typography
+            className="text-selanjutnya"
+            align="right"
+            onClick={handleImgOnClick}
+          >
+            Lihat Selanjutnya...
           </Typography>
         </div>
       </div>

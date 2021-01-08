@@ -189,14 +189,10 @@
               right: 0;
               margin-right: .5em;
               margin-bottom: .5em;
+              cursor: pointer;
 
-              a {
-                text-decoration: none;
-                color: inherit;
-
-                &:hover {
-                  text-decoration: underline;
-                }
+              &:hover {
+                text-decoration: underline;
               }
             }
           }
