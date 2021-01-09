@@ -27,6 +27,10 @@ function PortfolioModal(props) {
     }
   };
 
+  const handleOnClickThumbnail = (index) => {
+    setIndexGallery(index);
+  };
+
   return (
     <motion.div
       className="portfolio-modal-backdrop"
@@ -61,15 +65,29 @@ function PortfolioModal(props) {
 
         <motion.div className="thumbnails">
           {/* <motion.div drag="x" className="thumbnails"> */}
-          {imgSrc[selectedImg - 1].map((item, index) => (
-            <img
-              key={index}
-              src={item}
-              alt="enlarged pic"
-              onClick={() => setIndexGallery(index)}
-              className={indexGallery === index && 'active'}
-            />
-          ))}
+          {imgSrc[selectedImg - 1].map((item, index) => {
+            const ref = React.createRef();
+
+            const handleClick = () =>
+              ref.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+
+            return (
+              <img
+                key={index}
+                ref={ref}
+                src={item}
+                alt="enlarged pic"
+                onClick={() => {
+                  handleOnClickThumbnail(index);
+                  handleClick();
+                }}
+                className={indexGallery === index && 'active'}
+              />
+            );
+          })}
           {/* </motion.div> */}
         </motion.div>
 

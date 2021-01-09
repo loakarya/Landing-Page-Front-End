@@ -54,6 +54,7 @@
       height: 80px;
       padding: 0 1em;
       overflow: auto;
+      scroll-snap-type: x mandatory;
 
       // Scrollbar
       $foreground-color: rgb(59, 60, 65);
@@ -81,6 +82,7 @@
         border: 3px solid transparent;
         cursor: pointer;
         transition: all .2s;
+        scroll-snap-align: center;
 
         &:hover {
           opacity: 1;
