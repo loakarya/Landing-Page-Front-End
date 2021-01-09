@@ -58,6 +58,7 @@ function PortfolioModal(props) {
             <ArrowForwardIosIcon fontSize="large" />
           </IconButton>
         )}
+
         <motion.div className="thumbnails">
           {/* <motion.div drag="x" className="thumbnails"> */}
           {imgSrc[selectedImg - 1].map((item, index) => (
@@ -70,6 +71,22 @@ function PortfolioModal(props) {
             />
           ))}
           {/* </motion.div> */}
+        </motion.div>
+
+        <motion.div className="portfolio-pagination">
+          {/* <p className="index-title">Portofolio</p> */}
+          {imgSrc.map((src, index) => (
+            <p
+              className={
+                selectedImg === index + 1
+                  ? 'index-portfolio active'
+                  : 'index-portfolio'
+              }
+              onClick={() => setSelectedImg(index + 1)}
+            >
+              {index + 1}
+            </p>
+          ))}
         </motion.div>
       </div>
     </motion.div>
