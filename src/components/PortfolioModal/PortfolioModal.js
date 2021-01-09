@@ -100,7 +100,10 @@ function PortfolioModal(props) {
                   ? 'index-portfolio active'
                   : 'index-portfolio'
               }
-              onClick={() => setSelectedImg(index + 1)}
+              onClick={() => {
+                setSelectedImg(index + 1);
+                setIndexGallery(0);
+              }}
             >
               {index + 1}
             </p>
