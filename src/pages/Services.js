@@ -153,7 +153,7 @@ export default function Services() {
                 <ServicesTitle
                   titleText="Kolaborasi Bersama"
                   addSubtitle
-                  subtitleText="Nemo enim ipsam voluptatem quia voluptas sit"
+                  subtitleText="Lebih Mudah dan Menyenangkan Bersama Kami"
                 />
               </div>
             </div>
@@ -163,13 +163,15 @@ export default function Services() {
                 className="services-section-subtitle"
                 align="justify"
               >
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                dolorem. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                dolorem.
+                Setiap hari, ketika kita bangun dari tidur tentu ada harapan
+                yang muncul. Harapan untuk menjalani hari dengan baik dan
+                bersemangat. Harapan tersebut secara tidak sadar dipengaruhi
+                juga oleh lingkungan tempat kita tinggal. Memiliki tempat
+                tinggal yang nyaman dan dengan suasana yang positif dapat
+                memunculkan perasaan menyenangkan. Oleh karena itu, kami
+                Loakarya berusaha membantu anda mewujudkan hal tersebut.
+                Wujudkan memiliki suasana tempat tinggal yang nyaman dengan
+                layanan desain interior Loakarya!
               </Typography>
             </div>
             <hr />

@@ -888,6 +888,7 @@ section .section-title::after {
   background-image: url(../image/services-2.svg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1341,6 +1342,7 @@ input[type=text]:focus, input[type=password]:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   padding: 5em 2em;
   margin-top: 0;
   font-family: "Roboto", sans-serif;
@@ -1565,14 +1567,8 @@ input[type=text]:focus, input[type=password]:focus {
     width: 95%;
     padding: 5em 2em;
   }
-  .page-header-container .title-wrapper .header-subtitle {
-    font-size: 1rem;
-  }
   .page-header-container .title-wrapper .header-title {
     font-size: 5rem;
-  }
-  .page-header-container .title-wrapper .header-link {
-    font-size: 1rem;
   }
   #content.services-content .services-section .why-content .reason-points {
     text-align: center;
