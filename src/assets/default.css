@@ -1472,6 +1472,21 @@ input[type=text]:focus, input[type=password]:focus {
   height: 80px;
   padding: 0 1em;
   overflow: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+.portfolio-modal-backdrop .modal-content .thumbnails::-webkit-scrollbar {
+  height: .5em;
+}
+
+.portfolio-modal-backdrop .modal-content .thumbnails::-webkit-scrollbar-track {
+  background: #b1b1b3;
+}
+
+.portfolio-modal-backdrop .modal-content .thumbnails::-webkit-scrollbar-thumb {
+  background: #3b3c41;
 }
 
 .portfolio-modal-backdrop .modal-content .thumbnails img {
