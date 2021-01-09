@@ -1459,6 +1459,38 @@ input[type=text]:focus, input[type=password]:focus {
           box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
 }
 
+.portfolio-modal-backdrop .modal-content .thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  height: 80px;
+  padding: 0 1em;
+  overflow: auto;
+}
+
+.portfolio-modal-backdrop .modal-content .thumbnails img {
+  margin: auto 0;
+  margin-right: 1em;
+  opacity: .5;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.portfolio-modal-backdrop .modal-content .thumbnails img:hover {
+  opacity: 1;
+}
+
+.portfolio-modal-backdrop .modal-content .thumbnails img.active {
+  border: 3px solid rgba(0, 0, 0, 0.621);
+  opacity: 1;
+}
+
 @media all and (min-width: 300px) and (max-width: 768px) {
   .web-menu {
     display: none;

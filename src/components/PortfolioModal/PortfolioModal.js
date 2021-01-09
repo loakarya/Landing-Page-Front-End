@@ -17,7 +17,10 @@ function PortfolioModal(props) {
   const indexLength = imgSrc[selectedImg - 1].length - 1;
 
   const handleCloseOnClick = (e) => {
-    if (e.target.classList.contains('modal-content')) {
+    if (
+      e.target.classList.contains('modal-content') ||
+      e.target.classList.contains('thumbnails')
+    ) {
       setIsOpen(false);
       setIndexGallery(0);
       setSelectedImg(0);
@@ -55,26 +58,21 @@ function PortfolioModal(props) {
             <ArrowForwardIosIcon fontSize="large" />
           </IconButton>
         )}
+        <motion.div className="thumbnails">
+          {/* <motion.div drag="x" className="thumbnails"> */}
+          {imgSrc[selectedImg - 1].map((item, index) => (
+            <img
+              key={index}
+              src={item}
+              alt="enlarged pic"
+              onClick={() => setIndexGallery(index)}
+              className={indexGallery === index && 'active'}
+            />
+          ))}
+          {/* </motion.div> */}
+        </motion.div>
       </div>
     </motion.div>
-
-    // <Dialog
-    //   open={isOpen}
-    //   maxWidth="md"
-    //   className="portfolio-modal"
-    //   onClick={handleCloseOnClick}
-    // >
-    //   <DialogTitle>
-    //     <Typography variant="h4" component="div">
-    //       Portfolio
-    //     </Typography>
-    //   </DialogTitle>
-    //   <DialogContent dividers>
-    //     <div className="modal-content">
-    //       <img src={imgSrc[selectedImg - 1][indexGallery]} alt="enlarged pic" />
-    //     </div>
-    //   </DialogContent>
-    // </Dialog>
   );
 }
 

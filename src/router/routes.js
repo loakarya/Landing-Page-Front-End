@@ -17,7 +17,7 @@ import '../assets/default.css';
 import Services from '../pages/Services';
 
 //to hide all warning in console log
-console.log = console.warn = console.error = () => {};
+// console.log = console.warn = console.error = () => {};
 
 // const authAxios = axios.create ( {
 //     baseUrl: apiUrl,
