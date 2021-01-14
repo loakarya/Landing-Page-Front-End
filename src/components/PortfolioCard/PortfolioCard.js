@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
 
-import portfolio1 from '../../image/portfolio/icon/portfolio1.svg';
-import portfolio2 from '../../image/portfolio/icon/portfolio2.svg';
-import portfolio3 from '../../image/portfolio/icon/portfolio3.svg';
-import portfolio4 from '../../image/portfolio/icon/portfolio4.svg';
-import portfolio5 from '../../image/portfolio/icon/portfolio5.svg';
-import portfolio6 from '../../image/portfolio/icon/portfolio6.svg';
+import portfolio1 from '../../image/portfolio/icon/portfolio1.jpg';
+import portfolio2 from '../../image/portfolio/icon/portfolio2.jpg';
+import portfolio3 from '../../image/portfolio/icon/portfolio3.jpg';
+import portfolio4 from '../../image/portfolio/icon/portfolio4.jpg';
+import portfolio5 from '../../image/portfolio/icon/portfolio5.jpg';
+import portfolio6 from '../../image/portfolio/icon/portfolio6.jpg';
 
 function PortfolioCard(props) {
   const { cardText, setSelectedImg, setIsOpen } = props;
