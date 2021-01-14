@@ -885,7 +885,7 @@ section .section-title::after {
 }
 
 #content.services-content .services-section.collaboration-section .collaboration-header {
-  background-image: url(../image/services-2.svg);
+  background-image: url(../image/services-2.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1338,7 +1338,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .page-header-container {
-  background-image: url(../image/services-header.svg);
+  background-image: url(../image/services-header.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

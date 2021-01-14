@@ -10,7 +10,7 @@ import PortfolioCard from '../components/PortfolioCard/PortfolioCard';
 import PortfolioModal from '../components/PortfolioModal/PortfolioModal';
 import Footer from '../components/Footer/Footer';
 
-import services1 from '../image/services-1.svg';
+import services1 from '../image/services-1.jpg';
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -120,9 +120,14 @@ export default function Services() {
                     </span>
                   </Typography>
                   <div className="howto-button-wrapper">
-                    <button className="btn btn-secondary btn-secondary--active">
-                      Mulai Sekarang Juga!
-                    </button>
+                    <a
+                      target="blank"
+                      href="https://form.typeform.com/to/c6DBijku"
+                    >
+                      <button className="btn btn-secondary btn-secondary--active">
+                        Mulai Sekarang Juga!
+                      </button>
+                    </a>
                   </div>
                 </div>
               </Grid>

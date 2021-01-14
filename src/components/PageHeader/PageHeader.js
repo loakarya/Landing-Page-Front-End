@@ -17,7 +17,9 @@ export default function PageHeader() {
           Layanan Desain Interior
         </Typography>
         <Typography align="center" className="header-link">
-          <a href="/">Wujudkan Sekarang Juga!</a>
+          <a target="blank" href="https://form.typeform.com/to/c6DBijku">
+            Wujudkan Sekarang Juga!
+          </a>
         </Typography>
       </div>
     </div>
