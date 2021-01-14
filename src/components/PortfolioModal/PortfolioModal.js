@@ -9,6 +9,21 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import { motion } from 'framer-motion';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { y: '-100vh' },
+  visible: { y: 0, transition: { delay: 0.3 } },
+};
+
 function PortfolioModal(props) {
   const { selectedImg, setSelectedImg, setIsOpen } = props;
   const [indexGallery, setIndexGallery] = useState(0);
@@ -35,8 +50,10 @@ function PortfolioModal(props) {
     <motion.div
       className="portfolio-modal-backdrop"
       onClick={handleCloseOnClick}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
       // transition={{ delay: 0.1 }}
     >
       <div className="modal-content">
@@ -51,8 +68,7 @@ function PortfolioModal(props) {
         <motion.img
           src={imgSrc[selectedImg - 1][indexGallery]}
           alt="enlarged pic"
-          initial={{ y: '-100vh' }}
-          animate={{ y: 0 }}
+          variants={imageVariants}
         />
         {indexGallery <= indexLength - 1 && (
           <IconButton

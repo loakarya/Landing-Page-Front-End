@@ -12,6 +12,8 @@ import Footer from '../components/Footer/Footer';
 
 import services1 from '../image/services-1.svg';
 
+import { AnimatePresence } from 'framer-motion';
+
 import {
   Grid,
   Typography,
@@ -197,13 +199,15 @@ export default function Services() {
         </div>
         <Footer />
       </div>
-      {isOpen && (
-        <PortfolioModal
-          setIsOpen={setIsOpen}
-          selectedImg={selectedImg}
-          setSelectedImg={setSelectedImg}
-        />
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <PortfolioModal
+            setIsOpen={setIsOpen}
+            selectedImg={selectedImg}
+            setSelectedImg={setSelectedImg}
+          />
+        )}
+      </AnimatePresence>
     </ThemeProvider>
   );
 }
