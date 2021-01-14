@@ -2,13 +2,13 @@ import pic1_1 from '../../image/portfolio/original/kamar-billy/1-min.jpg';
 import pic1_2 from '../../image/portfolio/original/kamar-billy/2-min.jpg';
 import pic1_3 from '../../image/portfolio/original/kamar-billy/3-min.jpg';
 
-import pic2_1 from '../../image/portfolio/original/japandi/1-min.png';
-import pic2_2 from '../../image/portfolio/original/japandi/2-min.png';
-import pic2_3 from '../../image/portfolio/original/japandi/3-min.png';
-import pic2_4 from '../../image/portfolio/original/japandi/4-min.png';
-import pic2_5 from '../../image/portfolio/original/japandi/5-min.png';
-import pic2_6 from '../../image/portfolio/original/japandi/6-min.png';
-import pic2_7 from '../../image/portfolio/original/japandi/7-min.png';
+import pic2_1 from '../../image/portfolio/original/japandi/1-min.jpg';
+import pic2_2 from '../../image/portfolio/original/japandi/2-min.jpg';
+import pic2_3 from '../../image/portfolio/original/japandi/3-min.jpg';
+import pic2_4 from '../../image/portfolio/original/japandi/4-min.jpg';
+import pic2_5 from '../../image/portfolio/original/japandi/5-min.jpg';
+import pic2_6 from '../../image/portfolio/original/japandi/6-min.jpg';
+import pic2_7 from '../../image/portfolio/original/japandi/7-min.jpg';
 
 import pic3_1 from '../../image/portfolio/original/kenko/1-min.png';
 import pic3_2 from '../../image/portfolio/original/kenko/2-min.png';
@@ -34,10 +34,10 @@ import pic4_4 from '../../image/portfolio/original/lobby/4-min.png';
 import pic4_5 from '../../image/portfolio/original/lobby/5-min.png';
 import pic4_6 from '../../image/portfolio/original/lobby/6-min.png';
 
-import pic5_1 from '../../image/portfolio/original/office/1-min.png';
-import pic5_2 from '../../image/portfolio/original/office/2-min.png';
-import pic5_3 from '../../image/portfolio/original/office/3-min.png';
-import pic5_4 from '../../image/portfolio/original/office/4-min.png';
+import pic5_1 from '../../image/portfolio/original/office/1-min.jpg';
+import pic5_2 from '../../image/portfolio/original/office/2-min.jpg';
+import pic5_3 from '../../image/portfolio/original/office/3-min.jpg';
+import pic5_4 from '../../image/portfolio/original/office/4-min.jpg';
 
 import pic6_1 from '../../image/portfolio/original/yanies-cake/1-min.png';
 import pic6_2 from '../../image/portfolio/original/yanies-cake/2-min.png';
