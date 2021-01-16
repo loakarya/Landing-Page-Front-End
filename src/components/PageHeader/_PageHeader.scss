@@ -1,0 +1,61 @@
+.page-header-container {
+  * {
+    box-sizing: border-box;
+  }
+
+  background-image: url(../image/services-header.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 5em 2em;
+  margin-top: 0;
+  font-family: $font-style-3;
+
+  .title-wrapper {
+    width: 85%;
+    margin: 2em auto;
+    padding: 5em;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    .header-subtitle {
+      font-family: $font-style-3;
+      color: #424242;
+      font-size: 1.5rem;
+    }
+
+    .header-title {
+      font-family: $font-style-3;
+      color: $dark-slate-blue;
+      font-size: 6rem;
+      font-weight: bold;
+      margin-top: .2em;
+    }
+
+
+    .header-link {
+      font-family: $font-style-3;
+      font-size: 1.5rem;
+      align-items: center;
+      margin-top: 3.5em;
+
+      &::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 12em;
+        border-bottom: 3px solid black;
+      }
+
+      a {
+        color: #424242;
+        font-weight: bold;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
