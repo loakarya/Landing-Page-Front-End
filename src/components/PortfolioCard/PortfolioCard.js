@@ -2,12 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
 
-import portfolio1 from '../../image/portfolio/icon/portfolio1.jpg';
-import portfolio2 from '../../image/portfolio/icon/portfolio2.jpg';
-import portfolio3 from '../../image/portfolio/icon/portfolio3.jpg';
-import portfolio4 from '../../image/portfolio/icon/portfolio4.jpg';
-import portfolio5 from '../../image/portfolio/icon/portfolio5.jpg';
-import portfolio6 from '../../image/portfolio/icon/portfolio6.jpg';
+const portfolio1 =
+  'https://resources.loakarya.co/portfolio/icon/portfolio1.jpg';
+const portfolio2 =
+  'https://resources.loakarya.co/portfolio/icon/portfolio2.jpg';
+const portfolio3 =
+  'https://resources.loakarya.co/portfolio/icon/portfolio3.jpg';
+const portfolio4 =
+  'https://resources.loakarya.co/portfolio/icon/portfolio4.jpg';
+const portfolio5 =
+  'https://resources.loakarya.co/portfolio/icon/portfolio5.jpg';
+const portfolio6 =
+  'https://resources.loakarya.co/portfolio/icon/portfolio6.jpg';
 
 function PortfolioCard(props) {
   const { cardText, setSelectedImg, setIsOpen } = props;
