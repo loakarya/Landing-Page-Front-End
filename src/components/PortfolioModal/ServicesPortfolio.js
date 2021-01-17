@@ -1,49 +1,90 @@
-import pic1_1 from '../../image/portfolio/original/kamar-billy/1-min.jpg';
-import pic1_2 from '../../image/portfolio/original/kamar-billy/2-min.jpg';
-import pic1_3 from '../../image/portfolio/original/kamar-billy/3-min.jpg';
+const pic1_1 =
+  'https://resources.loakarya.co/portfolio/original/kamar-billy/1-min.jpg';
+const pic1_2 =
+  'https://resources.loakarya.co/portfolio/original/kamar-billy/2-min.jpg';
+const pic1_3 =
+  'https://resources.loakarya.co/portfolio/original/kamar-billy/3-min.jpg';
 
-import pic2_1 from '../../image/portfolio/original/japandi/1-min.jpg';
-import pic2_2 from '../../image/portfolio/original/japandi/2-min.jpg';
-import pic2_3 from '../../image/portfolio/original/japandi/3-min.jpg';
-import pic2_4 from '../../image/portfolio/original/japandi/4-min.jpg';
-import pic2_5 from '../../image/portfolio/original/japandi/5-min.jpg';
-import pic2_6 from '../../image/portfolio/original/japandi/6-min.jpg';
-import pic2_7 from '../../image/portfolio/original/japandi/7-min.jpg';
+const pic2_1 =
+  'https://resources.loakarya.co/portfolio/original/japandi/1-min.jpg';
+const pic2_2 =
+  'https://resources.loakarya.co/portfolio/original/japandi/2-min.jpg';
+const pic2_3 =
+  'https://resources.loakarya.co/portfolio/original/japandi/3-min.jpg';
+const pic2_4 =
+  'https://resources.loakarya.co/portfolio/original/japandi/4-min.jpg';
+const pic2_5 =
+  'https://resources.loakarya.co/portfolio/original/japandi/5-min.jpg';
+const pic2_6 =
+  'https://resources.loakarya.co/portfolio/original/japandi/6-min.jpg';
+const pic2_7 =
+  'https://resources.loakarya.co/portfolio/original/japandi/7-min.jpg';
 
-import pic3_1 from '../../image/portfolio/original/kenko/1-min.jpg';
-import pic3_2 from '../../image/portfolio/original/kenko/2-min.jpg';
-import pic3_3 from '../../image/portfolio/original/kenko/3-min.jpg';
-import pic3_4 from '../../image/portfolio/original/kenko/4-min.jpg';
-import pic3_5 from '../../image/portfolio/original/kenko/5-min.jpg';
-import pic3_6 from '../../image/portfolio/original/kenko/6-min.jpg';
-import pic3_7 from '../../image/portfolio/original/kenko/7-min.jpg';
-import pic3_8 from '../../image/portfolio/original/kenko/8-min.jpg';
-import pic3_9 from '../../image/portfolio/original/kenko/9-min.jpg';
-import pic3_10 from '../../image/portfolio/original/kenko/10-min.jpg';
-import pic3_11 from '../../image/portfolio/original/kenko/11-min.jpg';
-import pic3_12 from '../../image/portfolio/original/kenko/12-min.jpg';
-import pic3_13 from '../../image/portfolio/original/kenko/13-min.jpg';
-import pic3_14 from '../../image/portfolio/original/kenko/14-min.jpg';
-import pic3_15 from '../../image/portfolio/original/kenko/15-min.jpg';
-import pic3_16 from '../../image/portfolio/original/kenko/16-min.png';
+const pic3_1 =
+  'https://resources.loakarya.co/portfolio/original/kenko/1-min.jpg';
+const pic3_2 =
+  'https://resources.loakarya.co/portfolio/original/kenko/2-min.jpg';
+const pic3_3 =
+  'https://resources.loakarya.co/portfolio/original/kenko/3-min.jpg';
+const pic3_4 =
+  'https://resources.loakarya.co/portfolio/original/kenko/4-min.jpg';
+const pic3_5 =
+  'https://resources.loakarya.co/portfolio/original/kenko/5-min.jpg';
+const pic3_6 =
+  'https://resources.loakarya.co/portfolio/original/kenko/6-min.jpg';
+const pic3_7 =
+  'https://resources.loakarya.co/portfolio/original/kenko/7-min.jpg';
+const pic3_8 =
+  'https://resources.loakarya.co/portfolio/original/kenko/8-min.jpg';
+const pic3_9 =
+  'https://resources.loakarya.co/portfolio/original/kenko/9-min.jpg';
+const pic3_10 =
+  'https://resources.loakarya.co/portfolio/original/kenko/10-min.jpg';
+const pic3_11 =
+  'https://resources.loakarya.co/portfolio/original/kenko/11-min.jpg';
+const pic3_12 =
+  'https://resources.loakarya.co/portfolio/original/kenko/12-min.jpg';
+const pic3_13 =
+  'https://resources.loakarya.co/portfolio/original/kenko/13-min.jpg';
+const pic3_14 =
+  'https://resources.loakarya.co/portfolio/original/kenko/14-min.jpg';
+const pic3_15 =
+  'https://resources.loakarya.co/portfolio/original/kenko/15-min.jpg';
+const pic3_16 =
+  'https://resources.loakarya.co/portfolio/original/kenko/16-min.png';
 
-import pic4_1 from '../../image/portfolio/original/lobby/1-min.jpg';
-import pic4_2 from '../../image/portfolio/original/lobby/2-min.jpg';
-import pic4_3 from '../../image/portfolio/original/lobby/3-min.jpg';
-import pic4_4 from '../../image/portfolio/original/lobby/4-min.jpg';
-import pic4_5 from '../../image/portfolio/original/lobby/5-min.jpg';
-import pic4_6 from '../../image/portfolio/original/lobby/6-min.jpg';
+const pic4_1 =
+  'https://resources.loakarya.co/portfolio/original/lobby/1-min.jpg';
+const pic4_2 =
+  'https://resources.loakarya.co/portfolio/original/lobby/2-min.jpg';
+const pic4_3 =
+  'https://resources.loakarya.co/portfolio/original/lobby/3-min.jpg';
+const pic4_4 =
+  'https://resources.loakarya.co/portfolio/original/lobby/4-min.jpg';
+const pic4_5 =
+  'https://resources.loakarya.co/portfolio/original/lobby/5-min.jpg';
+const pic4_6 =
+  'https://resources.loakarya.co/portfolio/original/lobby/6-min.jpg';
 
-import pic5_1 from '../../image/portfolio/original/office/1-min.jpg';
-import pic5_2 from '../../image/portfolio/original/office/2-min.jpg';
-import pic5_3 from '../../image/portfolio/original/office/3-min.jpg';
-import pic5_4 from '../../image/portfolio/original/office/4-min.jpg';
+const pic5_1 =
+  'https://resources.loakarya.co/portfolio/original/office/1-min.jpg';
+const pic5_2 =
+  'https://resources.loakarya.co/portfolio/original/office/2-min.jpg';
+const pic5_3 =
+  'https://resources.loakarya.co/portfolio/original/office/3-min.jpg';
+const pic5_4 =
+  'https://resources.loakarya.co/portfolio/original/office/4-min.jpg';
 
-import pic6_1 from '../../image/portfolio/original/yanies-cake/1-min.jpg';
-import pic6_2 from '../../image/portfolio/original/yanies-cake/2-min.jpg';
-import pic6_3 from '../../image/portfolio/original/yanies-cake/3-min.jpg';
-import pic6_4 from '../../image/portfolio/original/yanies-cake/4-min.jpg';
-import pic6_5 from '../../image/portfolio/original/yanies-cake/5-min.jpg';
+const pic6_1 =
+  'https://resources.loakarya.co/portfolio/original/yanies-cake/1-min.jpg';
+const pic6_2 =
+  'https://resources.loakarya.co/portfolio/original/yanies-cake/2-min.jpg';
+const pic6_3 =
+  'https://resources.loakarya.co/portfolio/original/yanies-cake/3-min.jpg';
+const pic6_4 =
+  'https://resources.loakarya.co/portfolio/original/yanies-cake/4-min.jpg';
+const pic6_5 =
+  'https://resources.loakarya.co/portfolio/original/yanies-cake/5-min.jpg';
 
 export default function ServicesPortfolio() {
   const imgSrc = [
