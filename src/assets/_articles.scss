@@ -4,13 +4,19 @@
     background-position: center;
     padding-top: 66.6%;
     position: relative;  
+    margin-bottom: 13px;
 }
 
 .a-title {
-    margin-top: 13px;
     font-weight: bold;
     color:$dark-slate-blue;
     font-size: 16px;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
 
 .a-link {
