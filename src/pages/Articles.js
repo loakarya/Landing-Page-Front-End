@@ -32,8 +32,8 @@ export default function Articles () {
             });
 
             setArticles(respArticles);
-            
             getContentString(respArticles);
+            setLoading(false);
         })
         .catch(function (error) {
             console.log(error);
@@ -50,10 +50,19 @@ export default function Articles () {
         setArticles(allArticles);
     }
 
+    let loading = <div></div>
+    
+    if (isLoading) {
+        loading = <Loading />
+    }
+
     return (
         <div id="main">
             <Header />
             <div id="content" className="width--large">
+
+                { loading }
+
                 <h1 className="font-color-primary mb-4">Mengenal Lingkunganmu</h1>
                 <Grid container spacing={4}>
                     {articles.map((article) => 
@@ -61,7 +70,7 @@ export default function Articles () {
                             <div>
                                 <div className="a-image" style={{ backgroundImage: `url(${article.thumbnail})` }}>
                                 </div>
-                                <h3 className="a-title">{article.title}</h3>
+                                <Link to={`articles/${article.slug}`} className="a-title">{article.title}</Link>
                                 <div className="a-content">{article.content}</div>
                                 <Link to={`articles/${article.slug}`} className="a-link">Baca Artikel</Link>
                             </div>

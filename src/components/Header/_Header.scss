@@ -1,12 +1,11 @@
 .header-wrapper {
     padding: 0 60px;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     grid-gap: 0px;
     grid-template-areas:
-    "logo"
-    "link-one"
-    "link-two";
+    "logo" "link-one";
+    // "link-two";
 }
 
 header {
@@ -28,16 +27,23 @@ header {
 
     .link-one {
         grid-area: link-one;
+        text-align: right;
     }
 
-    .link-two {
-        grid-area: link-two;
-    }
+    // .link-two {
+    //     grid-area: link-two;
+    // }
+
+    // .web-menu {
+      
+    // }
     
     ul {
         list-style: none;
         display: flex;
-        line-height: 85px;
+        line-height: 70px;
+        justify-content: flex-end;
+
         li {
             vertical-align: bottom;
             a {

@@ -53,8 +53,9 @@ function Header (props) {
 
                 <div className="web-menu">
                     <ul>
+                        <li><Link to="/products">Produk</Link></li>
+                        <li><Link to="#">Layanan</Link></li>
                         <li><Link to="/articles">Artikel</Link></li>
-                        <li><Link to="/products">Produk Kami</Link></li>
                         <li><Link to="/about">Tentang Kami</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/contact">Hubungi Kami</Link></li>
@@ -69,8 +70,9 @@ function Header (props) {
 
                 <div className={(isHamburger ? "mobile-menu-active" : "") + " mobile-menu"}>
                     <ul>
+                        <li><Link to="/products">Produk</Link></li>
+                        <li><Link to="#">Layanan</Link></li>
                         <li><Link to="/articles">Artikel</Link></li>
-                        <li><Link to="/products">Produk Kami</Link></li>
                         <li><Link to="/about">Tentang Kami</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/contact">Hubungi Kami</Link></li>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import Loading from '../components/Loading/Loading';
 
 import axios from 'axios';
 
@@ -15,6 +16,8 @@ export default function ArticlesDetail () {
     const [tahun, setTahun] = useState();
     const [jam, setJam] = useState();
     const [menit, setMenit] = useState();
+    const [isLoading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const endpoint = '/article/' + id;
@@ -45,15 +48,14 @@ export default function ArticlesDetail () {
 
                 // console.log(respArticle);
                 setArticle(respArticle);
-                getTimeStamp(response.data.data.updated_at)
+                getTimeStamp(response.data.data.updated_at);
+                setLoading(false);
             }
         })
         .catch(function (error) {
             
         })
     }, [])
-
-    var updated_at = "2020-10-12T09:56:16.000000Z";
 
     function getTimeStamp (time) {
         var str_time, str_date, getDate, str_tahun, str_bulan, str_tanggal, str_jam, str_menit, date_str, time_str;
@@ -77,24 +79,31 @@ export default function ArticlesDetail () {
         setMenit(str_menit);
     }
 
+    let content = <div></div>
+    
+    if (isLoading) {
+        content = <Loading />
+    }
+    else {
+        content =  
+        <article className="article">
+            <h1 className="article__title">{article.title}</h1>
+            <h3 className="article__subtitle">{article.subtitle}</h3>
+
+            <p className="article__author">by Admin</p>
+            {/* <p className="article__date">{article.updated_at}</p> */}
+            <p className="article__date">{tanggal}  {bulan}  {tahun} | {jam}:{menit} WIB</p>
+
+            <div className="article__content" dangerouslySetInnerHTML={{__html: `${article.content}` }} />
+        </article>
+    }
+
     return (
         <div id="main">
             <Header />
             <div id="content" className="account-container width--large">
-                {/* {article.map((article) =>  */}
-                
-                    <article className="article">
-                    <h1 className="article__title">{article.title}</h1>
-                    <h3 className="article__subtitle">{article.subtitle}</h3>
-
-                    <p className="article__author">by Admin</p>
-                    {/* <p className="article__date">{article.updated_at}</p> */}
-                    <p className="article__date">{tanggal}  {bulan}  {tahun} | {jam}:{menit} WIB</p>
-
-                    <div className="article__content" dangerouslySetInnerHTML={{__html: `${article.content}` }} />
-                </article>
-                    
-                {/* )} */}
+            
+                { content }
                 
             </div>
             <Footer />
