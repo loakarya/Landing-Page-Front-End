@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 //import React, { Component, Fragment } from 'react';
 // import './Header.css';
 
+import { IconButton } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
+
 function Header(props) {
   //const [setCookie, removeCookie] = useCookies(['token']);
   //let buttons;
@@ -53,12 +56,14 @@ function Header(props) {
 
         <div className="web-menu">
           <ul>
-            {/* <li><Link to="/article">Artikel</Link></li> */}
             <li>
-              <Link to="/products">Produk Kami</Link>
+              <Link to="/products">Produk</Link>
             </li>
             <li>
-              <Link to="/services">Layanan Kami</Link>
+              <Link to="/services">Layanan</Link>
+            </li>
+            <li>
+              <Link to="/article">Artikel</Link>
             </li>
             <li>
               <Link to="/about">Tentang Kami</Link>
@@ -68,6 +73,17 @@ function Header(props) {
             </li>
             <li>
               <Link to="/contact">Hubungi Kami</Link>
+            </li>
+            <li>
+              <Link to="#">
+                {/* <IconButton>
+                  <SearchIcon fontSize="large" color="primary" />
+                </IconButton> */}
+                <image
+                  src="./../../image/ic-search.png"
+                  className="search-icon"
+                />
+              </Link>
             </li>
           </ul>
         </div>

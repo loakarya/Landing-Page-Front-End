@@ -1,81 +1,96 @@
 .header-wrapper {
-    padding: 0 60px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-gap: 0px;
-    grid-template-areas:
+  padding: 0 60px;
+  // display: grid;
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 0px;
+  grid-template-areas:
     "logo"
     "link-one"
     "link-two";
 }
 
 header {
-    background: #fff;
-    box-shadow: 0 0 16px 0 #dadada;
-    height: 70px;
-    width: 100%;
-    grid-area: header;
+  background: #fff;
+  box-shadow: 0 0 16px 0 #dadada;
+  height: 70px;
+  width: 100%;
+  grid-area: header;
 
-    .logo-wrapper {
-        line-height: 70px;
-        grid-area: logo;
-        img {
-            vertical-align: middle;
-            height: 25px;
-            width: auto;
+  .logo-wrapper {
+    line-height: 70px;
+    grid-area: logo;
+
+    img {
+      vertical-align: middle;
+      height: 25px;
+      width: auto;
+    }
+  }
+
+  .link-one {
+    grid-area: link-one;
+  }
+
+  .link-two {
+    grid-area: link-two;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    line-height: 85px;
+
+    li {
+      vertical-align: bottom;
+
+      a {
+        text-decoration: none;
+        color: $dark-slate-blue;
+        text-transform: uppercase;
+        margin: 0 15px;
+        font-size: $font-medium;
+        font-weight: 700;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
         }
-    }
 
-    .link-one {
-        grid-area: link-one;
-    }
+        // img.search-icon {
+        //   width: 60px;
+        //   height: 50px;
+        //   background-color: blue;
+        // }
+      }
 
-    .link-two {
-        grid-area: link-two;
+
     }
-    
-    ul {
-        list-style: none;
-        display: flex;
-        line-height: 85px;
-        li {
-            vertical-align: bottom;
-            a {
-              text-decoration: none;
-              color: $dark-slate-blue;
-              text-transform: uppercase;
-              margin: 0 15px;
-              font-size: $font-medium;
-              font-weight: 700;
-              
-              &:hover, &:active {
-                  text-decoration: underline;
-              }
-          }  
-        }
-    }
+  }
 }
 
 .mobile-menu {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .hamburger {
-    position: absolute;
-    right: 3rem;
-    top: 25px;
-    display: none;
-    div {
-        width: 30px;
-        height: 5px;
-        background: $dark-slate-blue;
-    }
+  position: absolute;
+  right: 3rem;
+  top: 25px;
+  display: none;
 
-    div + div {
-        margin: 3px 0;
-    }
-    
-    cursor: pointer;
+  div {
+    width: 30px;
+    height: 5px;
+    background: $dark-slate-blue;
+  }
+
+  div+div {
+    margin: 3px 0;
+  }
+
+  cursor: pointer;
 }
 
 .mobile-menu {
@@ -85,7 +100,7 @@ header {
   display: none;
   background: $dark-slate-blue;
   border-radius: 0 0 0px 30px;
-  
+
   ul {
     text-align: right;
     list-style: none;
@@ -93,8 +108,10 @@ header {
     display: block;
     line-height: 1rem;
   }
+
   li {
     padding: 10px 0;
+
     a {
       text-decoration: none;
       color: $white;
