@@ -359,6 +359,7 @@ section .section-title::after {
 .testimoni-section {
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
   text-align: left;
   -webkit-box-align: start;
@@ -693,6 +694,7 @@ section .section-title::after {
   padding-top: 2rem;
   font-weight: bold;
   font-size: 2rem;
+  text-shadow: 0 0 3px rgba(69, 200, 117, 0.63);
 }
 
 .compro-section {
