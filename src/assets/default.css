@@ -196,6 +196,11 @@ body {
   color: #ffffff;
 }
 
+.btn-secondary--active2 {
+  background: #3e61dc;
+  color: #ffffff;
+}
+
 .width--full {
   width: 100%;
 }
@@ -683,18 +688,25 @@ section .section-title::after {
   width: 100%;
   background: #ffffff;
   height: 250px;
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .image-heading .image-heading-title {
   text-align: center;
   color: #ffffff;
-  padding-top: 2rem;
   font-weight: bold;
-  font-size: 2rem;
-  text-shadow: 0 0 3px rgba(69, 200, 117, 0.63);
+  font-size: 6rem;
 }
 
 .compro-section {
@@ -1252,7 +1264,7 @@ input[type=text]:focus, input[type=password]:focus {
   background: #ffffff;
   padding: 1rem;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #292929;
 }
 
@@ -1262,6 +1274,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .detail-content p + p {
+  font-size: .8rem;
   margin: .5em 0;
 }
 

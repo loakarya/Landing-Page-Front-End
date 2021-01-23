@@ -184,7 +184,7 @@ export default function Services() {
             <hr />
           </section>
 
-          <section className="services-section">
+          <section id="portfolio" className="services-section">
             <div className="portfolio-section">
               <ServicesTitle titleText="Portofolio" />
               <div className="portfolio-content">

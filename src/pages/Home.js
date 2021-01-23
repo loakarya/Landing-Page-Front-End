@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
-import HeaderBar from "../components/HeaderBar/HeaderBar";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import HomeCarousel from "../components/Carousel/HomeCarousel";
-import Loading from "../components/Loading/Loading";
+import HeaderBar from '../components/HeaderBar/HeaderBar';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import HomeCarousel from '../components/Carousel/HomeCarousel';
+import Loading from '../components/Loading/Loading';
 
-import Grid from "@material-ui/core/Grid";
+import { Grid, Typography, Link as LinkText } from '@material-ui/core';
 
 //import { useCookies } from 'react-cookie';
 
@@ -30,7 +31,7 @@ export default function Home() {
   // console.log(cookies.token);
 
   useEffect(() => {
-    const endpoint = "profile/products";
+    const endpoint = 'profile/products';
 
     axios
       .get(endpoint)
@@ -70,6 +71,21 @@ export default function Home() {
         </div>
 
         <section>
+          <h1 class="section-title">Layanan</h1>
+          <Grid container>
+            <Grid item container md={4} sm={12} justify="center">
+              AUTHENTIC PRODUCT
+            </Grid>
+            <Grid item container md={4} sm={12} justify="center">
+              INTERIOR DESIGN
+            </Grid>
+            <Grid item container md={4} sm={12} justify="center">
+              ON DEMAND PRODUCT
+            </Grid>
+          </Grid>
+        </section>
+
+        <section>
           <h1 class="section-title">Produk</h1>
           <div class="home-gallery-container">
             {profileProducts.slice(0, 5).map((product) => (
@@ -86,7 +102,7 @@ export default function Home() {
         <article
           class="testimoni-section"
           style={{
-            backgroundImage: `url(${require("../image/testimoni.png")})`,
+            backgroundImage: `url(${require('../image/testimoni.png')})`,
           }}
         >
           <div class="black-opacity">
@@ -131,7 +147,7 @@ export default function Home() {
                 <div
                   class="box"
                   style={{
-                    backgroundImage: `url(${require("../image/value1.png")})`,
+                    backgroundImage: `url(${require('../image/value1.png')})`,
                   }}
                 >
                   {/* <img src="image/image-1.png" alt="" />  */}
@@ -147,7 +163,7 @@ export default function Home() {
                 <div
                   class="box"
                   style={{
-                    backgroundImage: `url(${require("../image/value2.png")})`,
+                    backgroundImage: `url(${require('../image/value2.png')})`,
                   }}
                 >
                   {/* <img src="image/image-1.png" alt="" />  */}
@@ -163,7 +179,7 @@ export default function Home() {
                 <div
                   class="box"
                   style={{
-                    backgroundImage: `url(${require("../image/value3.png")})`,
+                    backgroundImage: `url(${require('../image/value3.png')})`,
                   }}
                 >
                   {/* <img src="image/image-1.png" alt="" />  */}
@@ -178,7 +194,7 @@ export default function Home() {
                 <div
                   class="box"
                   style={{
-                    backgroundImage: `url(${require("../image/value4.png")})`,
+                    backgroundImage: `url(${require('../image/value4.png')})`,
                   }}
                 >
                   {/* <img src="image/image-1.png" alt="" />  */}
@@ -191,6 +207,29 @@ export default function Home() {
               </Grid>
             </Grid>
           </div>
+        </section>
+
+        <section>
+          <h1 class="section-title">Portofolio</h1>
+          <Grid container>
+            <Grid item container>
+              <Grid item container md={6} sm={12} justify="center">
+                Portofolio 1
+              </Grid>
+              <Grid item container md={6} sm={12} justify="center">
+                Portofolio 2
+              </Grid>
+            </Grid>
+            <Grid item container justify="flex-end">
+              <HashLink to="/services#portfolio">
+                <Typography>
+                  <LinkText component="button" variant="body2">
+                    Lihat Selengkapnya &rarr;
+                  </LinkText>
+                </Typography>
+              </HashLink>
+            </Grid>
+          </Grid>
         </section>
       </div>
       <Footer />
