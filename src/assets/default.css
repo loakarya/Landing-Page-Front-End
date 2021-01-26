@@ -503,6 +503,25 @@ section .section-title::after {
   padding: 0 17px 10px 17px;
 }
 
+.section-container {
+  background-color: #efefef;
+  padding: 1em 0;
+}
+
+.section-container .home-portfolio {
+  margin-top: 3em;
+}
+
+.section-container .home-portfolio img {
+  width: 100%;
+}
+
+.section-container .home-portfolio .MuiTypography-root.MuiLink-root {
+  color: #3e61dc;
+  font-size: 1rem;
+  margin-top: 3em;
+}
+
 .home-carousel-container {
   width: 100%;
   max-width: 100vw;

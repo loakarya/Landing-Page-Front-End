@@ -70,7 +70,7 @@ export default function Home() {
           <HomeCarousel />
         </div>
 
-        <section>
+        {/* <section>
           <h1 class="section-title">Layanan</h1>
           <Grid container>
             <Grid item container md={4} sm={12} justify="center">
@@ -83,7 +83,7 @@ export default function Home() {
               ON DEMAND PRODUCT
             </Grid>
           </Grid>
-        </section>
+        </section> */}
 
         <section>
           <h1 class="section-title">Produk</h1>
@@ -209,28 +209,54 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
-          <h1 class="section-title">Portofolio</h1>
-          <Grid container>
-            <Grid item container>
-              <Grid item container md={6} sm={12} justify="center">
-                Portofolio 1
+        <div className="section-container">
+          <section className="home-portfolio">
+            <h1 class="section-title">Portofolio</h1>
+            <Grid container>
+              <Grid item container spacing={3} justify="center">
+                <Grid item container lg={4} md={6} sm={12} justify="center">
+                  <img
+                    src="https://resources.loakarya.co/portfolio/original/lobby/4-min.jpg"
+                    alt=""
+                  />
+                </Grid>
+                <Grid item container lg={4} md={6} sm={12} justify="center">
+                  <img
+                    src="https://resources.loakarya.co/portfolio/original/office/3-min.jpg"
+                    alt=""
+                  />
+                </Grid>
+                <Grid item container lg={4} md={6} sm={12} justify="center">
+                  <img
+                    src="https://resources.loakarya.co/portfolio/original/kenko/15-min.jpg"
+                    alt=""
+                  />
+                </Grid>
+                <Grid item container lg={4} md={6} sm={12} justify="center">
+                  <img
+                    src="https://resources.loakarya.co/portfolio/original/yanies-cake/3-min.jpg"
+                    alt=""
+                  />
+                </Grid>
+                <Grid item container lg={4} md={6} sm={12} justify="center">
+                  <img
+                    src="https://resources.loakarya.co/portfolio/original/japandi/4-min.jpg"
+                    alt=""
+                  />
+                </Grid>
               </Grid>
-              <Grid item container md={6} sm={12} justify="center">
-                Portofolio 2
+              <Grid item container justify="flex-end">
+                <HashLink to="/services#portfolio">
+                  <Typography>
+                    <LinkText component="button" variant="body2">
+                      Lihat Selengkapnya &rarr;
+                    </LinkText>
+                  </Typography>
+                </HashLink>
               </Grid>
             </Grid>
-            <Grid item container justify="flex-end">
-              <HashLink to="/services#portfolio">
-                <Typography>
-                  <LinkText component="button" variant="body2">
-                    Lihat Selengkapnya &rarr;
-                  </LinkText>
-                </Typography>
-              </HashLink>
-            </Grid>
-          </Grid>
-        </section>
+          </section>
+        </div>
       </div>
       <Footer />
     </div>

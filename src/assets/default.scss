@@ -517,6 +517,25 @@ section {
   }
 }
 
+.section-container {
+  background-color: $white-two;
+  padding: 1em 0;
+
+  .home-portfolio {
+    margin-top: 3em;
+
+    img {
+      width: 100%;
+    }
+
+    .MuiTypography-root.MuiLink-root {
+      color: $dark-slate-blue;
+      font-size: 1rem;
+      margin-top: 3em;
+    }
+  }
+}
+
 .home-carousel-container {
   width: 100%;
   max-width: 100vw;
