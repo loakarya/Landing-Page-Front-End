@@ -58,11 +58,15 @@ header {
           text-decoration: underline;
         }
 
-        // img.search-icon {
-        //   width: 60px;
-        //   height: 50px;
-        //   background-color: blue;
-        // }
+        .MuiButtonBase-root {
+          margin-left: 40px;
+
+          img.search-icon {
+            width: 19px;
+            height: 16px;
+          }
+        }
+
       }
 
 

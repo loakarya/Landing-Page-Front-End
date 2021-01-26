@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 // import './Header.css';
 
 import { IconButton } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
 
 function Header(props) {
   //const [setCookie, removeCookie] = useCookies(['token']);
@@ -76,13 +75,13 @@ function Header(props) {
             </li>
             <li>
               <Link to="#">
-                {/* <IconButton>
-                  <SearchIcon fontSize="large" color="primary" />
-                </IconButton> */}
-                <image
-                  src="./../../image/ic-search.png"
-                  className="search-icon"
-                />
+                <IconButton>
+                  <img
+                    src="../../image/ic-search.svg"
+                    className="search-icon"
+                    alt="Search Icon"
+                  />
+                </IconButton>
               </Link>
             </li>
           </ul>
@@ -100,10 +99,13 @@ function Header(props) {
           <ul>
             {/* <li><Link to="/article">Artikel</Link></li> */}
             <li>
-              <Link to="/products">Produk Kami</Link>
+              <Link to="/products">Produk</Link>
             </li>
             <li>
-              <Link to="/services">Layanan Kami</Link>
+              <Link to="/services">Layanan</Link>
+            </li>
+            <li>
+              <Link to="/article">Artikel</Link>
             </li>
             <li>
               <Link to="/about">Tentang Kami</Link>
@@ -113,6 +115,17 @@ function Header(props) {
             </li>
             <li>
               <Link to="/contact">Hubungi Kami</Link>
+            </li>
+            <li>
+              <Link to="#">
+                <IconButton>
+                  <img
+                    src="../../image/ic-search.svg"
+                    className="search-icon"
+                    alt="Search Icon"
+                  />
+                </IconButton>
+              </Link>
             </li>
           </ul>
         </div>

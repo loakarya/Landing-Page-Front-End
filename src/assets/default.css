@@ -684,6 +684,11 @@ section .section-title::after {
   max-width: 100vw;
 }
 
+.detail-grid-container button.btn {
+  margin: .8em 0;
+  font-weight: bold;
+}
+
 .image-heading {
   width: 100%;
   background: #ffffff;
@@ -1150,6 +1155,15 @@ header ul li a {
 
 header ul li a:hover, header ul li a:active {
   text-decoration: underline;
+}
+
+header ul li a .MuiButtonBase-root {
+  margin-left: 40px;
+}
+
+header ul li a .MuiButtonBase-root img.search-icon {
+  width: 19px;
+  height: 16px;
 }
 
 .mobile-menu {
