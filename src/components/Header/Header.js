@@ -120,7 +120,7 @@ function Header(props) {
               <Link to="#">
                 <IconButton>
                   <img
-                    src="../../image/ic-search.svg"
+                    src="../../image/icons/ic-search.svg"
                     className="search-icon"
                     alt="Search Icon"
                   />
