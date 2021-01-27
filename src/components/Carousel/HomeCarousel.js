@@ -24,7 +24,7 @@ export default class HomeCarousel extends Component {
     const sliders = [
       {
         id: 1,
-        src: '../../image/slider1.png',
+        src: '../../image/slider1.jpg',
         h1: 'Tentang',
         h2: 'Kami',
         p:
@@ -34,7 +34,7 @@ export default class HomeCarousel extends Component {
       },
       {
         id: 2,
-        src: '../../image/slider2.png',
+        src: '../../image/slider2.jpg',
         h1: 'Produk',
         h2: 'dan Layanan',
         p:
@@ -46,7 +46,7 @@ export default class HomeCarousel extends Component {
       },
       {
         id: 3,
-        src: '../../image/slider3.png',
+        src: '../../image/slider3.jpg',
         h1: 'Hubungi',
         h2: 'Kami',
         p:

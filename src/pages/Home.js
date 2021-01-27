@@ -102,7 +102,7 @@ export default function Home() {
         <article
           class="testimoni-section"
           style={{
-            backgroundImage: `url(${require('../image/testimoni.png')})`,
+            backgroundImage: `url(${require('../image/testimoni.jpg')})`,
           }}
         >
           <div class="black-opacity">

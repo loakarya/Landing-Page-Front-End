@@ -12,7 +12,7 @@ class About extends Component {
         <div id="content" style={{ paddingTop: 0 }}>
           <div
             class="image-heading"
-            style={{ backgroundImage: `url(${require('../image/about.png')})` }}
+            style={{ backgroundImage: `url(${require('../image/about.jpg')})` }}
           >
             <h1 class="image-heading-title">Tentang Kami</h1>
           </div>
