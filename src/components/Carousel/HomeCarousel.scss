@@ -33,7 +33,8 @@
     top: 60%;
     transform: translate(0, -50%);
 
-    h1,h2 {
+    h1,
+    h2 {
         font-size: 3rem;
         font-weight: bold;
         //color: $dark-slate-blue;
@@ -42,15 +43,15 @@
         text-align: left;
     }
 
-    h2  {
+    h2 {
         font-size: 2rem;
     }
 
-    h1 + h2 {
+    h1+h2 {
         margin-top: -10px;
     }
 
-    h2 + p {
+    h2+p {
         margin-top: 13px;
         padding-bottom: 2rem;
     }

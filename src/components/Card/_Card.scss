@@ -27,13 +27,13 @@
     text-align: center;
     font-size: 1.2rem;
     color: $black-two;
-        
+
     .detail-content-title {
         text-transform: uppercase;
         font-weight: bold;
     }
 
-    p + p {
+    p+p {
         margin: .5em 0;
     }
 }

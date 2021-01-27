@@ -1,6 +1,6 @@
 import React from 'react';
 //import { CookiesProvider, useCookies } from 'react-cookie';
-import { BrowserRouter as Router, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import axios from 'axios';
 
 import About from '../pages/About';
@@ -15,9 +15,10 @@ import Products from '../pages/Products';
 import Signup from '../pages/Signup';
 
 import '../assets/default.css';
+import Services from '../pages/Services';
 
 //to hide all warning in console log
-//console.log = console.warn = console.error = () => {};
+// console.log = console.warn = console.error = () => {};
 
 // const authAxios = axios.create ( {
 //     baseUrl: apiUrl,
@@ -26,56 +27,55 @@ import '../assets/default.css';
 //     }
 // })
 
-
-
 function routes() {
-//     const [cookies] = useCookies();
-//     const [user, setUser] = useState(); 
-    
-//     console.log(cookies.token);
+  //     const [cookies] = useCookies();
+  //     const [user, setUser] = useState();
 
-    // useEffect(() => {
-        // const config = {
-        //     headers: {
-        //         Authorization: 'Bearer ' + cookies.token
-        //     }
-        // };
+  //     console.log(cookies.token);
 
-    //     const endpoint = '/user';
+  // useEffect(() => {
+  // const config = {
+  //     headers: {
+  //         Authorization: 'Bearer ' + cookies.token
+  //     }
+  // };
 
-    //     axios.post(
-    //         endpoint,{}, {
-    //             headers: {
-    //                 Authorization: "Bearer " + cookies.token
-    //             }
-    //         }
-    //     )
-    //     .then((response) => {
-    //         console.log(response.data);
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     })
-    // }, [])
-    
-    return(
-        // <CookiesProvider>
-        <Router>
-                <div>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/articles" component={Articles} />
-                    <Route path="/articles/:id" component={ArticlesDetail} />
-                    <Route path="/faq" component={Faq} />
-                    <Route path="/about" component={About} />
-                    <Route path="/contact" component={Contact} />
-                    <Route exact path="/products" component={Products} />
-                    <Route path="/products/:id" component={ProductDetail} />
+  //     const endpoint = '/user';
 
-                    {/* <Route path="/login" component={Login} />
+  //     axios.post(
+  //         endpoint,{}, {
+  //             headers: {
+  //                 Authorization: "Bearer " + cookies.token
+  //             }
+  //         }
+  //     )
+  //     .then((response) => {
+  //         console.log(response.data);
+  //     })
+  //     .catch(function (error) {
+  //         console.log(error);
+  //     })
+  // }, [])
+
+  return (
+    // <CookiesProvider>
+    <Router>
+      <div>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/articles" component={Articles} />
+        <Route path="/articles/:id" component={ArticlesDetail} />
+        <Route path="/faq" component={Faq} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/services" component={Services} />
+        <Route exact path="/products" component={Products} />
+        <Route path="/products/:id" component={ProductDetail} />
+
+        {/* <Route path="/login" component={Login} />
                     <Route path="/signup" component={Signup} /> */}
-                </div>
-            </Router>
-        // </CookiesProvider>
-    );
+      </div>
+    </Router>
+    // </CookiesProvider>
+  );
 }
 export default routes;
