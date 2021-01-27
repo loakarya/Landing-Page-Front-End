@@ -22,8 +22,8 @@ class About extends Component {
             <p>
               Loakarya menyediakan solusi mudah dengan pengalaman yang
               menyenangkan untuk mengelola limbah anorganik yang anda punya
-              dengan metode upcycling dan recycling juga mengedepankan konsep
-              eco smartliving.
+              dengan metode <i>upcycling</i> dan <i>recycling</i> juga
+              mengedepankan konsep eco <i>smartliving</i>.
             </p>
           </div>
 
