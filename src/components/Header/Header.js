@@ -73,7 +73,7 @@ function Header(props) {
             <li>
               <Link to="/contact">Hubungi Kami</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="#">
                 <IconButton>
                   <img
@@ -83,7 +83,7 @@ function Header(props) {
                   />
                 </IconButton>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -109,7 +109,7 @@ function Header(props) {
             <li>
               <Link to="/contact">Hubungi Kami</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="#">
                 <IconButton>
                   <img
@@ -119,7 +119,7 @@ function Header(props) {
                   />
                 </IconButton>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="hamburger" onClick={() => openHamburger()}>

@@ -9,11 +9,17 @@
 
 // @media all and (min-width: 768px) and (max-width: 1024px) { }
 
-@media all and (min-width: 300px) and (max-width: 768px) {
-
+@media all and (min-width: 300px) and (max-width: 960px) {
   .web-menu {
     display: none;
   }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media all and (min-width: 300px) and (max-width: 768px) {
 
   // For services page
   #content.services-content {
@@ -132,10 +138,6 @@
 
   .width--large {
     width: 90%;
-  }
-
-  .hamburger {
-    display: block;
   }
 
   // For Services Page

@@ -1818,10 +1818,16 @@ input[type=text]:focus, input[type=password]:focus {
   opacity: 1;
 }
 
-@media all and (min-width: 300px) and (max-width: 768px) {
+@media all and (min-width: 300px) and (max-width: 960px) {
   .web-menu {
     display: none;
   }
+  .hamburger {
+    display: block;
+  }
+}
+
+@media all and (min-width: 300px) and (max-width: 768px) {
   #content.services-content .services-section .left-text-wrapper .MuiTypography-root.services-section-subtitle {
     text-align: center;
   }
@@ -1915,9 +1921,6 @@ input[type=text]:focus, input[type=password]:focus {
   }
   .width--large {
     width: 90%;
-  }
-  .hamburger {
-    display: block;
   }
   .page-header-container {
     padding: 1em .5em;
