@@ -29,7 +29,7 @@ export default function Card() {
     },
     {
       id: 3,
-      src: 'fikri.png',
+      src: 'fikri.jpg',
       name: 'Fikri Rida Pebriansyah',
       position: 'Chief Technology Officer',
       socmed: {
@@ -53,7 +53,7 @@ export default function Card() {
     // },
     {
       id: 6,
-      src: 'akhyar.png',
+      src: 'sakagala.jpg',
       name: 'Sakagala Gema Lafadzagat',
       position: 'On-Demand Product Designer',
       socmed: {
@@ -62,7 +62,7 @@ export default function Card() {
     },
     {
       id: 7,
-      src: 'akhyar.png',
+      src: 'dummy.jpg',
       name: 'Naufal Taqi Athallah',
       position: 'Graphic Designer',
       socmed: {
@@ -78,7 +78,7 @@ export default function Card() {
     // }
     {
       id: 9,
-      src: 'akhyar.png',
+      src: 'dummy.jpg',
       name: 'Syahrul Hidayat',
       position: 'Supply Chain Specialist',
       socmed: {
