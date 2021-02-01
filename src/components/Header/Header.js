@@ -62,7 +62,7 @@ function Header(props) {
               <Link to="/services">Layanan</Link>
             </li>
             <li>
-              <Link to="/article">Artikel</Link>
+              <Link to="/articles">Artikel</Link>
             </li>
             <li>
               <Link to="/about">Tentang Kami</Link>
@@ -87,17 +87,10 @@ function Header(props) {
           </ul>
         </div>
 
-        <div className="hamburger" onClick={() => openHamburger()}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
         <div
           className={(isHamburger ? 'mobile-menu-active' : '') + ' mobile-menu'}
         >
           <ul>
-            {/* <li><Link to="/article">Artikel</Link></li> */}
             <li>
               <Link to="/products">Produk</Link>
             </li>
@@ -105,7 +98,7 @@ function Header(props) {
               <Link to="/services">Layanan</Link>
             </li>
             <li>
-              <Link to="/article">Artikel</Link>
+              <Link to="/articles">Artikel</Link>
             </li>
             <li>
               <Link to="/about">Tentang Kami</Link>
@@ -120,7 +113,7 @@ function Header(props) {
               <Link to="#">
                 <IconButton>
                   <img
-                    src="../../image/icons/ic-search.svg"
+                    src="../../image/ic-search.svg"
                     className="search-icon"
                     alt="Search Icon"
                   />
@@ -128,6 +121,11 @@ function Header(props) {
               </Link>
             </li>
           </ul>
+        </div>
+        <div className="hamburger" onClick={() => openHamburger()}>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
 
         {/* {buttons} */}

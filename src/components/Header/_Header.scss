@@ -1,14 +1,12 @@
 .header-wrapper {
+
   padding: 0 60px;
-  // display: grid;
-  display: flex;
-  justify-content: space-between;
-  grid-template-columns: auto 1fr auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
   grid-gap: 0px;
   grid-template-areas:
-    "logo"
-    "link-one"
-    "link-two";
+    "logo""link-one";
+  // "link-two";
 }
 
 header {
@@ -29,18 +27,25 @@ header {
     }
   }
 
+
   .link-one {
     grid-area: link-one;
+    text-align: right;
   }
 
-  .link-two {
-    grid-area: link-two;
-  }
+  // .link-two {
+  //     grid-area: link-two;
+  // }
+
+  // .web-menu {
+
+  // }
 
   ul {
     list-style: none;
     display: flex;
-    line-height: 85px;
+    line-height: 70px;
+    justify-content: flex-end;
 
     li {
       vertical-align: bottom;
@@ -66,32 +71,35 @@ header {
             height: 16px;
           }
         }
-
       }
-
-
     }
+
   }
+
+
 }
+
+
 
 .mobile-menu {
   flex-direction: row;
 }
 
 .hamburger {
+
   position: absolute;
   right: 3rem;
-  top: 25px;
+  top: 27px;
   display: none;
 
   div {
-    width: 30px;
-    height: 5px;
+    width: 25px;
+    height: 3px;
     background: $dark-slate-blue;
   }
 
   div+div {
-    margin: 3px 0;
+    margin: 3.5px 0;
   }
 
   cursor: pointer;
@@ -128,8 +136,22 @@ header {
   }
 }
 
+@keyframes slide-in {
+  0% {
+    // transform: scale(0.2);
+    transform: translateX(100%);
+  }
+
+  100% {
+    // transform: scale(1);
+    transform: translateX(0%);
+  }
+}
+
 .mobile-menu-active {
   display: block;
   right: 0;
   transition: 0.3ms ease-in;
+  z-index: 99;
+  animation: slide-in 0.3s;
 }

@@ -17,7 +17,9 @@ export default function Home() {
   // const [isLoggedIn, setLoggedIn] = useState(false);
   // const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const [profileProducts, setProfileProducts] = useState([]);
+  const [profileArticles, setProfileArticles] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  let loading = <div></div>;
 
   // useEffect(() => {
   //    if(cookies.token) {
@@ -31,32 +33,69 @@ export default function Home() {
   // console.log(cookies.token);
 
   useEffect(() => {
-    const endpoint = 'profile/products';
+    const endpoint1 = 'profile/products';
+    const endpoint2 = 'article';
 
-    axios
-      .get(endpoint)
-      .then((response) => {
-        //console.log(response);
-        // if (response.status === 200) {
+    const req1 = axios.get(endpoint1);
+    const req2 = axios.get(endpoint2);
+
+    req1.then((response) => {
+      // if (response.status === 200) {
+      if (response.data.status) {
+        let respProfileProducts = [];
+
+        response.data.data.map((resp) => {
+          respProfileProducts.push({
+            productId: resp.product_id,
+            thumbnail: resp.product.thumbnail_url,
+          });
+        });
+
+        setProfileProducts(respProfileProducts);
+      } else {
+      }
+    });
+    req1.catch(function (error) {
+      console.log(error);
+    });
+
+    req2.then((response) => {
+      if (response.status === 200) {
         if (response.data.status) {
-          console.log(response.data.data);
-          let respProfileProducts = [];
+          let respArticles = [];
 
           response.data.data.map((resp) => {
-            respProfileProducts.push({
-              productId: resp.product.id,
-              thumbnail: resp.product.thumbnail_url,
+            respArticles.push({
+              id: resp.id,
+              thumbnail:
+                'https://dev.api.loakarya.co/storage/article/' +
+                resp.thumbnail_url,
+              title: resp.title,
+              slug: resp.slug,
+              content: resp.content,
             });
           });
 
-          setProfileProducts(respProfileProducts);
+          setProfileArticles(respArticles);
+          getContentString(respArticles);
           setLoading(false);
         }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      }
+    });
   }, []);
+
+  function getContentString(data) {
+    const allArticles = [...data];
+
+    for (var i = 0; i < allArticles.length; i++) {
+      allArticles[i].content = allArticles[i].content.replace(
+        /<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g,
+        ' '
+      );
+    }
+
+    setProfileArticles(allArticles);
+  }
 
   if (isLoading) return <Loading />;
 
@@ -65,25 +104,10 @@ export default function Home() {
       <HeaderBar />
       <Header />
       {/* <Header isLoggedIn={isLoggedIn} /> */}
-      <div id="content" className="" style={{ paddingTop: 0 }}>
+      <div id="content" className="overflow-x-hidden" style={{ paddingTop: 0 }}>
         <div className="home-carousel-container">
           <HomeCarousel />
         </div>
-
-        {/* <section>
-          <h1 class="section-title">Layanan</h1>
-          <Grid container>
-            <Grid item container md={4} sm={12} justify="center">
-              AUTHENTIC PRODUCT
-            </Grid>
-            <Grid item container md={4} sm={12} justify="center">
-              INTERIOR DESIGN
-            </Grid>
-            <Grid item container md={4} sm={12} justify="center">
-              ON DEMAND PRODUCT
-            </Grid>
-          </Grid>
-        </section> */}
 
         <section>
           <h1 class="section-title">Produk</h1>
@@ -206,6 +230,37 @@ export default function Home() {
                 </div>
               </Grid>
             </Grid>
+          </div>
+        </section>
+
+        <section>
+          <h1 class="section-title">Artikel Terbaru</h1>
+          <Grid container spacing={4} className="mb-4">
+            {profileArticles.slice(0, 3).map((article) => (
+              <Grid item xs={12} sm={6} md={3}>
+                <div>
+                  <div
+                    className="a-image"
+                    style={{ backgroundImage: `url(${article.thumbnail})` }}
+                  ></div>
+                  <Link to={`articles/${article.slug}`} className="a-title">
+                    {article.title}
+                  </Link>
+                  <div className="a-content">{article.content}</div>
+                  <Link to={`articles/${article.slug}`} className="a-link">
+                    Baca Artikel
+                  </Link>
+                </div>
+              </Grid>
+            ))}
+          </Grid>
+
+          <div className="text--center mt-4">
+            <Link to="/articles">
+              <button className="btn btn-secondary btn-secondary--active">
+                Lihat Artikel Lain
+              </button>
+            </Link>
           </div>
         </section>
 
