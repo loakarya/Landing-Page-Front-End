@@ -511,10 +511,6 @@ section .section-title::after {
   padding: 1em 0;
 }
 
-.section-container .home-portfolio {
-  margin-top: 3em;
-}
-
 .section-container .home-portfolio img {
   width: 100%;
 }

@@ -110,59 +110,6 @@ export default function Home() {
         </div>
 
         <section>
-          <h1 class="section-title">Produk</h1>
-          <div class="home-gallery-container">
-            {profileProducts.slice(0, 5).map((product) => (
-              <Link to={`products/${product.productId}`} class="">
-                <div
-                  class="home-gallery"
-                  style={{ backgroundImage: `url(${product.thumbnail})` }}
-                ></div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <article
-          class="testimoni-section"
-          style={{
-            backgroundImage: `url(${require('../image/testimoni.jpg')})`,
-          }}
-        >
-          <div class="black-opacity">
-            <div class="w-80">
-              <h1 class="section-title">Testimoni</h1>
-
-              <div class="row slider-testimoni">
-                <div class="testimoni column">
-                  <div class="head-testimoni">
-                    Sampah rumah ternyata bisa dipakai lagi, puas sekali saya
-                    menggunakan layanan on demand Loakarya!
-                  </div>
-                  <div class="content-testimoni">
-                    Loakarya membantu saya mengolah limbah menjadi produk baru.
-                    Prosesnya mudah, pelayananya menarik, dan saya puas dengan
-                    hasilnya.
-                  </div>
-                  <div class="source-testimoni">Hanifan, Mahasiswa</div>
-                </div>
-                <div class="testimoni column">
-                  <div class="head-testimoni">
-                    Mejanya benar-benar elegan dan minimalis.
-                  </div>
-                  <div class="content-testimoni">
-                    Loakarya memberi warna baru dalam gaya hidup saya. Saya
-                    tidak perlu bingung lagi jika ingin membeli furniture sambil
-                    menjaga lingkungan.
-                  </div>
-                  <div class="source-testimoni">Ray, Freelancer</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <section>
           <h1 class="section-title">Nilai Kami</h1>
 
           <div class="box-container">
@@ -233,34 +180,50 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
-          <h1 class="section-title">Artikel Terbaru</h1>
-          <Grid container spacing={4} className="mb-4">
-            {profileArticles.slice(0, 3).map((article) => (
-              <Grid item xs={12} sm={6} md={3}>
-                <div>
-                  <div
-                    className="a-image"
-                    style={{ backgroundImage: `url(${article.thumbnail})` }}
-                  ></div>
-                  <Link to={`articles/${article.slug}`} className="a-title">
-                    {article.title}
-                  </Link>
-                  <div className="a-content">{article.content}</div>
-                  <Link to={`articles/${article.slug}`} className="a-link">
-                    Baca Artikel
-                  </Link>
-                </div>
-              </Grid>
-            ))}
-          </Grid>
+        <div className="section-container">
+          <section>
+            <h1 class="section-title">Artikel Terbaru</h1>
+            <Grid container spacing={4} className="mb-4">
+              {profileArticles.slice(0, 3).map((article) => (
+                <Grid item xs={12} sm={6} md={3}>
+                  <div>
+                    <div
+                      className="a-image"
+                      style={{ backgroundImage: `url(${article.thumbnail})` }}
+                    ></div>
+                    <Link to={`articles/${article.slug}`} className="a-title">
+                      {article.title}
+                    </Link>
+                    <div className="a-content">{article.content}</div>
+                    <Link to={`articles/${article.slug}`} className="a-link">
+                      Baca Artikel
+                    </Link>
+                  </div>
+                </Grid>
+              ))}
+            </Grid>
 
-          <div className="text--center mt-4">
-            <Link to="/articles">
-              <button className="btn btn-secondary btn-secondary--active">
-                Lihat Artikel Lain
-              </button>
-            </Link>
+            <div className="text--center mt-4">
+              <Link to="/articles">
+                <button className="btn btn-secondary btn-secondary--active">
+                  Lihat Artikel Lain
+                </button>
+              </Link>
+            </div>
+          </section>
+        </div>
+
+        <section>
+          <h1 class="section-title">Produk</h1>
+          <div class="home-gallery-container">
+            {profileProducts.slice(0, 5).map((product) => (
+              <Link to={`products/${product.productId}`} class="">
+                <div
+                  class="home-gallery"
+                  style={{ backgroundImage: `url(${product.thumbnail})` }}
+                ></div>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -312,6 +275,45 @@ export default function Home() {
             </Grid>
           </section>
         </div>
+
+        <article
+          class="testimoni-section"
+          style={{
+            backgroundImage: `url(${require('../image/testimoni.jpg')})`,
+          }}
+        >
+          <div class="black-opacity">
+            <div class="w-80">
+              <h1 class="section-title">Testimoni</h1>
+
+              <div class="row slider-testimoni">
+                <div class="testimoni column">
+                  <div class="head-testimoni">
+                    Sampah rumah ternyata bisa dipakai lagi, puas sekali saya
+                    menggunakan layanan on demand Loakarya!
+                  </div>
+                  <div class="content-testimoni">
+                    Loakarya membantu saya mengolah limbah menjadi produk baru.
+                    Prosesnya mudah, pelayananya menarik, dan saya puas dengan
+                    hasilnya.
+                  </div>
+                  <div class="source-testimoni">Hanifan, Mahasiswa</div>
+                </div>
+                <div class="testimoni column">
+                  <div class="head-testimoni">
+                    Mejanya benar-benar elegan dan minimalis.
+                  </div>
+                  <div class="content-testimoni">
+                    Loakarya memberi warna baru dalam gaya hidup saya. Saya
+                    tidak perlu bingung lagi jika ingin membeli furniture sambil
+                    menjaga lingkungan.
+                  </div>
+                  <div class="source-testimoni">Ray, Freelancer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
       <Footer />
     </div>
