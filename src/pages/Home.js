@@ -205,7 +205,7 @@ export default function Home() {
 
             <div className="text--center mt-4">
               <Link to="/articles">
-                <button className="btn btn-secondary btn-secondary--active">
+                <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                   Lihat Artikel Lain
                 </button>
               </Link>

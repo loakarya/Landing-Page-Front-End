@@ -228,6 +228,26 @@ body {
   color: $white;
 }
 
+@mixin btn-can-hover-base($color) {
+  border: 1px solid transparent;
+  transition: .2s;
+
+  &:hover {
+    color: $color;
+    background-color: transparent;
+    border: 1px solid $color;
+    transition: .2s;
+  }
+}
+
+.btn-can-hover-green {
+  @include btn-can-hover-base($dark-grey-blue)
+}
+
+.btn-can-hover-blue {
+  @include btn-can-hover-base($dark-slate-blue)
+}
+
 .width--full {
   width: 100%;
 }

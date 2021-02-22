@@ -76,13 +76,13 @@ export default class HomeCarousel extends Component {
                     <div className="banner-button-container">
                       {slider.link2 && (
                         <Link to={slider.link2}>
-                          <button className="btn btn-secondary btn-secondary--active2">
+                          <button className="btn btn-secondary btn-secondary--active2 btn-can-hover-blue">
                             {slider.textLink2}
                           </button>
                         </Link>
                       )}
                       <Link to={slider.link1}>
-                        <button className="btn btn-secondary btn-secondary--active">
+                        <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                           {slider.textLink1}
                         </button>
                       </Link>

@@ -57,15 +57,15 @@
           font-weight: bold;
           margin-top: 5em;
           padding: 1em 3em;
-          border: 1px solid transparent;
-          transition: .2s;
+          // border: 1px solid transparent;
+          // transition: .2s;
 
-          &:hover {
-            color: $dark-grey-blue;
-            background-color: white;
-            border: 1px solid $dark-grey-blue;
-            transition: .2s;
-          }
+          // &:hover {
+          //   color: $dark-grey-blue;
+          //   background-color: white;
+          //   border: 1px solid $dark-grey-blue;
+          //   transition: .2s;
+          // }
         }
       }
     }

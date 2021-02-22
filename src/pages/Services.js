@@ -124,7 +124,7 @@ export default function Services() {
                       target="blank"
                       href="https://form.typeform.com/to/c6DBijku"
                     >
-                      <button className="btn btn-secondary btn-secondary--active">
+                      <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                         Mulai Sekarang Juga!
                       </button>
                     </a>

@@ -204,6 +204,34 @@ body {
   color: #ffffff;
 }
 
+.btn-can-hover-green {
+  border: 1px solid transparent;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-can-hover-green:hover {
+  color: #45C875;
+  background-color: transparent;
+  border: 1px solid #45C875;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-can-hover-blue {
+  border: 1px solid transparent;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-can-hover-blue:hover {
+  color: #3e61dc;
+  background-color: transparent;
+  border: 1px solid #3e61dc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
 .width--full {
   width: 100%;
 }
@@ -1045,17 +1073,6 @@ div.a-content {
   font-weight: bold;
   margin-top: 5em;
   padding: 1em 3em;
-  border: 1px solid transparent;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-#content.services-content .services-section .howto-content .howto-button-wrapper button:hover {
-  color: #45C875;
-  background-color: white;
-  border: 1px solid #45C875;
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 #content.services-content .services-section .why-content {
