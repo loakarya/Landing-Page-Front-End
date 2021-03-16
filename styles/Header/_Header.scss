@@ -1,0 +1,154 @@
+.header-wrapper {
+
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 0px;
+  grid-template-areas:
+    "logo""link-one";
+  // "link-two";
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 0 16px 0 #dadada;
+  height: 70px;
+  width: 100%;
+  grid-area: header;
+
+  .logo-wrapper {
+    line-height: 70px;
+    grid-area: logo;
+
+    img {
+      vertical-align: middle;
+      height: 25px;
+      width: auto;
+    }
+  }
+
+
+  .link-one {
+    grid-area: link-one;
+    text-align: right;
+  }
+
+  // .link-two {
+  //     grid-area: link-two;
+  // }
+
+  // .web-menu {
+
+  // }
+
+  ul {
+    list-style: none;
+    display: flex;
+    line-height: 70px;
+    justify-content: flex-end;
+
+    li {
+      vertical-align: bottom;
+
+      a {
+        text-decoration: none;
+        color: $dark-slate-blue;
+        text-transform: uppercase;
+        margin: 0 15px;
+        font-size: $font-medium;
+        font-weight: 700;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+
+        .MuiButtonBase-root {
+          margin-left: 40px;
+
+          img.search-icon {
+            width: 19px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.mobile-menu {
+  flex-direction: row;
+}
+
+.hamburger {
+
+  position: absolute;
+  right: 3rem;
+  top: 27px;
+  display: none;
+
+  div {
+    width: 25px;
+    height: 3px;
+    background: $dark-slate-blue;
+  }
+
+  div+div {
+    margin: 3.5px 0;
+  }
+
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 70px;
+  //right: -700px;
+  display: none;
+  background: $dark-slate-blue;
+  border-radius: 0 0 0px 30px;
+
+  ul {
+    text-align: right;
+    list-style: none;
+    padding: 2rem 2rem 2rem 5rem;
+    display: block;
+    line-height: 1rem;
+  }
+
+  li {
+    padding: 10px 0;
+
+    a {
+      text-decoration: none;
+      color: $white;
+      font-size: 1.3rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    // transform: scale(0.2);
+    transform: translateX(100%);
+  }
+
+  100% {
+    // transform: scale(1);
+    transform: translateX(0%);
+  }
+}
+
+.mobile-menu-active {
+  display: block;
+  right: 0;
+  transition: 0.3ms ease-in;
+  z-index: 99;
+  animation: slide-in 0.3s;
+}

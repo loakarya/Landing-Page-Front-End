@@ -1,0 +1,21 @@
+.form-group + .form-group {
+  margin: 1rem 0px;
+}
+
+input[type=text], input[type=password] {
+  width: calc(100% - 20px);
+  font-family: $font-style-1;
+  height: 42px;
+  padding: 0 10px;
+  border: none;
+  background: $white-69;
+
+  &:focus {
+    outline: none;
+    background: $white;
+    color: $dark-slate-blue;
+    width: calc(100% - 22px);
+    border: 1px solid $warm-grey;
+    height: 40px;
+  }
+}
