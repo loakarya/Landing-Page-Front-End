@@ -21,7 +21,7 @@ const Footer = () => {
                 Loakarya menyediakan solusi mudah dengan pengalaman yang
                 menyenangkan untuk mengelola limbah anorganik yang anda punya
                 dengan metode <i>upcycling</i> dan <i>recycling</i> juga
-                mengedepankan konsep <i>eco smartliving</i>.
+                mengedepankan konsep <i>eco smart-living</i>.
               </p>
               <br />
               <p>
