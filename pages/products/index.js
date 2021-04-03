@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 
 import HeaderBar from "../../components/HeaderBar/HeaderBar";
 import Header from "../../components/Header/Header";
@@ -80,6 +81,28 @@ export default function Products() {
 
   return (
     <div id="main">
+      <Head>
+        <title>Produk | Loakarya Indonesia</title>
+        <meta
+          name="description"
+          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+        />
+        <meta name="robots" content="index-follow" />
+        <link rel="canonical" href="https://loakarya.co/products" />
+        <meta name="og:title" content="Produk | Loakarya Indonesia" />
+        <meta name="og:site_name" content="Loakarya Indonesia" />
+        <meta
+          name="og:description"
+          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+        />
+        <meta
+          name="og:image"
+          content="https://resources.loakarya.co/logo-loakarya-putih.png"
+        />
+        <meta name="og:image:type" content="image/jpg" />
+        <meta name="og:url" content="https://loakarya.co/products" />
+        <meta name="og:type" content="website" />
+      </Head>
       <HeaderBar />
       <Header />
       <div id="content" className="width--large">

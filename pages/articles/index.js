@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
+
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Loading from "../../components/Loading/Loading";
@@ -58,6 +60,28 @@ export default function Articles() {
 
   return (
     <div id="main">
+      <Head>
+        <title>Artikel | Loakarya Indonesia</title>
+        <meta
+          name="description"
+          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+        />
+        <meta name="robots" content="index-follow" />
+        <link rel="canonical" href="https://loakarya.co/articles" />
+        <meta name="og:title" content="Artikel | Loakarya Indonesia" />
+        <meta name="og:site_name" content="Loakarya Indonesia" />
+        <meta
+          name="og:description"
+          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+        />
+        <meta
+          name="og:image"
+          content="https://resources.loakarya.co/logo-loakarya-putih.png"
+        />
+        <meta name="og:image:type" content="image/jpg" />
+        <meta name="og:url" content="https://loakarya.co/articles" />
+        <meta name="og:type" content="website" />
+      </Head>
       <Header />
       <div id="content" className="width--large">
         {loading}
