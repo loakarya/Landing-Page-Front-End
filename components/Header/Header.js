@@ -20,13 +20,13 @@ function Header(props) {
         <div className="web-menu">
           <ul>
             <li>
-              <Link href="/product">Produk</Link>
+              <Link href="/products">Produk</Link>
             </li>
             <li>
               <Link href="/services">Layanan</Link>
             </li>
             <li>
-              <Link href="/article">Artikel</Link>
+              <Link href="/articles">Artikel</Link>
             </li>
             <li>
               <Link href="/about">Tentang Kami</Link>
