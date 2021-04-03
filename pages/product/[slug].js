@@ -39,22 +39,28 @@ export default function ProductDetail(props) {
     <React.Fragment>
       <Head>
         <title>Jual Produk {props.product.title} | Loakarya Indonesia</title>
-        <meta name="description" content={props.product.trimmed_detail} />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          property="og:description"
+          content={props.product.trimmed_detail}
+        />
+        <meta name="robots" content="index-follow" />
+        <link
+          rel="canonical"
+          href={`https://loakarya.co/product/${props.product.id}`}
+        />
         <meta
           property="og:title"
           content={`Jual Produk ${props.product.title} | Loakarya Indonesia`}
         />
-        <meta
-          property="og:description"
-          content={props.product.trimmed_detail}
-        />
-        <meta property="og:type" content="product" />
+        <meta property="og:site_name" content="Loakarya Indonesia" />
+        <meta property="og:image" content={props.product.thumbnail_url} />
         <meta
           property="og:url"
           content={`https://loakarya.co/product/${props.product.id}`}
         />
-        <meta property="og:image" content={props.product.thumbnail_url} />
+        <meta property="og:type" content="product" />
       </Head>
 
       <div id="main">

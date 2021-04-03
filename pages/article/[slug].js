@@ -22,28 +22,31 @@ export default function ArticlesDetail(props) {
     <React.Fragment>
       <Head>
         <title>{props.article.title} | Loakarya Indonesia</title>
-
-        <link rel="icon" href="/favicon.ico" type="image/ico" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
-
-        <meta name="description" content={props.article.subtitle} />
-
+        <meta
+          name="description"
+          property="og:description"
+          content={props.metaDescription}
+        />
+        <meta name="robots" content="index-follow" />
+        <link
+          rel="canonical"
+          href={`https://loakarya.co/article/${props.article.slug}`}
+        />
         <meta
           property="og:title"
           content={`${props.article.title} | Loakarya Indonesia`}
         />
-        <meta property="og:description" content={props.article.subtitle} />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={`https://loakarya.co/article/${props.article.slug}`}
-        />
+        <meta property="og:site_name" content="Loakarya Indonesia" />
         <meta
           property="og:image"
           content={`https://dev.api.loakarya.co/storage/article/${props.article.thumbnail_url}`}
         />
+        <meta
+          property="og:url"
+          content={`https://loakarya.co/article/${props.article.slug}`}
+        />
+        <meta property="og:type" content="article" />
       </Head>
       <div id="main">
         <Header />
@@ -114,14 +117,20 @@ export default function ArticlesDetail(props) {
 }
 
 export async function getServerSideProps(context) {
-  let article, timestamp;
+  let article, timestamp, metaDescription;
 
   await Axios.get(`/article/${context.params.slug}`).then((response) => {
     if (response.data.status) {
       article = response.data.data;
       timestamp = response.data.data.updated_at;
+
+      let contentTrimmed = article.content
+        .substring(0, 100)
+        .replace(/<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g, " ");
+
+      metaDescription = `${article.subtitle} &bull; ${contentTrimmed}...`;
     }
   });
 
-  return { props: { article, timestamp } };
+  return { props: { article, timestamp, metaDescription } };
 }

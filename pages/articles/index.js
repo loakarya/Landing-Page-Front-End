@@ -62,25 +62,25 @@ export default function Articles() {
     <div id="main">
       <Head>
         <title>Artikel | Loakarya Indonesia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+          property="og:description"
+          content="Lihat berbagai artikel yang menambah pengetahuanmu seputar eco-living, eco-lifestyle, dan berbagai informasi menarik mengenai produk serta layanan kami."
         />
         <meta name="robots" content="index-follow" />
         <link rel="canonical" href="https://loakarya.co/articles" />
-        <meta name="og:title" content="Artikel | Loakarya Indonesia" />
-        <meta name="og:site_name" content="Loakarya Indonesia" />
+        <meta property="og:title" content="Artikel | Loakarya Indonesia" />
+        <meta property="og:site_name" content="Loakarya Indonesia" />
         <meta
-          name="og:description"
-          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+          property="og:image"
+          content="https://resources.loakarya.co/loakarya-og-image.jpg"
         />
-        <meta
-          name="og:image"
-          content="https://resources.loakarya.co/logo-loakarya-putih.png"
-        />
-        <meta name="og:image:type" content="image/jpg" />
-        <meta name="og:url" content="https://loakarya.co/articles" />
-        <meta name="og:type" content="website" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:url" content="https://loakarya.co/articles" />
+        <meta property="og:type" content="website" />
       </Head>
       <Header />
       <div id="content" className="width--large">

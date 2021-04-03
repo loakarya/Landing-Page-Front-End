@@ -27,8 +27,6 @@ export default function Products() {
   useEffect(() => {
     Axios.get("/product?data_per_page=9")
       .then((response) => {
-        // console.log(response.data.data.data);
-        // if (response.status === 200) {
         if (response.data.status) {
           let respProducts = [];
 
@@ -43,8 +41,7 @@ export default function Products() {
 
           setProducts(respProducts);
           setFilteredProducts(respProducts);
-          console.log(filteredProducts);
-          //console.log(products, [products]);
+          // console.log(filteredProducts);
           setLoading(false);
         } else {
         }
@@ -83,25 +80,25 @@ export default function Products() {
     <div id="main">
       <Head>
         <title>Produk | Loakarya Indonesia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
+          property="og:description"
           content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
         />
         <meta name="robots" content="index-follow" />
         <link rel="canonical" href="https://loakarya.co/products" />
-        <meta name="og:title" content="Produk | Loakarya Indonesia" />
-        <meta name="og:site_name" content="Loakarya Indonesia" />
+        <meta property="og:title" content="Produk | Loakarya Indonesia" />
+        <meta property="og:site_name" content="Loakarya Indonesia" />
         <meta
-          name="og:description"
-          content="Ketahui berbagai produk dari Loakarya yang sesuai dengan keinginan anda. Beragam produk kami siap membantu kebutuhan anda."
+          property="og:image"
+          content="https://resources.loakarya.co/loakarya-og-image.jpg"
         />
-        <meta
-          name="og:image"
-          content="https://resources.loakarya.co/logo-loakarya-putih.png"
-        />
-        <meta name="og:image:type" content="image/jpg" />
-        <meta name="og:url" content="https://loakarya.co/products" />
-        <meta name="og:type" content="website" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:url" content="https://loakarya.co/products" />
+        <meta property="og:type" content="website" />
       </Head>
       <HeaderBar />
       <Header />

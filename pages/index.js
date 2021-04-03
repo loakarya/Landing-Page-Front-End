@@ -1,16 +1,13 @@
 import Head from "next/head";
-// import styles from '../styles/Home.module.css'
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Axios from "Axios";
 import Link from "next/link";
-// import { HashLink } from "react-router-hash-link";
 
 import HeaderBar from "../components/HeaderBar/HeaderBar";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import HomeCarousel from "../components/Carousel/HomeCarousel";
-import Loading from "../components/Loading/Loading";
 
 import { Grid, Typography, Link as LinkText } from "@material-ui/core";
 
@@ -19,25 +16,28 @@ export default function Home(props) {
     <div id="main">
       <Head>
         <title>Loakarya Indonesia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Loakarya Indonesia merupakan sebuah start-up yang menawarkan layanan untuk meningkatkan nilai barang bekas dengan upcycling dan repurposing untuk eco-living."
+          property="og:description"
+          content="Produk furnitur ramah lingkungan dan layanan desain interior dengan konsep eco-living. Memenuhi kebutuhan anda dan juga melestarikan lingkungan."
         />
         <meta name="robots" content="index-follow" />
         <link rel="canonical" href="https://loakarya.co" />
-        <meta name="og:title" content="Halaman Depan Situs Resmi" />
-        <meta name="og:site_name" content="Loakarya Indonesia" />
         <meta
-          name="og:description"
-          content="Loakarya Indonesia merupakan sebuah start-up yang menawarkan layanan untuk meningkatkan nilai barang bekas dengan upcycling dan repurposing untuk eco-living."
+          property="og:title"
+          content="Halaman Depan Situs Resmi Loakarya Indonesia"
         />
+        <meta property="og:site_name" content="Loakarya Indonesia" />
         <meta
-          name="og:image"
-          content="https://resources.loakarya.co/logo-loakarya-putih.png"
+          property="og:image"
+          content="https://resources.loakarya.co/loakarya-og-image.jpg"
         />
-        <meta name="og:image:type" content="image/jpg" />
-        <meta name="og:url" content="https://loakarya.co" />
-        <meta name="og:type" content="website" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:url" content="https://loakarya.co" />
+        <meta property="og:type" content="website" />
       </Head>
       <HeaderBar />
       <Header />
@@ -258,12 +258,10 @@ export default function Home(props) {
 export async function getServerSideProps() {
   // Fetch data from external API
 
-  let profileProducts;
-  let profileArticles;
+  let profileProducts, profileArticles;
 
   await Axios.get("/profile/products")
     .then((response) => {
-      // if (response.status === 200) {
       if (response.data.status) {
         let respProfileProducts = [];
 
@@ -275,8 +273,6 @@ export async function getServerSideProps() {
         );
 
         profileProducts = respProfileProducts;
-
-        console.log(profileProducts);
       }
     })
     .catch(function (error) {
@@ -284,24 +280,21 @@ export async function getServerSideProps() {
     });
 
   await Axios.get("/article").then((response) => {
-    if (response.status === 200) {
-      if (response.data.status) {
-        let respArticles = [];
+    if (response.data.status) {
+      let respArticles = [];
 
-        response.data.data.map((resp) =>
-          respArticles.push({
-            id: resp.id,
-            thumbnail:
-              "https://dev.api.loakarya.co/storage/article/" +
-              resp.thumbnail_url,
-            title: resp.title,
-            slug: resp.slug,
-            content: resp.content,
-          })
-        );
+      response.data.data.map((resp) =>
+        respArticles.push({
+          id: resp.id,
+          thumbnail:
+            "https://dev.api.loakarya.co/storage/article/" + resp.thumbnail_url,
+          title: resp.title,
+          slug: resp.slug,
+          content: resp.content,
+        })
+      );
 
-        profileArticles = getContentString(respArticles);
-      }
+      profileArticles = getContentString(respArticles);
     }
   });
 
