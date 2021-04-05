@@ -1314,6 +1314,7 @@ header .logo-wrapper {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
+  cursor: pointer;
 }
 
 header .logo-wrapper img {
