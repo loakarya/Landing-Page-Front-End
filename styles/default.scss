@@ -228,6 +228,26 @@ body {
   color: $white;
 }
 
+@mixin btn-can-hover-base($color) {
+  border: 1px solid transparent;
+  transition: .2s;
+
+  &:hover {
+    color: $color;
+    background-color: transparent;
+    border: 1px solid $color;
+    transition: .2s;
+  }
+}
+
+.btn-can-hover-green {
+  @include btn-can-hover-base($dark-grey-blue)
+}
+
+.btn-can-hover-blue {
+  @include btn-can-hover-base($dark-slate-blue)
+}
+
 .width--full {
   width: 100%;
 }
@@ -573,12 +593,12 @@ section {
 @import 'articles';
 @import 'articles-detail';
 @import 'services';
-@import '../components/Footer/Footer';
-@import '../components/Header/Header';
-@import '../components/HeaderBar/HeaderBar';
-@import '../components/TextInput/TextInput';
-@import '../components/Card/Card';
-@import '../components/Accordion/Accordion';
-@import '../components/PageHeader/PageHeader';
-@import '../components/PortfolioModal/PortfolioModal';
+@import './Footer/Footer';
+@import './Header/Header';
+@import './HeaderBar/HeaderBar';
+@import './TextInput/TextInput';
+@import './Card/Card';
+@import './Accordion/Accordion';
+@import './PageHeader/PageHeader';
+@import './PortfolioModal/PortfolioModal';
 @import 'queries';

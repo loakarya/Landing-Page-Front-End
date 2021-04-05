@@ -1,15 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import React from "react";
-import Axios from "Axios";
-import Link from "next/link";
+import React from 'react';
+import Axios from 'Axios';
+import Link from 'next/link';
 
-import HeaderBar from "../components/HeaderBar/HeaderBar";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import HomeCarousel from "../components/Carousel/HomeCarousel";
+import HeaderBar from '../components/HeaderBar/HeaderBar';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import HomeCarousel from '../components/Carousel/HomeCarousel';
 
-import { Grid, Typography, Link as LinkText } from "@material-ui/core";
+import { Grid, Typography, Link as LinkText } from '@material-ui/core';
 
 export default function Home(props) {
   return (
@@ -139,7 +139,7 @@ export default function Home(props) {
             </Grid>
             <div className="text--center mt-4">
               <Link href="/articles">
-                <button className="btn btn-secondary btn-secondary--active">
+                <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                   Lihat Artikel Lain
                 </button>
               </Link>
@@ -151,7 +151,7 @@ export default function Home(props) {
           <div className="home-gallery-container">
             {props.profileProducts.slice(0, 5).map((product, index) => (
               <Link
-                key={"product-" + index}
+                key={'product-' + index}
                 href={`products/${product.productId}`}
                 className=""
               >
@@ -260,7 +260,7 @@ export async function getServerSideProps() {
 
   let profileProducts, profileArticles;
 
-  await Axios.get("/profile/products")
+  await Axios.get('/profile/products')
     .then((response) => {
       if (response.data.status) {
         let respProfileProducts = [];
@@ -279,7 +279,7 @@ export async function getServerSideProps() {
       console.log(error);
     });
 
-  await Axios.get("/article").then((response) => {
+  await Axios.get('/article').then((response) => {
     if (response.data.status) {
       let respArticles = [];
 
@@ -287,7 +287,7 @@ export async function getServerSideProps() {
         respArticles.push({
           id: resp.id,
           thumbnail:
-            "https://dev.api.loakarya.co/storage/article/" + resp.thumbnail_url,
+            'https://dev.api.loakarya.co/storage/article/' + resp.thumbnail_url,
           title: resp.title,
           slug: resp.slug,
           content: resp.content,
@@ -308,7 +308,7 @@ function getContentString(data) {
   for (var i = 0; i < allArticles.length; i++) {
     allArticles[i].content = allArticles[i].content.replace(
       /<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g,
-      " "
+      ' '
     );
   }
 
