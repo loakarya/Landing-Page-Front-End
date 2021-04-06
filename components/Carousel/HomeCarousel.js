@@ -27,8 +27,14 @@ export default class HomeCarousel extends Component {
         src: '/images/slider1.jpg',
         h1: 'Tentang',
         h2: 'Kami',
-        p:
-          'Kami mengingkatkan nilai barang bekas dengan metode upcycling dan recycling untuk mengedepankan konsep eco-living; kehidupan ramah lingkungan.',
+        p: (
+          <p>
+            Loakarya menyediakan solusi mudah dengan pengalaman yang
+            menyenangkan untuk mengelola limbah anorganik yang anda punya dengan
+            metode <i>upcycling</i> dan <i>recycling</i> juga mengedepankan
+            konsep <i>eco smartliving</i>.
+          </p>
+        ),
         link1: '/about',
         textLink1: 'Telusuri',
       },
@@ -37,8 +43,12 @@ export default class HomeCarousel extends Component {
         src: '/images/slider2.jpg',
         h1: 'Produk',
         h2: 'dan Layanan',
-        p:
-          'Dari memadukan dan mencocokan material hingga memahami furnitur mana yang terbaik untuk berbagai tempat; menata ruang adalah seni.',
+        p: (
+          <p>
+            Dari memadukan dan mencocokan material hingga memahami furnitur mana
+            yang terbaik untuk berbagai tempat; menata ruang adalah seni.
+          </p>
+        ),
         link1: '/services',
         textLink1: 'Layanan',
         link2: '/products',
@@ -49,8 +59,12 @@ export default class HomeCarousel extends Component {
         src: '/images/slider3.jpg',
         h1: 'Hubungi',
         h2: 'Kami',
-        p:
-          'Apakah anda memiliki pertanyaan tentang produk, layanan, atau apa pun? Tim kami siap menjawab semua pertanyaan anda.',
+        p: (
+          <p>
+            Apakah anda memiliki pertanyaan tentang produk, layanan, atau apa
+            pun? Tim kami siap menjawab semua pertanyaan anda.
+          </p>
+        ),
         link1: '/contact',
         textLink1: 'Telusuri',
       },
@@ -75,7 +89,7 @@ export default class HomeCarousel extends Component {
                   <div className="banner-right-container">
                     <h1>{slider.h1}</h1>
                     <h2>{slider.h2}</h2>
-                    <p>{slider.p}</p>
+                    {slider.p}
                     <div className="banner-button-container">
                       {slider.link2 && (
                         <Link href={slider.link2}>
