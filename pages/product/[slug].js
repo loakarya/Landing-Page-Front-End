@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import Axios from "Axios";
+import React, { useEffect, useState } from 'react';
+import Axios from 'Axios';
 
-import HeaderBar from "../../components/HeaderBar/HeaderBar";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import ProductCarousel from "../../components/Carousel/ProductCarousel";
+import HeaderBar from '../../components/HeaderBar/HeaderBar';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import ProductCarousel from '../../components/Carousel/ProductCarousel';
 
-import Head from "next/head";
+import Head from 'next/head';
 
-import Grid from "@material-ui/core/Grid";
-import NumberFormat from "react-number-format";
+import Grid from '@material-ui/core/Grid';
+import NumberFormat from 'react-number-format';
 
 export default function ProductDetail(props) {
   const [priceBeforeDisc, setPriceBeforeDisc] = useState();
@@ -29,9 +29,9 @@ export default function ProductDetail(props) {
   const productCategory = (index) => {
     switch (parseInt(index)) {
       case 0:
-        return "Authentic Product";
+        return 'Authentic Product';
       case 1:
-        return "On Demand Product";
+        return 'On Demand Product';
     }
   };
 
@@ -81,9 +81,9 @@ export default function ProductDetail(props) {
               <h1 className="product-name mb-10">{props.product.title}</h1>
               <s className="product-price-before">
                 <NumberFormat
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
-                  prefix={"Rp "}
+                  prefix={'Rp '}
                   value={priceBeforeDisc}
                 />
               </s>
@@ -92,9 +92,9 @@ export default function ProductDetail(props) {
               </span>
               <p className="product-price ">
                 <NumberFormat
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
-                  prefix={"Rp "}
+                  prefix={'Rp '}
                   value={props.product.price}
                 />
               </p>
@@ -110,18 +110,18 @@ export default function ProductDetail(props) {
                 target="blank"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSe9N7FTD9w9KamQm-Q90ZR1vBSox6A8RvH95irLOlpicDswAg/viewform"
               >
-                <button className="btn btn-secondary btn-secondary--active">
+                <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                   Pesan Sekarang
                 </button>
               </a>
               <p className="marketplace-link">
-                Produk ini juga tersedia di{" "}
+                Produk ini juga tersedia di{' '}
                 <a
                   href={props.product.shopee_order_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shopee,{" "}
+                  Shopee,{' '}
                 </a>
                 <a
                   href={props.product.tokopedia_order_link}
@@ -129,8 +129,8 @@ export default function ProductDetail(props) {
                   rel="noopener noreferrer"
                 >
                   Tokopedia
-                </a>{" "}
-                dan{" "}
+                </a>{' '}
+                dan{' '}
                 <a
                   href={props.product.bukalapak_order_link}
                   target="_blank"
@@ -157,7 +157,7 @@ export async function getServerSideProps(context) {
       product = response.data.data;
 
       if (product.detail.length > 55)
-        product.trimmed_detail = product.detail.substring(0, 167) + "...";
+        product.trimmed_detail = product.detail.substring(0, 167) + '...';
 
       pictures = [
         product.thumbnail_url,
