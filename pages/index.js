@@ -126,12 +126,12 @@ export default function Home(props) {
                       className="a-image"
                       style={{ backgroundImage: `url(${article.thumbnail})` }}
                     ></div>
-                    <Link href={`articles/${article.slug}`} className="a-title">
-                      {article.title}
+                    <Link href={`article/${article.slug}`}>
+                      <a className="a-title">{article.title}</a>
                     </Link>
                     <div className="a-content">{article.content}</div>
-                    <Link href={`articles/${article.slug}`} className="a-link">
-                      Baca Artikel
+                    <Link href={`article/${article.slug}`}>
+                      <a className="a-link">Baca Artikel</a>
                     </Link>
                   </div>
                 </Grid>
@@ -152,13 +152,15 @@ export default function Home(props) {
             {props.profileProducts.slice(0, 5).map((product, index) => (
               <Link
                 key={'product-' + index}
-                href={`products/${product.productId}`}
+                href={`product/${product.productId}`}
                 className=""
               >
-                <div
-                  className="home-gallery"
-                  style={{ backgroundImage: `url(${product.thumbnail})` }}
-                ></div>
+                <a>
+                  <div
+                    className="home-gallery"
+                    style={{ backgroundImage: `url(${product.thumbnail})` }}
+                  ></div>
+                </a>
               </Link>
             ))}
           </div>
@@ -200,13 +202,13 @@ export default function Home(props) {
                 </Grid>
               </Grid>
               <Grid item container justify="flex-end">
-                {/* <HashLink to="/services#portfolio"> */}
-                <Typography>
-                  <LinkText component="button" variant="body2">
-                    Lihat Selengkapnya &rarr;
-                  </LinkText>
-                </Typography>
-                {/* </HashLink> */}
+                <Link href="/services#portfolio">
+                  <Typography>
+                    <LinkText component="button" variant="body2">
+                      Lihat Selengkapnya &rarr;
+                    </LinkText>
+                  </Typography>
+                </Link>
               </Grid>
             </Grid>
           </section>
