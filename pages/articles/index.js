@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import Head from "next/head";
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Loading from "../../components/Loading/Loading";
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import Loading from '../../components/Loading/Loading';
 
-import Axios from "Axios";
-import Link from "next/link";
-import Grid from "@material-ui/core/Grid";
+import Axios from 'Axios';
+import Link from 'next/link';
+import Grid from '@material-ui/core/Grid';
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get("/article")
+    Axios.get('/article')
       .then((response) => {
         let respArticles = [];
 
@@ -22,7 +22,7 @@ export default function Articles() {
           respArticles.push({
             id: resp.id,
             thumbnail:
-              "https://dev.api.loakarya.co/storage/article/" +
+              'https://dev.api.loakarya.co/storage/article/' +
               resp.thumbnail_url,
             title: resp.title,
             slug: resp.slug,
@@ -45,7 +45,7 @@ export default function Articles() {
     for (var i = 0; i < allArticles.length; i++) {
       allArticles[i].content = allArticles[i].content.replace(
         /<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g,
-        " "
+        ' '
       );
     }
 
@@ -95,12 +95,12 @@ export default function Articles() {
                   className="a-image"
                   style={{ backgroundImage: `url(${article.thumbnail})` }}
                 ></div>
-                <Link href={`article/${article.slug}`} className="a-title">
-                  {article.title}
+                <Link href={`article/${article.slug}`}>
+                  <a className="a-title">{article.title}</a>
                 </Link>
                 <div className="a-content">{article.content}</div>
-                <Link href={`article/${article.slug}`} className="a-link">
-                  Baca Artikel
+                <Link href={`article/${article.slug}`}>
+                  <a className="a-link">Baca Artikel</a>
                 </Link>
               </div>
             </Grid>
