@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import React from 'react';
-import Axios from 'Axios';
+import axios from 'axios';
 import Link from 'next/link';
 
 import HeaderBar from '../components/HeaderBar/HeaderBar';
@@ -262,7 +262,8 @@ export async function getServerSideProps() {
 
   let profileProducts, profileArticles;
 
-  await Axios.get('/profile/products')
+  await axios
+    .get('/profile/products')
     .then((response) => {
       if (response.data.status) {
         let respProfileProducts = [];
@@ -281,7 +282,7 @@ export async function getServerSideProps() {
       console.log(error);
     });
 
-  await Axios.get('/article').then((response) => {
+  await axios.get('/article').then((response) => {
     if (response.data.status) {
       let respArticles = [];
 

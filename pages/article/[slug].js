@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
-import Head from "next/head";
+import Head from 'next/head';
 
-import Axios from "Axios";
+import axios from 'axios';
 
 export default function ArticlesDetail(props) {
   const [tanggal, setTanggal] = useState();
@@ -82,34 +82,34 @@ export default function ArticlesDetail(props) {
       str_jam,
       str_menit;
     var bulanIndo = [
-      "",
-      "Januari",
-      "Februari",
-      "Maret",
-      "April",
-      "Mei",
-      "Juni",
-      "Juli",
-      "Agustus",
-      "September",
-      "Oktober",
-      "November",
-      "Desember",
+      '',
+      'Januari',
+      'Februari',
+      'Maret',
+      'April',
+      'Mei',
+      'Juni',
+      'Juli',
+      'Agustus',
+      'September',
+      'Oktober',
+      'November',
+      'Desember',
     ];
 
-    getDate = time.split("T");
+    getDate = time.split('T');
     str_date = getDate[0];
-    str_tahun = str_date.split("-")[0];
-    str_bulan = bulanIndo[Math.abs(str_date.split("-")[1])];
-    str_tanggal = str_date.split("-")[2];
+    str_tahun = str_date.split('-')[0];
+    str_bulan = bulanIndo[Math.abs(str_date.split('-')[1])];
+    str_tanggal = str_date.split('-')[2];
 
     setTahun(str_tahun);
     setBulan(str_bulan);
     setTanggal(str_tanggal);
 
-    str_time = getDate[1].split(".");
-    str_jam = str_time[0].split(":")[0];
-    str_menit = str_time[0].split(":")[1];
+    str_time = getDate[1].split('.');
+    str_jam = str_time[0].split(':')[0];
+    str_menit = str_time[0].split(':')[1];
 
     setJam(str_jam);
     setMenit(str_menit);
@@ -119,14 +119,14 @@ export default function ArticlesDetail(props) {
 export async function getServerSideProps(context) {
   let article, timestamp, metaDescription;
 
-  await Axios.get(`/article/${context.params.slug}`).then((response) => {
+  await axios.get(`/article/${context.params.slug}`).then((response) => {
     if (response.data.status) {
       article = response.data.data;
       timestamp = response.data.data.updated_at;
 
       let contentTrimmed = article.content
         .substring(0, 100)
-        .replace(/<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g, " ");
+        .replace(/<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g, ' ');
 
       metaDescription = `${article.subtitle} &bull; ${contentTrimmed}...`;
     }

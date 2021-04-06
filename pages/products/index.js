@@ -8,7 +8,7 @@ import ProductImage from '../../components/ProductImage/ProductImage';
 import Loading from '../../components/Loading/Loading';
 
 import Link from 'next/link';
-import Axios from 'Axios';
+import axios from 'axios';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -25,7 +25,8 @@ export default function Products() {
   let loading = <div></div>;
 
   useEffect(() => {
-    Axios.get('/product?data_per_page=9')
+    axios
+      .get('/product?data_per_page=9')
       .then((response) => {
         if (response.data.status) {
           let respProducts = [];

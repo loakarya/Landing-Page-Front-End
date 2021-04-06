@@ -1,12 +1,12 @@
-import "../styles/default.css";
+import '../styles/default.css';
 
-import "../styles/Carousel/HomeCarousel.css";
-import "../styles/Carousel/ProductCarousel.css";
-import "../styles/Carousel/SlickCustom.css";
+import '../styles/Carousel/HomeCarousel.css';
+import '../styles/Carousel/ProductCarousel.css';
+import '../styles/Carousel/SlickCustom.css';
 
-import Axios from "Axios";
+import axios from 'axios';
 
-Axios.defaults.baseURL = "https://dev.api.loakarya.co/api";
+axios.defaults.baseURL = 'https://dev.api.loakarya.co/api';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

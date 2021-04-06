@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Loading from '../../components/Loading/Loading';
 
-import Axios from 'Axios';
+import axios from 'axios';
 import Link from 'next/link';
 import Grid from '@material-ui/core/Grid';
 
@@ -14,7 +14,8 @@ export default function Articles() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get('/article')
+    axios
+      .get('/article')
       .then((response) => {
         let respArticles = [];
 

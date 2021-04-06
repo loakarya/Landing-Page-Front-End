@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Axios from 'Axios';
+import axios from 'axios';
 
 import HeaderBar from '../../components/HeaderBar/HeaderBar';
 import Header from '../../components/Header/Header';
@@ -152,7 +152,7 @@ export async function getServerSideProps(context) {
   let product = {};
   let pictures = [];
 
-  await Axios.get(`/product/${context.params.slug}`).then((response) => {
+  await axios.get(`/product/${context.params.slug}`).then((response) => {
     if (response.data.status) {
       product = response.data.data;
 
