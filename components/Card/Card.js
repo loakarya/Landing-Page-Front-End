@@ -89,7 +89,7 @@ export default function Card() {
       id: 10,
       src: '/images/team-kami/sami.jpg',
       name: 'Sami Fauzan Ramadhan',
-      position: 'Internet of Things Engineer',
+      position: 'Hardware Engineer',
       socmed: {
         linkedin: 'https://www.linkedin.com/in/sami-f-8a6068109/',
       },
