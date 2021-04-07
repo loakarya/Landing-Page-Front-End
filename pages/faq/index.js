@@ -47,6 +47,8 @@ export default function Products() {
 
           response.data.data.map((resp) => {
             if (resp.category === '1') {
+              setFirstButtonFilter('btn filter-btn filter-btn-active');
+
               return filteredFaq.push({
                 category: resp.category,
                 question: resp.question,
@@ -56,7 +58,7 @@ export default function Products() {
             }
             return null;
           });
-          showFirstCategory();
+          // showFirstCategory();
           setLoading(false);
         }
       })
