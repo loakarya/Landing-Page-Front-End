@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Head from "next/head";
+import React, { useState } from 'react';
+import Head from 'next/head';
 
-import HeaderBar from "../../components/HeaderBar/HeaderBar";
-import Header from "../../components/Header/Header";
-import PageHeader from "../../components/PageHeader/PageHeader";
-import ServicesTitle from "../../components/ServicesTitle/ServicesTitle";
-import ReasonPoints from "../../components/Reason/ReasonPoints";
-import ReasonEffects from "../../components/Reason/ReasonEffects";
-import PortfolioCard from "../../components/PortfolioCard/PortfolioCard";
-import PortfolioModal from "../../components/PortfolioModal/PortfolioModal";
-import Footer from "../../components/Footer/Footer";
+import HeaderBar from '../../components/HeaderBar/HeaderBar';
+import Header from '../../components/Header/Header';
+import PageHeader from '../../components/PageHeader/PageHeader';
+import ServicesTitle from '../../components/ServicesTitle/ServicesTitle';
+import ReasonPoints from '../../components/Reason/ReasonPoints';
+import ReasonEffects from '../../components/Reason/ReasonEffects';
+import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
+import PortfolioModal from '../../components/PortfolioModal/PortfolioModal';
+import Footer from '../../components/Footer/Footer';
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from 'framer-motion';
 
 import {
   Grid,
@@ -19,58 +19,58 @@ import {
   ThemeProvider,
   createMuiTheme,
   useMediaQuery,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: 'Montserrat, sans-serif',
   },
 });
 
 const reasons = [
-  { id: 1, reasonText: "Menggunakan jasa profesional" },
-  { id: 2, reasonText: "Memberdayakan pengrajin lokal" },
-  { id: 3, reasonText: "Ketepatan waktu pengerjaan" },
-  { id: 4, reasonText: "Anggaran dapat disesuaikan" },
+  { id: 1, reasonText: 'Menggunakan jasa profesional' },
+  { id: 2, reasonText: 'Memberdayakan pengrajin lokal' },
+  { id: 3, reasonText: 'Ketepatan waktu pengerjaan' },
+  { id: 4, reasonText: 'Anggaran dapat disesuaikan' },
 ];
 
-const reasonEffects = ["mudah", "cepat", "menyenangkan"];
+const reasonEffects = ['mudah', 'cepat', 'menyenangkan'];
 
 const cardPortfolio = [
   {
     id: 1,
-    title: "Renovasi Kamar Billy",
-    subtitles: ["Residental", "Desain Interior", "Furnitur"],
+    title: 'Renovasi Kamar Billy',
+    subtitles: ['Residental', 'Desain Interior', 'Furnitur'],
   },
   {
     id: 2,
-    title: "Japandi Bedroom Client",
-    subtitles: ["Residental", "Desain Interior"],
+    title: 'Japandi Bedroom Client',
+    subtitles: ['Residental', 'Desain Interior'],
   },
   {
     id: 3,
-    title: "Kenko Rehabilitation Facility",
-    subtitles: ["Fasilitas Publik", "Desain Interior"],
+    title: 'Kenko Rehabilitation Facility',
+    subtitles: ['Fasilitas Publik', 'Desain Interior'],
   },
   {
     id: 4,
-    title: "Lobby Hotel Batik",
-    subtitles: ["Fasilitas Gedung", "Desain Interior"],
+    title: 'Lobby Hotel Batik',
+    subtitles: ['Fasilitas Gedung', 'Desain Interior'],
   },
   {
     id: 5,
-    title: "Office Paxel Jakarta",
-    subtitles: ["Office", "Desain Interior"],
+    title: 'Office Paxel Jakarta',
+    subtitles: ['Office', 'Desain Interior'],
   },
   {
     id: 6,
     title: `Yanie's Cake Tea and Patisserie`,
-    subtitles: ["Toko Retail", "Desain Interior"],
+    subtitles: ['Toko Retail', 'Desain Interior'],
   },
 ];
 
 export default function Services() {
-  const isMediumDevice = useMediaQuery("(max-width:960px)");
+  const isMediumDevice = useMediaQuery('(max-width:960px)');
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState(null);
@@ -116,7 +116,7 @@ export default function Services() {
               spacing={3}
               justify="center"
               className="howto-content"
-              direction={isMediumDevice && "column-reverse"}
+              direction={isMediumDevice && 'column-reverse'}
             >
               <Grid
                 container
@@ -134,7 +134,7 @@ export default function Services() {
                     variant="subtitle2"
                     className="services-section-subtitle"
                   >
-                    Bagikan inspirasi ruangan yang ingin anda miliki, sehingga{" "}
+                    Bagikan inspirasi ruangan yang ingin anda miliki, sehingga{' '}
                     <span className="services-subtitle-bold">
                       kami dapat menyesuaikannya dengan anggaran dan selera
                       anda.
@@ -145,7 +145,7 @@ export default function Services() {
                       target="blank"
                       href="https://form.typeform.com/to/c6DBijku"
                     >
-                      <button className="btn btn-secondary btn-secondary--active">
+                      <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                         Mulai Sekarang Juga!
                       </button>
                     </a>

@@ -1,15 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import React from "react";
-import Axios from "Axios";
-import Link from "next/link";
+import React from 'react';
+import axios from 'axios';
+import Link from 'next/link';
 
-import HeaderBar from "../components/HeaderBar/HeaderBar";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import HomeCarousel from "../components/Carousel/HomeCarousel";
+import HeaderBar from '../components/HeaderBar/HeaderBar';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import HomeCarousel from '../components/Carousel/HomeCarousel';
 
-import { Grid, Typography, Link as LinkText } from "@material-ui/core";
+import { Grid, Typography, Link as LinkText } from '@material-ui/core';
 
 export default function Home(props) {
   return (
@@ -126,12 +126,12 @@ export default function Home(props) {
                       className="a-image"
                       style={{ backgroundImage: `url(${article.thumbnail})` }}
                     ></div>
-                    <Link href={`articles/${article.slug}`} className="a-title">
-                      {article.title}
+                    <Link href={`article/${article.slug}`}>
+                      <a className="a-title">{article.title}</a>
                     </Link>
                     <div className="a-content">{article.content}</div>
-                    <Link href={`articles/${article.slug}`} className="a-link">
-                      Baca Artikel
+                    <Link href={`article/${article.slug}`}>
+                      <a className="a-link">Baca Artikel</a>
                     </Link>
                   </div>
                 </Grid>
@@ -139,7 +139,7 @@ export default function Home(props) {
             </Grid>
             <div className="text--center mt-4">
               <Link href="/articles">
-                <button className="btn btn-secondary btn-secondary--active">
+                <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                   Lihat Artikel Lain
                 </button>
               </Link>
@@ -151,14 +151,16 @@ export default function Home(props) {
           <div className="home-gallery-container">
             {props.profileProducts.slice(0, 5).map((product, index) => (
               <Link
-                key={"product-" + index}
-                href={`products/${product.productId}`}
+                key={'product-' + index}
+                href={`product/${product.productId}`}
                 className=""
               >
-                <div
-                  className="home-gallery"
-                  style={{ backgroundImage: `url(${product.thumbnail})` }}
-                ></div>
+                <a>
+                  <div
+                    className="home-gallery"
+                    style={{ backgroundImage: `url(${product.thumbnail})` }}
+                  ></div>
+                </a>
               </Link>
             ))}
           </div>
@@ -200,13 +202,13 @@ export default function Home(props) {
                 </Grid>
               </Grid>
               <Grid item container justify="flex-end">
-                {/* <HashLink to="/services#portfolio"> */}
-                <Typography>
-                  <LinkText component="button" variant="body2">
-                    Lihat Selengkapnya &rarr;
-                  </LinkText>
-                </Typography>
-                {/* </HashLink> */}
+                <Link href="/services#portfolio">
+                  <Typography>
+                    <LinkText component="button" variant="body2">
+                      Lihat Selengkapnya &rarr;
+                    </LinkText>
+                  </Typography>
+                </Link>
               </Grid>
             </Grid>
           </section>
@@ -260,7 +262,8 @@ export async function getServerSideProps() {
 
   let profileProducts, profileArticles;
 
-  await Axios.get("/profile/products")
+  await axios
+    .get('/profile/products')
     .then((response) => {
       if (response.data.status) {
         let respProfileProducts = [];
@@ -279,7 +282,7 @@ export async function getServerSideProps() {
       console.log(error);
     });
 
-  await Axios.get("/article").then((response) => {
+  await axios.get('/article').then((response) => {
     if (response.data.status) {
       let respArticles = [];
 
@@ -287,7 +290,7 @@ export async function getServerSideProps() {
         respArticles.push({
           id: resp.id,
           thumbnail:
-            "https://dev.api.loakarya.co/storage/article/" + resp.thumbnail_url,
+            'https://dev.api.loakarya.co/storage/article/' + resp.thumbnail_url,
           title: resp.title,
           slug: resp.slug,
           content: resp.content,
@@ -308,7 +311,7 @@ function getContentString(data) {
   for (var i = 0; i < allArticles.length; i++) {
     allArticles[i].content = allArticles[i].content.replace(
       /<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g,
-      " "
+      ' '
     );
   }
 

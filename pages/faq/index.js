@@ -1,34 +1,35 @@
-import React, { useState, useEffect } from "react";
-import Head from "next/head";
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 
-import HeaderBar from "../../components/HeaderBar/HeaderBar";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Accordion from "../../components/Accordion/Accordion";
-import Loading from "../../components/Loading/Loading";
+import HeaderBar from '../../components/HeaderBar/HeaderBar';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import Accordion from '../../components/Accordion/Accordion';
+import Loading from '../../components/Loading/Loading';
 
-import Axios from "Axios";
+import axios from 'axios';
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
 export default function Products() {
   const [faq, setFaq] = useState([]);
   const [filteredFaq, setFilteredFaq] = useState([]);
-  const [firstButtonFilter, setFirstButtonFilter] = useState("btn filter-btn");
+  const [firstButtonFilter, setFirstButtonFilter] = useState('btn filter-btn');
   const [secondButtonFilter, setSecondButtonFilter] = useState(
-    "btn filter-btn"
+    'btn filter-btn'
   );
-  const [thirdButtonFilter, setThirdButtonFilter] = useState("btn filter-btn");
+  const [thirdButtonFilter, setThirdButtonFilter] = useState('btn filter-btn');
   const [fourthButtonFilter, setFourthButtonFilter] = useState(
-    "btn filter-btn"
+    'btn filter-btn'
   );
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState('');
   const [isLoading, setLoading] = useState(true);
 
   let loading = <div></div>;
 
   useEffect(() => {
-    Axios.get("/faq")
+    axios
+      .get('/faq')
       .then((response) => {
         if (response.data.status) {
           let respFaq = [];
@@ -45,7 +46,9 @@ export default function Products() {
           setFaq(respFaq);
 
           response.data.data.map((resp) => {
-            if (resp.category === "1") {
+            if (resp.category === '1') {
+              setFirstButtonFilter('btn filter-btn filter-btn-active');
+
               return filteredFaq.push({
                 category: resp.category,
                 question: resp.question,
@@ -55,7 +58,7 @@ export default function Products() {
             }
             return null;
           });
-          showFirstCategory();
+          // showFirstCategory();
           setLoading(false);
         }
       })
@@ -65,35 +68,35 @@ export default function Products() {
   }, []);
 
   function showFirstCategory() {
-    setFilteredFaq(faq.filter((e) => e.category === "1"));
-    setFirstButtonFilter("btn filter-btn filter-btn-active");
-    setSecondButtonFilter("btn filter-btn");
-    setThirdButtonFilter("btn filter-btn");
-    setFourthButtonFilter("btn filter-btn");
+    setFilteredFaq(faq.filter((e) => e.category === '1'));
+    setFirstButtonFilter('btn filter-btn filter-btn-active');
+    setSecondButtonFilter('btn filter-btn');
+    setThirdButtonFilter('btn filter-btn');
+    setFourthButtonFilter('btn filter-btn');
   }
 
   function showSecondCategory() {
-    setFilteredFaq(faq.filter((e) => e.category === "2"));
-    setFirstButtonFilter("btn filter-btn");
-    setSecondButtonFilter("btn filter-btn filter-btn-active");
-    setThirdButtonFilter("btn filter-btn");
-    setFourthButtonFilter("btn filter-btn");
+    setFilteredFaq(faq.filter((e) => e.category === '2'));
+    setFirstButtonFilter('btn filter-btn');
+    setSecondButtonFilter('btn filter-btn filter-btn-active');
+    setThirdButtonFilter('btn filter-btn');
+    setFourthButtonFilter('btn filter-btn');
   }
 
   function showThirdCategory() {
-    setFilteredFaq(faq.filter((e) => e.category === "3"));
-    setFirstButtonFilter("btn filter-btn");
-    setSecondButtonFilter("btn filter-btn");
-    setThirdButtonFilter("btn filter-btn filter-btn-active");
-    setFourthButtonFilter("btn filter-btn");
+    setFilteredFaq(faq.filter((e) => e.category === '3'));
+    setFirstButtonFilter('btn filter-btn');
+    setSecondButtonFilter('btn filter-btn');
+    setThirdButtonFilter('btn filter-btn filter-btn-active');
+    setFourthButtonFilter('btn filter-btn');
   }
 
   function showFourthCategory() {
-    setFilteredFaq(faq.filter((e) => e.category === "4"));
-    setFirstButtonFilter("btn filter-btn");
-    setSecondButtonFilter("btn filter-btn");
-    setThirdButtonFilter("btn filter-btn");
-    setFourthButtonFilter("btn filter-btn filter-btn-active");
+    setFilteredFaq(faq.filter((e) => e.category === '4'));
+    setFirstButtonFilter('btn filter-btn');
+    setSecondButtonFilter('btn filter-btn');
+    setThirdButtonFilter('btn filter-btn');
+    setFourthButtonFilter('btn filter-btn filter-btn-active');
   }
 
   if (isLoading) {

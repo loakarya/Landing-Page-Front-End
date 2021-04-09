@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import Link from "next/link";
+import React, { Component } from 'react';
+import Link from 'next/link';
 
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 // import "./HomeCarousel.css";
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
 export default class HomeCarousel extends Component {
   render() {
@@ -24,35 +24,49 @@ export default class HomeCarousel extends Component {
     const sliders = [
       {
         id: 1,
-        src: "/images/slider1.jpg",
-        h1: "Tentang",
-        h2: "Kami",
-        p:
-          "Kami mengingkatkan nilai barang bekas dengan metode upcycling dan recycling untuk mengedepankan konsep eco-living; kehidupan ramah lingkungan.",
-        link1: "/about",
-        textLink1: "Telusuri",
+        src: '/images/slider1.jpg',
+        h1: 'Tentang',
+        h2: 'Kami',
+        p: (
+          <p>
+            Loakarya menyediakan solusi mudah dengan pengalaman yang
+            menyenangkan untuk mengelola limbah anorganik yang anda punya dengan
+            metode <i>upcycling</i> dan <i>recycling</i> juga mengedepankan
+            konsep <i>eco smartliving</i>.
+          </p>
+        ),
+        link1: '/about',
+        textLink1: 'Telusuri',
       },
       {
         id: 2,
-        src: "/images/slider2.jpg",
-        h1: "Produk",
-        h2: "dan Layanan",
-        p:
-          "Dari memadukan dan mencocokan material hingga memahami furnitur mana yang terbaik untuk berbagai tempat; menata ruang adalah seni.",
-        link1: "/services",
-        textLink1: "Layanan",
-        link2: "/products",
-        textLink2: "Produk",
+        src: '/images/slider2.jpg',
+        h1: 'Produk',
+        h2: 'dan Layanan',
+        p: (
+          <p>
+            Dari memadukan dan mencocokan material hingga memahami furnitur mana
+            yang terbaik untuk berbagai tempat; menata ruang adalah seni.
+          </p>
+        ),
+        link1: '/services',
+        textLink1: 'Layanan',
+        link2: '/products',
+        textLink2: 'Produk',
       },
       {
         id: 3,
-        src: "/images/slider3.jpg",
-        h1: "Hubungi",
-        h2: "Kami",
-        p:
-          "Apakah anda memiliki pertanyaan tentang produk, layanan, atau apa pun? Tim kami siap menjawab semua pertanyaan anda.",
-        link1: "/contact",
-        textLink1: "Telusuri",
+        src: '/images/slider3.jpg',
+        h1: 'Hubungi',
+        h2: 'Kami',
+        p: (
+          <p>
+            Apakah anda memiliki pertanyaan tentang produk, layanan, atau apa
+            pun? Tim kami siap menjawab semua pertanyaan anda.
+          </p>
+        ),
+        link1: '/contact',
+        textLink1: 'Telusuri',
       },
     ];
 
@@ -66,7 +80,7 @@ export default class HomeCarousel extends Component {
                   <div className="banner-left-container">
                     <img
                       src={slider.src}
-                      alt={"Home carousel image " + index + "."}
+                      alt={'Home carousel image ' + index + '.'}
                     />
                   </div>
                 </Grid>
@@ -75,17 +89,17 @@ export default class HomeCarousel extends Component {
                   <div className="banner-right-container">
                     <h1>{slider.h1}</h1>
                     <h2>{slider.h2}</h2>
-                    <p>{slider.p}</p>
+                    {slider.p}
                     <div className="banner-button-container">
                       {slider.link2 && (
                         <Link href={slider.link2}>
-                          <button className="btn btn-secondary btn-secondary--active2">
+                          <button className="btn btn-secondary btn-secondary--active2 btn-can-hover-blue">
                             {slider.textLink2}
                           </button>
                         </Link>
                       )}
                       <Link href={slider.link1}>
-                        <button className="btn btn-secondary btn-secondary--active">
+                        <button className="btn btn-secondary btn-secondary--active btn-can-hover-green">
                           {slider.textLink1}
                         </button>
                       </Link>

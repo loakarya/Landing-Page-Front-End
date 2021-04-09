@@ -1,31 +1,32 @@
-import React, { useState, useEffect } from "react";
-import Head from "next/head";
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 
-import HeaderBar from "../../components/HeaderBar/HeaderBar";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import ProductImage from "../../components/ProductImage/ProductImage";
-import Loading from "../../components/Loading/Loading";
+import HeaderBar from '../../components/HeaderBar/HeaderBar';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import ProductImage from '../../components/ProductImage/ProductImage';
+import Loading from '../../components/Loading/Loading';
 
-import Link from "next/link";
-import Axios from "Axios";
+import Link from 'next/link';
+import axios from 'axios';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [buttonClass, setButtonClass] = useState(
-    "btn btn-secondary btn-secondary--active"
+    'btn btn-secondary btn-secondary--active'
   );
-  const [firstButtonClass, setFirstButtonClass] = useState("btn btn-secondary");
+  const [firstButtonClass, setFirstButtonClass] = useState('btn btn-secondary');
   const [secondButtonClass, setSecondButtonClass] = useState(
-    "btn btn-secondary"
+    'btn btn-secondary'
   );
   const [isLoading, setLoading] = useState(true);
 
   let loading = <div></div>;
 
   useEffect(() => {
-    Axios.get("/product?data_per_page=9")
+    axios
+      .get('/product?data_per_page=9')
       .then((response) => {
         if (response.data.status) {
           let respProducts = [];
@@ -57,23 +58,23 @@ export default function Products() {
 
   function showAllProduct() {
     setFilteredProducts(products);
-    setButtonClass("btn btn-secondary btn-secondary--active");
-    setFirstButtonClass("btn btn-secondary");
-    setSecondButtonClass("btn btn-secondary");
+    setButtonClass('btn btn-secondary btn-secondary--active');
+    setFirstButtonClass('btn btn-secondary');
+    setSecondButtonClass('btn btn-secondary');
   }
 
   function showAuthenticProduct() {
-    setFilteredProducts(products.filter((e) => e.category === "0"));
-    setFirstButtonClass("btn btn-secondary btn-secondary--active");
-    setSecondButtonClass("btn btn-secondary");
-    setButtonClass("btn btn-secondary");
+    setFilteredProducts(products.filter((e) => e.category === '0'));
+    setFirstButtonClass('btn btn-secondary btn-secondary--active');
+    setSecondButtonClass('btn btn-secondary');
+    setButtonClass('btn btn-secondary');
   }
 
   function showOnDemandProduct() {
-    setFilteredProducts(products.filter((e) => e.category === "1"));
-    setSecondButtonClass("btn btn-secondary btn-secondary--active");
-    setFirstButtonClass("btn btn-secondary");
-    setButtonClass("btn btn-secondary");
+    setFilteredProducts(products.filter((e) => e.category === '1'));
+    setSecondButtonClass('btn btn-secondary btn-secondary--active');
+    setFirstButtonClass('btn btn-secondary');
+    setButtonClass('btn btn-secondary');
   }
 
   return (
@@ -127,7 +128,9 @@ export default function Products() {
           {filteredProducts &&
             filteredProducts.map((product) => (
               <Link href={`product/${product.id}`}>
-                <ProductImage src={product.thumbnail} alt={product.id} />
+                <a>
+                  <ProductImage src={product.thumbnail} alt={product.id} />
+                </a>
               </Link>
             ))}
         </div>
