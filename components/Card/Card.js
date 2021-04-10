@@ -80,7 +80,7 @@ export default function Card() {
       id: 9,
       src: '/images/team-kami/dummy.jpg',
       name: 'Syahrul Hidayat',
-      position: 'Supply Chain Specialist',
+      position: 'Operation Specialist',
       socmed: {
         linkedin: 'https://www.linkedin.com/in/syahrul-hidayat-916371171/',
       },
