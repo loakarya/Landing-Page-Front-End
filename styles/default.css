@@ -934,6 +934,7 @@ div.a-content {
 
 .article__content p {
   margin: 1.25rem auto;
+  text-align: justify;
 }
 
 .article__content ul,
