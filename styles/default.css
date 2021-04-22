@@ -910,7 +910,8 @@ div.a-content {
   margin-bottom: 2rem;
 }
 
-.article__author, .article__date {
+.article__author,
+.article__date {
   color: #494949;
   font-family: "Montserrat", sans-serif;
   line-height: 1.59;
@@ -931,7 +932,13 @@ div.a-content {
   max-width: 100vw;
 }
 
-.article__content ul, .article__content ol {
+.article__content p {
+  margin: 1.25rem auto;
+  text-align: justify;
+}
+
+.article__content ul,
+.article__content ol {
   list-style-position: inside;
 }
 
@@ -1001,7 +1008,9 @@ div.a-content {
   overflow-x: auto;
 }
 
-.article__content table, .article__content th, .article__content td {
+.article__content table,
+.article__content th,
+.article__content td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: .5em;
